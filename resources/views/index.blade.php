@@ -8,7 +8,8 @@
                 <div class="container">
                     <div class="text-center text-white mb-7">
                         <h1 class="mb-1">Find Your Best Property</h1>
-                        <p>It is a long established fact that a reader will be distracted by the readable.</p>
+                        <p>Find your ideal, secure, and verified property.
+                        </p>
                     </div>
                     <div class="row">
                         <div class="col-xl-10 col-lg-12 col-md-12 d-block mx-auto">
@@ -187,188 +188,6 @@
     </section>
     <!--Categories-->
 
-    <!--Location-->
-    <section class="sptb">
-        <div class="container">
-            <div class="section-title center-block text-center">
-                <h2>Top Lisiting Places</h2>
-                <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-12 col-lg-12 col-xl-6">
-                    <div class="row">
-                        <div class="col-sm-12 col-lg-6 col-md-6 ">
-                            <div class="item-card overflow-hidden">
-                                <div class="item-card-desc">
-                                    <div class="card text-center overflow-hidden">
-                                        <div class="card-img">
-                                            <img src="../assets/images/locations/germany.jpg" alt="img"
-                                                class="cover-image">
-                                        </div>
-                                        <div class="item-tags">
-                                            <div class="bg-primary tag-option"><i class="fa fa fa-heart-o me-1"></i> 786
-                                            </div>
-                                        </div>
-                                        <div class="item-card-text">
-                                            <h4 class="mb-0">44,327<span><i
-                                                        class="fa fa-map-marker me-1 text-primary"></i>GERMANY</span></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-lg-6 col-md-6 ">
-                            <div class="item-card overflow-hidden">
-                                <div class="item-card-desc">
-                                    <div class="card text-center overflow-hidden">
-                                        <div class="card-img">
-                                            <img src="../assets/images/locations/london.jpg" alt="img"
-                                                class="cover-image">
-                                        </div>
-                                        <div class="item-tags">
-                                            <div class="bg-secondary tag-option"><i class="fa fa fa-heart-o me-1"></i> 89
-                                            </div>
-                                        </div>
-                                        <div class="item-card-text">
-                                            <h4 class="mb-0">52,145<span><i
-                                                        class="fa fa-map-marker me-1 text-primary"></i> LONDON</span></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-lg-6 col-md-6 ">
-                            <div class="item-card overflow-hidden">
-                                <div class="item-card-desc">
-                                    <div class="card text-center overflow-hidden mb-lg-0">
-                                        <div class="card-img">
-                                            <img src="../assets/images/locations/austerlia.jpg" alt="img"
-                                                class="cover-image">
-                                        </div>
-                                        <div class="item-tags">
-                                            <div class="bg-primary tag-option"><i class="fa fa fa-heart-o me-1"></i> 894
-                                            </div>
-                                        </div>
-                                        <div class="item-card-text">
-                                            <h4 class="mb-0">63,263<span><i
-                                                        class="fa fa-map-marker text-primary me-1"></i>AUSTERLIA</span>
-                                            </h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-lg-6 col-md-6 ">
-                            <div class="item-card overflow-hidden">
-                                <div class="item-card-desc">
-                                    <div class="card text-center overflow-hidden mb-lg-0">
-                                        <div class="card-img">
-                                            <img src="../assets/images/locations/chicago.jpg" alt="img"
-                                                class="cover-image">
-                                        </div>
-                                        <div class="item-tags">
-                                            <div class="bg-secondary tag-option"><i class="fa fa fa-heart-o me-1"></i> 123
-                                            </div>
-                                        </div>
-                                        <div class="item-card-text">
-                                            <h4 class="mb-0">36,485<span><i
-                                                        class="fa fa-map-marker text-primary me-1"></i>CHICAGO</span></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12 col-md-12 col-xl-6 col-sm-12">
-                    <div class="row">
-                        <div class="col-sm-12 col-lg-6 col-md-6 ">
-                            <div class="item-card overflow-hidden">
-                                <div class="item-card-desc">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img">
-                                            <img src="../assets/images/locations/spain.jpg" alt="img"
-                                                class="cover-image">
-                                        </div>
-                                        <div class="item-tags">
-                                            <div class="bg-primary tag-option"><i class="fa fa fa-heart-o me-1"></i> 298
-                                            </div>
-                                        </div>
-                                        <div class="item-card-text">
-                                            <h4 class="mb-0">64,825<span><i
-                                                        class="fa fa-map-marker text-primary me-1"></i>Spain</span></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-lg-6 col-md-6 ">
-                            <div class="item-card overflow-hidden">
-                                <div class="item-card-desc">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img">
-                                            <img src="../assets/images/locations/losangels-1.jpg" alt="img"
-                                                class="cover-image">
-                                        </div>
-                                        <div class="item-tags">
-                                            <div class="bg-secondary tag-option"><i class="fa fa fa-heart-o me-1"></i> 567
-                                            </div>
-                                        </div>
-                                        <div class="item-card-text">
-                                            <h4 class="mb-0">4,897<span><i
-                                                        class="fa fa-map-marker text-primary me-1"></i>WASHINGTON</span>
-                                            </h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-lg-6 col-md-6 ">
-                            <div class="item-card overflow-hidden">
-                                <div class="item-card-desc">
-                                    <div class="card overflow-hidden mb-md-0">
-                                        <div class="card-img">
-                                            <img src="../assets/images/locations/india.jpg" alt="img"
-                                                class="cover-image">
-                                        </div>
-                                        <div class="item-tags">
-                                            <div class="bg-primary tag-option"><i class="fa fa fa-heart-o me-1"></i> 398
-                                            </div>
-                                        </div>
-                                        <div class="item-card-text">
-                                            <h4 class="mb-0">15,987<span><i
-                                                        class="fa fa-map-marker text-primary me-1"></i>India</span></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-lg-6 col-md-6 ">
-                            <div class="item-card overflow-hidden">
-                                <div class="item-card-desc">
-                                    <div class="card overflow-hidden mb-0">
-                                        <div class="card-img">
-                                            <img src="../assets/images/locations/japan.jpg" alt="img"
-                                                class="cover-image">
-                                        </div>
-                                        <div class="item-tags">
-                                            <div class="bg-secondary tag-option"><i class="fa fa fa-heart-o me-1"></i> 127
-                                            </div>
-                                        </div>
-                                        <div class="item-card-text">
-                                            <h4 class="mb-0">795<span><i
-                                                        class="fa fa-map-marker text-primary me-1"></i>Japan</span></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--/Location-->
 
     <!--Latest Ads-->
     <section class="sptb bg-white">
@@ -906,5 +725,4 @@
         </div>
     </section>
     <!--/Featured Ads-->
-
 @endsection

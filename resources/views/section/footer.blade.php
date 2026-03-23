@@ -15,11 +15,11 @@
                          <h6>Our Quick Links</h6>
                          <hr class="deep-purple text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto">
                          <ul class="list-unstyled mb-0">
-                             <li><a href="javascript:;">Our Team</a></li>
-                             <li><a href="javascript:;">Contact US</a></li>
+                             {{-- <li><a href="javascript:;">Our Team</a></li> --}}
                              <li><a href="javascript:;">About</a></li>
-                             <li><a href="javascript:;">Luxury Rooms</a></li>
-                             <li><a href="javascript:;">Blog</a></li>
+                             <li><a href="javascript:;">Contact US</a></li>
+                             <li><a href="javascript:;">Featured Homes</a></li>
+                             {{-- <li><a href="javascript:;">Blog</a></li> --}}
                              <li><a href="javascript:;">Terms</a></li>
                          </ul>
                      </div>
@@ -76,21 +76,7 @@
                              <input type="text" class="form-control br-tl-3  br-bl-3 " placeholder="Email">
                              <button type="button" class="btn btn-primary br-tr-3  br-br-3"> Subscribe </button>
                          </div>
-                         <h6 class="mb-0 mt-5">Payments</h6>
-                         <hr class="deep-purple  text-primary accent-2 mb-2 mt-3 d-inline-block mx-auto">
-                         <div class="clearfix"></div>
-                         <ul class="footer-payments">
-                             <li class="ps-0"><a href="javascript:;"><i class="fa fa-cc-amex text-muted"
-                                         aria-hidden="true"></i></a></li>
-                             <li><a href="javascript:;"><i class="fa fa-cc-visa text-muted" aria-hidden="true"></i></a>
-                             </li>
-                             <li><a href="javascript:;"><i class="fa fa-credit-card-alt text-muted"
-                                         aria-hidden="true"></i></a></li>
-                             <li><a href="javascript:;"><i class="fa fa-cc-mastercard text-muted"
-                                         aria-hidden="true"></i></a></li>
-                             <li><a href="javascript:;"><i class="fa fa-cc-paypal text-muted"
-                                         aria-hidden="true"></i></a></li>
-                         </ul>
+
                      </div>
                  </div>
              </div>
@@ -99,9 +85,7 @@
              <div class="container">
                  <div class="row d-flex">
                      <div class="col-lg-12 col-sm-12 mt-3 mb-3 text-center ">
-                         Copyright © 2022 <a href="javascript:void(0);" class="fs-14 text-primary">Reallist</a>.
-                         Designed with <i class="fa fa-heart text-danger"></i> by <a href="javascript:void(0);"
-                             class="fs-14 text-primary">Spruko</a> All rights reserved.
+                         Copyright © 2026 <a href="javascript:void(0);" class="fs-14 text-primary">Estateman Ltd</a>
                      </div>
                  </div>
              </div>

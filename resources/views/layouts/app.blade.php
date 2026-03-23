@@ -58,6 +58,31 @@
     <!-- Back to top -->
     <a href="#top" id="back-to-top"><i class="fa fa-rocket"></i></a>
 
+    <section>
+        <div class="cover-image sptb bg-background-color" data-bs-image-src="../assets/images/banners/banner4.jpg">
+            <div class="content-text mb-0">
+                <div class="container">
+                    <div class="text-center text-white ">
+                        <h2 class="mb-2 display-5">Let’s Help You Own Genuine Property in Nigeria</h2>
+                        <h6>Whether you’re looking to buy land, invest in housing, or develop an estate, Estateman Ltd
+                            is
+                            your trusted partner on the ground. We’ll ensure you never lose a kobo to fraud or
+                            misinformation.</h6>
+
+                        <h6>
+                            Contact us today and let’s help you invest confidently in Nigeria — from wherever you are in
+                            the
+                            world.
+                        </h6>
+                        <div class="mt-5">
+                            <a href="" class="btn btn-secondary  btn-lg">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     @include('section.footer')
 
     @stack('scripts')

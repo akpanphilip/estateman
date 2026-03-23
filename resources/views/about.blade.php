@@ -53,8 +53,9 @@
                                 </div>
                                 <div class="servic-data mt-4">
                                     <h4 class="font-weight-semibold mb-2">Property Verification <br> & Due Diligence</h4>
-                                    <p class="text-muted">Nam libero tempore, cum soluta nobis est eligendi cumque facere
-                                        possimus</p>
+                                    <p class="text-muted">At Estateman Ltd, we verify every property to ensure your
+                                        investment is 100% genuine and legally secure.
+                                    </p>
                                     <a href="javascript:void(0);" class="btn btn-primary btn-sm">View More</a>
                                 </div>
                             </div>
@@ -72,8 +73,11 @@
                                     <h4 class="font-weight-semibold mb-2">Indemnified Transactions <br> for Your Peace of
                                         Mind
                                     </h4>
-                                    <p class="text-muted">Nam libero tempore, cum soluta nobis est eligendi cumque facere
-                                        possimus</p>
+                                    <p class="text-muted">
+                                        Every transaction is backed by our indemnity, giving you full confidence and peace
+                                        of mind.
+
+                                    </p>
                                     <a href="javascript:void(0);" class="btn btn-primary btn-sm">View More</a>
                                 </div>
                             </div>
@@ -89,8 +93,10 @@
                                 </div>
                                 <div class="servic-data mt-4">
                                     <h4 class="font-weight-semibold mb-2">Property Management <br> While You're Away</h4>
-                                    <p class="text-muted">Nam libero tempore, cum soluta nobis est eligendi cumque facere
-                                        possimus</p>
+                                    <p class="text-muted">
+                                        We manage your property fully, ensuring it stays protected, well-maintained, and
+                                        income-generating.
+                                    </p>
                                     <a href="javascript:void(0);" class="btn btn-primary btn-sm">View More</a>
                                 </div>
                             </div>
@@ -103,117 +109,81 @@
     </section>
     <!--/How to work-->
 
-    <section class="sptb bg-white">
+    <section class="sptb">
         <div class="container">
             <div class="section-title center-block text-center">
                 <h2>Why Nigerians in the Diaspora Trust Us</h2>
                 {{-- <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p> --}}
             </div>
-            <div class="row">
-                <div class="col-lg-6 col-md-12">
-                    <div class="card widgets-cards">
-                        <div class="card-body d-flex">
-                            <div class="widgets-cards-icons">
-                                <div class="wrp icon-circle bg-success">
-                                    <i class="fa fa-check icons"></i>
-                                </div>
-                            </div>
-                            <div class="widgets-cards-data">
-                                <div class="wrp text-wrapper">
-                                    <p>Zero Tolerance for Fraud</p>
-                                    <p class="text-muted mt-1 mb-0">We only deal with verified estates and certified
-                                        developers.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="card widgets-cards">
-                        <div class="card-body d-flex">
-                            <div class="widgets-cards-icons">
-                                <div class="wrp icon-circle bg-success">
-                                    <i class="fa fa-check icons"></i>
-                                </div>
-                            </div>
-                            <div class="widgets-cards-data">
-                                <div class="wrp text-wrapper">
-                                    <p>Full Transparency</p>
-                                    <p class="text-muted mt-1 mb-0"> You get real-time updates, photos, video inspections,
-                                        and document reviews.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="card widgets-cards">
-                        <div class="card-body d-flex">
-                            <div class="widgets-cards-icons">
-                                <div class="wrp icon-circle bg-success">
-                                    <i class="fa fa-check icons"></i>
-                                </div>
-                            </div>
-                            <div class="widgets-cards-data">
-                                <div class="wrp text-wrapper">
-                                    <p>Professional Team</p>
-                                    <p class="text-muted mt-1 mb-0">We work with lawyers, surveyors, town planners, and
-                                        property consultants.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="card widgets-cards">
-                        <div class="card-body d-flex">
-                            <div class="widgets-cards-icons">
-                                <div class="wrp icon-circle bg-success">
-                                    <i class="fa fa-check icons"></i>
-                                </div>
-                            </div>
-                            <div class="widgets-cards-data">
-                                <div class="wrp text-wrapper">
-                                    <p>Client-Centered Approach</p>
-                                    <p class="text-muted mt-1 mb-0"> We treat every transaction like it’s our own.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!--post section-->
-    <section>
-        <div class="cover-image sptb bg-background-color" data-bs-image-src="../assets/images/banners/banner4.jpg">
-            <div class="content-text mb-0">
-                <div class="container">
-                    <div class="text-center text-white ">
-                        <h2 class="mb-2 display-5">Are you ready for the posting you ads on this Site?</h2>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page
-                            when looking at its layout.</p>
-                        <div class="mt-5">
-                            <a href="ad-posts.html" class="btn btn-secondary  btn-lg">Free Property Ad</a>
+            <div id="defaultCarousel" class="owl-carousel Card-owlcarousel owl-carousel-icons">
+
+                <div class="item">
+                    <div class="card mb-0">
+                        <div class="card-body text-center">
+                            <div class="feature">
+                                <div class="fa-stack fa-lg  fea-icon bg-success  mb-3">
+                                    <i class="fa fa-university  text-white"></i>
+                                </div>
+                                <h4>Zero Tolerance for Fraud</h4>
+                                <p>
+                                    We only deal with verified estates and certified
+                                    developers.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card mb-0">
+                        <div class="card-body text-center">
+                            <div class="feature">
+                                <div class="fa-stack fa-lg  fea-icon bg-primary mb-3">
+                                    <i class="fa fa-pencil-square-o  text-white"></i>
+                                </div>
+                                <h4>Full Transparency</h4>
+                                <p>You get real-time updates, photos, video inspections,
+                                    and document reviews </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card mb-0">
+                        <div class="card-body text-center">
+                            <div class="feature">
+                                <div class="fa-stack fa-lg  fea-icon bg-secondary mb-3">
+                                    <i class="fa fa-handshake-o  text-white"></i>
+                                </div>
+                                <h4>Professional Team</h4>
+                                <p>
+                                    We work with lawyers, surveyors, town planners, and
+                                    property consultants.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="card mb-0">
+                        <div class="card-body text-center">
+                            <div class="feature">
+                                <div class="fa-stack fa-lg  fea-icon bg-warning mb-3">
+                                    <i class="fa fa-cubes   text-white"></i>
+                                </div>
+                                <h4>Client-Centered Approach</h4>
+                                <p>
+                                    We treat every transaction like it’s our own, with integrity, care, and unwavering
+                                    attention to detail.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!--/post section-->
-
-    <!--section-->
-    <section class="sptb">
-        <div class="container">
-            <div class="section-title center-block text-center">
-                <h2>Why Choose Us?</h2>
-                <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-            </div>
-            <div class="row ">
+            {{-- <div class="row ">
                 <div class="col-sm-6 col-lg-4 features">
                     <div class="card">
                         <div class="card-body text-center">
@@ -221,8 +191,10 @@
                                 <div class="fa-stack fa-lg  fea-icon bg-success  mb-3">
                                     <i class="fa fa-university  text-white"></i>
                                 </div>
-                                <h3>Bank Loan Facility</h3>
-                                <p>our being able to do what we like best, every pleasure is to be welcomed and every pain.
+                                <h3>Zero Tolerance for Fraud</h3>
+                                <p>
+                                    We only deal with verified estates and certified
+                                    developers.
                                 </p>
                             </div>
                         </div>
@@ -235,9 +207,9 @@
                                 <div class="fa-stack fa-lg  fea-icon bg-primary mb-3">
                                     <i class="fa fa-pencil-square-o  text-white"></i>
                                 </div>
-                                <h3>Spot Registration</h3>
-                                <p>our being able to do what we like best, every pleasure is to be welcomed and every pain.
-                                </p>
+                                <h3>Full Transparency</h3>
+                                <p>You get real-time updates, photos, video inspections,
+                                    and document reviews </p>
                             </div>
                         </div>
                     </div>
@@ -249,8 +221,10 @@
                                 <div class="fa-stack fa-lg  fea-icon bg-secondary mb-3">
                                     <i class="fa fa-handshake-o  text-white"></i>
                                 </div>
-                                <h3>Investment Consulting</h3>
-                                <p>our being able to do what we like best, every pleasure is to be welcomed and every pain.
+                                <h3>Professional Team</h3>
+                                <p>
+                                    We work with lawyers, surveyors, town planners, and
+                                    property consultants.
                                 </p>
                             </div>
                         </div>
@@ -263,44 +237,76 @@
                                 <div class="fa-stack fa-lg  fea-icon bg-warning mb-3">
                                     <i class="fa fa-cubes   text-white"></i>
                                 </div>
-                                <h3>Construction Services</h3>
-                                <p>our being able to do what we like best, every pleasure is to be welcomed and every pain.
+                                <h3>Client-Centered Approach</h3>
+                                <p>
+                                    We treat every transaction like it’s our own.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-lg-4 features">
-                    <div class="card mb-lg-0 mb-md-0">
-                        <div class="card-body text-center">
-                            <div class="feature">
-                                <div class="fa-stack fa-lg  fea-icon bg-danger mb-3">
-                                    <i class="fa fa-cogs   text-white"></i>
+            
+            </div> --}}
+        </div>
+    </section>
+
+
+    <section class="sptb bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="card widgets-cards">
+                        <div class="card-body d-flex">
+                            <div class="widgets-cards-icons">
+                                <div class="wrp icon-circle bg-success">
+                                    <i class="fa fa-rocket icons"></i>
                                 </div>
-                                <h3>Personalized Service</h3>
-                                <p>our being able to do what we like best, every pleasure is to be welcomed and every pain.
-                                </p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 features">
-                    <div class="card mb-0">
-                        <div class="card-body text-center">
-                            <div class="feature">
-                                <div class="fa-stack fa-lg  fea-icon bg-info mb-3">
-                                    <i class="fa fa-flask  text-white"></i>
+                            <div class="widgets-cards-data">
+                                <div class="wrp text-wrapper">
+                                    <p>Our Vision</p>
+                                    <p class="text-muted mt-1 mb-0">
+                                        To become the most trusted real estate partner for Nigerians in the diaspora by
+                                        delivering peace of mind through verified property transactions and reliable
+                                        after-sale management.
+                                    </p>
                                 </div>
-                                <h3>Property Maintenance</h3>
-                                <p>our being able to do what we like best, every pleasure is to be welcomed and every pain.
-                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="card widgets-cards">
+                        <div class="card-body d-flex">
+                            <div class="widgets-cards-icons">
+                                <div class="wrp icon-circle bg-success">
+                                    <i class="fa fa-rocket icons"></i>
+                                </div>
+                            </div>
+                            <div class="widgets-cards-data">
+                                <div class="wrp text-wrapper">
+                                    <p>Our Mission</p>
+                                    <p class="text-muted mt-1 mb-0">
+                                        To bridge the trust gap in the Nigerian real estate market by providing verified
+                                        property opportunities and full-risk accountability to clients abroad.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
+
+    <!--post section-->
+  
+    <!--/post section-->
+
+
+    <!--section-->
+
     <!--/section-->
 
     <!--Statistics-->
@@ -352,5 +358,4 @@
         </div>
     </section> --}}
     <!--/Statistics-->
-
 @endsection
