@@ -1,0 +1,23 @@
+name: Deploy Laravel to cPanel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to Server
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script: |
+            cd public_html/your-project-folder
+            git pull origin main
+            composer install --no-dev --optimize-autoloader
+            php artisan migrate --force
