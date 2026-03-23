@@ -9,7 +9,14 @@
                         <div class="wrapper wrapper2">
                             <form method="POST" action="{{ route('login') }}" class="card-body" tabindex="500">
                                 @csrf
-                                <h3>Login</h3>
+
+                                <div class="smllogo py-4">
+                                    <img src="../assets/images/brand/logo.png" class="mobile-light-logo" width="120"
+                                        alt="" />
+                                    <img src="../assets/images/brand/logo1.png" class="mobile-dark-logo" width="120"
+                                        alt="" />
+                                </div>
+                                <h3 class="mt-4">Login</h3>
 
                                 <div class="mail">
                                     <input type="email" name="email" value="{{ old('email') }}" autocomplete="email">

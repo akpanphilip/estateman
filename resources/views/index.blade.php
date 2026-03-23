@@ -1,43 +1,47 @@
 @extends('layouts.app')
 @section('content')
-    
     <!--Sliders Section-->
     <section>
-        <div class="banner-1 cover-image sptb-2 sptb-tab bg-background2"
-            data-bs-image-src="../assets/images/banners/banner1.jpg">
+        <div class="banner-1 cover-image sptb-2 sptb-tab bg-background2 animation-zidex"
+            data-bs-image-src="../assets/images/banners/banner2.jpg">
             <div class="header-text mb-0">
                 <div class="container">
                     <div class="text-center text-white mb-7">
-                        <h1 class="mb-1">Your Property, Our Priority.</h1>
+                        <h1 class="mb-1">Find Your Best Property</h1>
                         <p>It is a long established fact that a reader will be distracted by the readable.</p>
                     </div>
                     <div class="row">
                         <div class="col-xl-10 col-lg-12 col-md-12 d-block mx-auto">
                             <div class="search-background bg-transparent">
                                 <div class="form row no-gutters ">
-                                    <div class="form-group  col-xl-3 col-lg-3 col-md-12 mb-0">
-                                        <input type="text" class="form-control input-lg br-tr-md-0 br-br-md-0"
-                                            id="text4" placeholder="Find Your Property">
+                                    <div class="form-group  col-xl-4 col-lg-3 col-md-12 mb-0">
+                                        <input type="text" class="form-control input-lg " id="text4"
+                                            placeholder="Find Your Property">
                                     </div>
-                                    <div class="form-group  col-xl-3 col-lg-3 col-md-12 mb-0">
-                                        <input type="text" class="form-control input-lg br-md-0" id="text5"
+                                    <div class="form-group  col-xl-3 col-lg-2 col-md-12 mb-0">
+                                        <input type="text" class="form-control input-lg  " id="text5"
                                             placeholder="Enter Location">
                                         <span><i class="fa fa-map-marker location-gps me-1"></i> </span>
                                     </div>
-                                    <div class="form-group  col-xl-2 col-lg-3 col-md-12 mb-0">
-                                        <input class="form-control fc-datepicker input-lg br-md-0"
-                                            placeholder="Start-Date" type="text">
-                                        <span><i class="fa fa-calendar location-gps me-1"></i> </span>
-                                    </div>
-                                    <div class="form-group  col-xl-2 col-lg-3 col-md-12 mb-0">
-                                        <input class="form-control fc-datepicker input-lg br-md-0"
-                                            placeholder="End-Date" type="text">
-                                        <span><i class="fa fa-calendar location-gps me-1"></i> </span>
+                                    <div class="form-group col-xl-3 col-lg-2 col-md-12 select2-lg  mb-0">
+                                        <select class="form-control select2-show-search  "
+                                            data-placeholder="Select Category">
+                                            <optgroup label="Categories">
+                                                <option>Select</option>
+                                                <option value="1">Delux Houses</option>
+                                                <option value="2">Modren Flats</option>
+                                                <option value="3">Apartments</option>
+                                                <option value="4">Apartments</option>
+                                                <option value="5">Offices</option>
+                                                <option value="6">Luxury Homes</option>
+                                                <option value="7">Shops</option>
+                                                <option value="8">Farm Houses</option>
+                                            </optgroup>
+                                        </select>
                                     </div>
                                     <div class="col-xl-2 col-lg-3 col-md-12 mb-0">
                                         <a href="javascript:void(0);"
-                                            class="btn btn-lg btn-block btn-primary br-tl-md-0 br-bl-md-0">Search
-                                            Here</a>
+                                            class="btn btn-lg btn-block btn-primary br-tl-md-0 br-bl-md-0">Find Home</a>
                                     </div>
                                 </div>
                             </div>
@@ -45,265 +49,134 @@
                     </div>
                 </div>
             </div><!-- /header-text -->
+            <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
         </div>
     </section>
+
     <!--Sliders Section-->
 
-    <!--Categories-->
-    <section class="categories">
-        <div class="container">
-            <div class="card mb-0 box-shadow-0">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6 col-sm-6 d-catmb mb-4 mb-lg-0">
-                            <div class="d-flex">
-                                <div>
-                                    <span class="bg-primary-transparent icon-service1 text-primary">
-                                        <i class="fa fa-map-o"></i>
-                                    </span>
-                                </div>
-                                <div class="ms-4 mt-1">
-                                    <h3 class=" mb-0 font-weight-bold">1,200</h3>
-                                    <p class="mb-0 text-muted">Commercial Lands</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6 d-catmb mb-4 mb-lg-0">
-                            <div class="d-flex">
-                                <div>
-                                    <span class="bg-secondary-transparent icon-service1 text-secondary">
-                                        <i class="fa fa-home"></i>
-                                    </span>
-                                </div>
-                                <div class="ms-4 mt-1">
-                                    <h3 class=" mb-0 font-weight-bold">894</h3>
-                                    <p class="mb-0 text-muted">Showrooms & Shops</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6 d-catmb mb-4 mb-sm-0">
-                            <div class="d-flex">
-                                <div>
-                                    <span class="bg-warning-transparent icon-service1 text-warning">
-                                        <i class="fa fa-object-group"></i>
-                                    </span>
-                                </div>
-                                <div class="ms-4 mt-1">
-                                    <h3 class=" mb-0 font-weight-bold">1,089</h3>
-                                    <p class="mb-0 text-muted">Office rooms</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6 ">
-                            <div class="d-flex">
-                                <div>
-                                    <span class="bg-info-transparent icon-service1 text-info">
-                                        <i class="fa fa-building-o"></i>
-                                    </span>
-                                </div>
-                                <div class="ms-4 mt-1">
-                                    <h3 class=" mb-0 font-weight-bold ">789</h3>
-                                    <p class="mb-0 text-muted">Residential</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--Categories-->
-
-    <!--Categories-->
-    <section class="sptb">
+    <!-- Categories-->
+    <section class="sptb bg-white">
         <div class="container">
             <div class="section-title center-block text-center">
                 <h2>Categories</h2>
                 <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
             </div>
-            <div id="small-categories" class="owl-carousel owl-carousel-icons2">
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="item-card">
-                            <div class="item-card-desc">
-                                <a href="javascript:void(0);"></a>
-                                <div class="item-card-img">
-                                    <img src="../assets/images/products/1.png" alt="img"
-                                        class="br-tr-7 br-tl-7">
+            <div class="row">
+                <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                    <div class="card bg-card mb-xl-0">
+                        <div class="card-body">
+                            <div class="cat-item text-center">
+                                <a href="page-list.html"></a>
+                                <div class="cat-img text-shadow1">
+                                    <img src="../assets/images/categories/bk.png" alt="img"
+                                        class="cover-image h-8 w-8 status-img-light">
+                                    <img src="../assets/images/categories/2.png" alt="img"
+                                        class="cover-image h-8 w-8 status-img-dark">
                                 </div>
-                                <div class="item-card-text">
-                                    <h4 class="mb-0">Stylish Houses</h4>
-                                    <span class="badge rounded-pill badge-primary w-15">45</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="item-card">
-                            <div class="item-card-desc">
-                                <a href="javascript:void(0);"></a>
-                                <div class="item-card-img">
-                                    <img src="../assets/images/products/2.png" alt="img"
-                                        class="br-tr-7 br-tl-7">
-                                </div>
-                                <div class="item-card-text">
-                                    <h4 class="mb-0">Luxury Houses</h4>
-                                    <span class="badge rounded-pill badge-secondary w-15">23</span>
+                                <div class="cat-desc">
+                                    <h5 class="mb-1">2BHK Homes</h5>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="item-card">
-                            <div class="item-card-desc">
-                                <a href="javascript:void(0);"></a>
-                                <div class="item-card-img">
-                                    <img src="../assets/images/products/3.png" alt="img"
-                                        class="br-tr-7 br-tl-7">
+                <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                    <div class="card bg-card mb-xl-0">
+                        <div class="card-body">
+                            <div class="cat-item text-center">
+                                <a href="page-list.html"></a>
+                                <div class="cat-img text-shadow1">
+                                    <img src="../assets/images/categories/resturant.png" alt="img"
+                                        class="cover-image h-8 w-8 status-img-light">
+                                    <img src="../assets/images/categories/6.png" alt="img"
+                                        class="cover-image h-8 w-8 status-img-dark">
                                 </div>
-                                <div class="item-card-text">
-                                    <h4 class="mb-0">Apartments</h4>
-                                    <span class="badge rounded-pill badge-warning w-15">48</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="item-card">
-                            <div class="item-card-desc">
-                                <a href="javascript:void(0);"></a>
-                                <div class="item-card-img">
-                                    <img src="../assets/images/products/9.png" alt="img"
-                                        class="br-tr-7 br-tl-7">
-                                </div>
-                                <div class="item-card-text">
-                                    <h4 class="mb-0">Deluxe Houses</h4>
-                                    <span class="badge rounded-pill badge-info w-15">15</span>
+                                <div class="cat-desc">
+                                    <h5 class="mb-1">Duplex House</h5>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="item-card">
-                            <div class="item-card-desc">
-                                <a href="javascript:void(0);"></a>
-                                <div class="item-card-img">
-                                    <img src="../assets/images/products/10.png" alt="img"
-                                        class="br-tr-7 br-tl-7">
+                <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                    <div class="card bg-card mb-xl-0">
+                        <div class="card-body">
+                            <div class="cat-item text-center">
+                                <a href="page-list.html"></a>
+                                <div class="cat-img text-shadow1">
+                                    <img src="../assets/images/categories/apartment.png" alt="img"
+                                        class="cover-image h-8 w-8 status-img-light">
+                                    <img src="../assets/images/categories/1.png" alt="img"
+                                        class="cover-image h-8 w-8 status-img-dark">
                                 </div>
-                                <div class="item-card-text">
-                                    <h4 class="mb-0">Nature Houses</h4>
-                                    <span class="badge rounded-pill badge-success w-15">12</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="item-card ">
-                            <div class="item-card-desc">
-                                <a href="javascript:void(0);"></a>
-                                <div class="item-card-img">
-                                    <img src="../assets/images/products/11.png" alt="img"
-                                        class="br-tr-7 br-tl-7">
-                                </div>
-                                <div class="item-card-text">
-                                    <h4 class="mb-0">2BHK Houses</h4>
-                                    <span class="badge rounded-pill badge-pink w-15">05</span>
+                                <div class="cat-desc">
+                                    <h5 class="mb-1">Apartments</h5>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="item">
-                    <div class="card mb-0 mb-0">
-                        <div class="item-card">
-                            <div class="item-card-desc">
-                                <a href="javascript:void(0);"></a>
-                                <div class="item-card-img">
-                                    <img src="../assets/images/products/3.png" alt="img"
-                                        class="br-tr-7 br-tl-7">
+                <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                    <div class="card bg-card mb-md-0">
+                        <div class="card-body">
+                            <div class="cat-item text-center">
+                                <a href="page-list.html"></a>
+                                <div class="cat-img text-shadow1">
+                                    <img src="../assets/images/categories/duplex.png" alt="img"
+                                        class="cover-image h-8 w-8 status-img-light">
+                                    <img src="../assets/images/categories/3.png" alt="img"
+                                        class="cover-image h-8 w-8 status-img-dark">
                                 </div>
-                                <div class="item-card-text">
-                                    <h4 class="mb-0">3BK Houses</h4>
-                                    <span class="badge rounded-pill badge-primary w-15">09</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="item-card">
-                            <div class="item-card-desc">
-                                <a href="javascript:void(0);"></a>
-                                <div class="item-card-img">
-                                    <img src="../assets/images/products/12.png" alt="img"
-                                        class="br-tr-7 br-tl-7">
-                                </div>
-                                <div class="item-card-text">
-                                    <h4 class="mb-0">Duplex House</h4>
-                                    <span class="badge rounded-pill badge-secondary w-15">65</span>
+                                <div class="cat-desc">
+                                    <h5 class="mb-1">3BHK Flats</h5>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="item-card">
-                            <div class="item-card-desc">
-                                <a href="javascript:void(0);"></a>
-                                <div class="item-card-img">
-                                    <img src="../assets/images/products/13.png" alt="img"
-                                        class="br-tr-7 br-tl-7">
+                <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                    <div class="card bg-card mb-sm-0">
+                        <div class="card-body">
+                            <div class="cat-item text-center">
+                                <a href="page-list.html"></a>
+                                <div class="cat-img text-shadow1">
+                                    <img src="../assets/images/categories/office.png" alt="img"
+                                        class="cover-image h-8 w-8 status-img-light">
+                                    <img src="../assets/images/categories/5.png" alt="img"
+                                        class="cover-image h-8 w-8 status-img-dark">
                                 </div>
-                                <div class="item-card-text">
-                                    <h4 class="mb-0">Office Houses</h4>
-                                    <span class="badge rounded-pill badge-warning w-15">45</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="item-card">
-                            <div class="item-card-desc">
-                                <a href="javascript:void(0);"></a>
-                                <div class="item-card-img">
-                                    <img src="../assets/images/products/14.png" alt="img"
-                                        class="br-tr-7 br-tl-7">
-                                </div>
-                                <div class="item-card-text">
-                                    <h4 class="mb-0">KidsFriendly Houses</h4>
-                                    <span class="badge rounded-pill badge-info w-15">36</span>
+                                <div class="cat-desc">
+                                    <h5 class="mb-1">Offices</h5>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="item-card">
-                            <div class="item-card-desc">
-                                <a href="javascript:void(0);"></a>
-                                <div class="item-card-img">
-                                    <img src="../assets/images/products/4.png" alt="img"
-                                        class="br-tr-7 br-tl-7">
+                <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                    <div class="card bg-card mb-0">
+                        <div class="card-body">
+                            <div class="cat-item text-center">
+                                <a href="page-list.html"></a>
+                                <div class="cat-img text-shadow1">
+                                    <img src="../assets/images/categories/flats.png" alt="img"
+                                        class="cover-image h-8 w-8 status-img-light">
+                                    <img src="../assets/images/categories/4.png" alt="img"
+                                        class="cover-image h-8 w-8 status-img-dark">
                                 </div>
-                                <div class="item-card-text">
-                                    <h4 class="mb-0">Budget Homes</h4>
-                                    <span class="badge rounded-pill badge-success w-15">59</span>
+                                <div class="cat-desc">
+                                    <h5 class="mb-1">Flats</h5>
                                 </div>
                             </div>
                         </div>
@@ -312,7 +185,190 @@
             </div>
         </div>
     </section>
-    <!--/Categories-->
+    <!--Categories-->
+
+    <!--Location-->
+    <section class="sptb">
+        <div class="container">
+            <div class="section-title center-block text-center">
+                <h2>Top Lisiting Places</h2>
+                <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-12 col-xl-6">
+                    <div class="row">
+                        <div class="col-sm-12 col-lg-6 col-md-6 ">
+                            <div class="item-card overflow-hidden">
+                                <div class="item-card-desc">
+                                    <div class="card text-center overflow-hidden">
+                                        <div class="card-img">
+                                            <img src="../assets/images/locations/germany.jpg" alt="img"
+                                                class="cover-image">
+                                        </div>
+                                        <div class="item-tags">
+                                            <div class="bg-primary tag-option"><i class="fa fa fa-heart-o me-1"></i> 786
+                                            </div>
+                                        </div>
+                                        <div class="item-card-text">
+                                            <h4 class="mb-0">44,327<span><i
+                                                        class="fa fa-map-marker me-1 text-primary"></i>GERMANY</span></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-6 col-md-6 ">
+                            <div class="item-card overflow-hidden">
+                                <div class="item-card-desc">
+                                    <div class="card text-center overflow-hidden">
+                                        <div class="card-img">
+                                            <img src="../assets/images/locations/london.jpg" alt="img"
+                                                class="cover-image">
+                                        </div>
+                                        <div class="item-tags">
+                                            <div class="bg-secondary tag-option"><i class="fa fa fa-heart-o me-1"></i> 89
+                                            </div>
+                                        </div>
+                                        <div class="item-card-text">
+                                            <h4 class="mb-0">52,145<span><i
+                                                        class="fa fa-map-marker me-1 text-primary"></i> LONDON</span></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-6 col-md-6 ">
+                            <div class="item-card overflow-hidden">
+                                <div class="item-card-desc">
+                                    <div class="card text-center overflow-hidden mb-lg-0">
+                                        <div class="card-img">
+                                            <img src="../assets/images/locations/austerlia.jpg" alt="img"
+                                                class="cover-image">
+                                        </div>
+                                        <div class="item-tags">
+                                            <div class="bg-primary tag-option"><i class="fa fa fa-heart-o me-1"></i> 894
+                                            </div>
+                                        </div>
+                                        <div class="item-card-text">
+                                            <h4 class="mb-0">63,263<span><i
+                                                        class="fa fa-map-marker text-primary me-1"></i>AUSTERLIA</span>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-6 col-md-6 ">
+                            <div class="item-card overflow-hidden">
+                                <div class="item-card-desc">
+                                    <div class="card text-center overflow-hidden mb-lg-0">
+                                        <div class="card-img">
+                                            <img src="../assets/images/locations/chicago.jpg" alt="img"
+                                                class="cover-image">
+                                        </div>
+                                        <div class="item-tags">
+                                            <div class="bg-secondary tag-option"><i class="fa fa fa-heart-o me-1"></i> 123
+                                            </div>
+                                        </div>
+                                        <div class="item-card-text">
+                                            <h4 class="mb-0">36,485<span><i
+                                                        class="fa fa-map-marker text-primary me-1"></i>CHICAGO</span></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-xl-6 col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-12 col-lg-6 col-md-6 ">
+                            <div class="item-card overflow-hidden">
+                                <div class="item-card-desc">
+                                    <div class="card overflow-hidden">
+                                        <div class="card-img">
+                                            <img src="../assets/images/locations/spain.jpg" alt="img"
+                                                class="cover-image">
+                                        </div>
+                                        <div class="item-tags">
+                                            <div class="bg-primary tag-option"><i class="fa fa fa-heart-o me-1"></i> 298
+                                            </div>
+                                        </div>
+                                        <div class="item-card-text">
+                                            <h4 class="mb-0">64,825<span><i
+                                                        class="fa fa-map-marker text-primary me-1"></i>Spain</span></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-6 col-md-6 ">
+                            <div class="item-card overflow-hidden">
+                                <div class="item-card-desc">
+                                    <div class="card overflow-hidden">
+                                        <div class="card-img">
+                                            <img src="../assets/images/locations/losangels-1.jpg" alt="img"
+                                                class="cover-image">
+                                        </div>
+                                        <div class="item-tags">
+                                            <div class="bg-secondary tag-option"><i class="fa fa fa-heart-o me-1"></i> 567
+                                            </div>
+                                        </div>
+                                        <div class="item-card-text">
+                                            <h4 class="mb-0">4,897<span><i
+                                                        class="fa fa-map-marker text-primary me-1"></i>WASHINGTON</span>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-6 col-md-6 ">
+                            <div class="item-card overflow-hidden">
+                                <div class="item-card-desc">
+                                    <div class="card overflow-hidden mb-md-0">
+                                        <div class="card-img">
+                                            <img src="../assets/images/locations/india.jpg" alt="img"
+                                                class="cover-image">
+                                        </div>
+                                        <div class="item-tags">
+                                            <div class="bg-primary tag-option"><i class="fa fa fa-heart-o me-1"></i> 398
+                                            </div>
+                                        </div>
+                                        <div class="item-card-text">
+                                            <h4 class="mb-0">15,987<span><i
+                                                        class="fa fa-map-marker text-primary me-1"></i>India</span></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-6 col-md-6 ">
+                            <div class="item-card overflow-hidden">
+                                <div class="item-card-desc">
+                                    <div class="card overflow-hidden mb-0">
+                                        <div class="card-img">
+                                            <img src="../assets/images/locations/japan.jpg" alt="img"
+                                                class="cover-image">
+                                        </div>
+                                        <div class="item-tags">
+                                            <div class="bg-secondary tag-option"><i class="fa fa fa-heart-o me-1"></i> 127
+                                            </div>
+                                        </div>
+                                        <div class="item-card-text">
+                                            <h4 class="mb-0">795<span><i
+                                                        class="fa fa-map-marker text-primary me-1"></i>Japan</span></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/Location-->
 
     <!--Latest Ads-->
     <section class="sptb bg-white">
@@ -335,8 +391,7 @@
                             </div>
                         </div>
                         <div class="item-card2-icons">
-                            <a href="col-left.html" class="item-card2-icons-l bg-primary"> <i
-                                    class="fa fa-home"></i></a>
+                            <a href="col-left.html" class="item-card2-icons-l bg-primary"> <i class="fa fa-home"></i></a>
                             <a href="javascript:void(0);" class="item-card2-icons-r bg-secondary"><i
                                     class="fa fa fa-heart-o"></i></a>
                         </div>
@@ -348,12 +403,12 @@
                                     </a>
                                     <p class="mb-2"><i class="fa fa-map-marker text-danger me-1"></i> Preston Street
                                         Wichita , USA </p>
-                                    <h5 class="font-weight-bold mb-3">$89,005 <span
-                                            class="fs-12  font-weight-normal">Per Month</span></h5>
+                                    <h5 class="font-weight-bold mb-3">$89,005 <span class="fs-12  font-weight-normal">Per
+                                            Month</span></h5>
                                 </div>
                                 <ul class="item-card2-list">
-                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i>
-                                            256 Sqft</a></li>
+                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i> 256
+                                            Sqft</a></li>
                                     <li><a href="javascript:void(0);" class="icons"><i
                                                 class="fa fa-bed text-muted me-1"></i> 3 Beds</a></li>
                                     <li><a href="javascript:void(0);" class="icons"><i
@@ -402,12 +457,12 @@
                                     </a>
                                     <p class="mb-2"><i class="fa fa-map-marker text-danger me-1"></i> Preston Street
                                         Wichita , USA </p>
-                                    <h5 class="font-weight-bold mb-3">$12,890 <span
-                                            class="fs-12  font-weight-normal">Per Month</span></h5>
+                                    <h5 class="font-weight-bold mb-3">$12,890 <span class="fs-12  font-weight-normal">Per
+                                            Month</span></h5>
                                 </div>
                                 <ul class="item-card2-list">
-                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i>
-                                            150 Sqft</a></li>
+                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i> 150
+                                            Sqft</a></li>
                                     <li><a href="javascript:void(0);" class="icons"><i
                                                 class="fa fa-bed text-muted me-1"></i> 2 Beds</a></li>
                                     <li><a href="javascript:void(0);" class="icons"><i
@@ -457,12 +512,12 @@
                                     </a>
                                     <p class="mb-2"><i class="fa fa-map-marker text-danger me-1"></i> Preston Street
                                         Wichita , USA </p>
-                                    <h5 class="font-weight-bold mb-3">$25,784 <span
-                                            class="fs-12  font-weight-normal">Per Month</span></h5>
+                                    <h5 class="font-weight-bold mb-3">$25,784 <span class="fs-12  font-weight-normal">Per
+                                            Month</span></h5>
                                 </div>
                                 <ul class="item-card2-list">
-                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i>
-                                            256 Sqft</a></li>
+                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i> 256
+                                            Sqft</a></li>
                                     <li><a href="javascript:void(0);" class="icons"><i
                                                 class="fa fa-bed text-muted me-1"></i> 8 Beds</a></li>
                                     <li><a href="javascript:void(0);" class="icons"><i
@@ -511,12 +566,12 @@
                                     </a>
                                     <p class="mb-2"><i class="fa fa-map-marker text-danger me-1"></i> Preston Street
                                         Wichita , USA </p>
-                                    <h5 class="font-weight-bold mb-3">$89,005 <span
-                                            class="fs-12  font-weight-normal">Per Month</span></h5>
+                                    <h5 class="font-weight-bold mb-3">$89,005 <span class="fs-12  font-weight-normal">Per
+                                            Month</span></h5>
                                 </div>
                                 <ul class="item-card2-list">
-                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i>
-                                            700 Sqft</a></li>
+                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i> 700
+                                            Sqft</a></li>
                                     <li><a href="javascript:void(0);" class="icons"><i
                                                 class="fa fa-bed text-muted me-1"></i> 20 Beds</a></li>
                                     <li><a href="javascript:void(0);" class="icons"><i
@@ -543,8 +598,8 @@
                     </div>
                 </div>
                 <div class="item sold-out">
-                    <div class="ribbon sold-ribbon ribbon-top-left text-danger"><span class="bg-danger">Sold
-                            Out</span></div>
+                    <div class="ribbon sold-ribbon ribbon-top-left text-danger"><span class="bg-danger">Sold Out</span>
+                    </div>
                     <div class="card mb-0">
                         <div class="power-ribbon power-ribbon-top-left text-warning"><span class="bg-warning"><i
                                     class="fa fa-bolt"></i></span></div>
@@ -570,12 +625,12 @@
                                     </a>
                                     <p class="mb-2"><i class="fa fa-map-marker text-danger me-1"></i> Preston Street
                                         Wichita , USA </p>
-                                    <h5 class="font-weight-bold mb-3">$23,789 <span
-                                            class="fs-12  font-weight-normal">Per Month</span></h5>
+                                    <h5 class="font-weight-bold mb-3">$23,789 <span class="fs-12  font-weight-normal">Per
+                                            Month</span></h5>
                                 </div>
                                 <ul class="item-card2-list">
-                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i>
-                                            300 Sqft</a></li>
+                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i> 300
+                                            Sqft</a></li>
                                     <li><a href="javascript:void(0);" class="icons"><i
                                                 class="fa fa-bed text-muted me-1"></i> 4 Beds</a></li>
                                     <li><a href="javascript:void(0);" class="icons"><i
@@ -607,7 +662,7 @@
     <!--Latest Ads-->
 
     <!--Featured Ads-->
-    <section class="sptb bg-patterns">
+    <section class="sptb">
         <div class="container">
             <div class="section-title center-block text-center">
                 <h2>Featured Properties</h2>
@@ -624,7 +679,7 @@
                         </div>
                         <div class="item-card7-overlaytext">
                             <a href="col-left.html" class="text-white"> Featured </a>
-                            <span class="mb-0 fs-13 active"><i class="fa fa fa-heart"></i></span>
+                            <span class="mb-0 fs-13"><i class="fa fa fa-heart-o"></i></span>
                         </div>
                         <div class="card-body">
                             <div class="item-card7-desc">
@@ -632,12 +687,12 @@
                                     <a href="col-left.html" class="text-dark">
                                         <h4 class="">Deluxe Flat</h4>
                                     </a>
-                                    <p class=""><i class="icon icon-location-pin text-muted me-1"></i> New York,
-                                        NY 10012, US </p>
+                                    <p class=""><i class="icon icon-location-pin text-muted me-1"></i> New York, NY
+                                        10012, US </p>
                                 </div>
                                 <ul class="item-cards7-ic mb-0">
-                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i>
-                                            300 Sqft</a></li>
+                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i> 300
+                                            Sqft</a></li>
                                     <li><a href="javascript:void(0);" class="icons"><i
                                                 class="fa fa-bed text-muted me-1"></i> 4 Beds</a></li>
                                     <li><a href="javascript:void(0);" class="icons"><i
@@ -670,7 +725,7 @@
                         </div>
                         <div class="item-card7-overlaytext">
                             <a href="col-left.html" class="text-white">Featured</a>
-                            <span class="mb-0 fs-13"><i class="fa fa fa-heart-o"></i></span>
+                            <span class="mb-0 fs-13 active"><i class="fa fa fa-heart"></i></span>
                         </div>
                         <div class="card-body">
                             <div class="item-card7-desc">
@@ -678,12 +733,12 @@
                                     <a href="col-left.html" class="text-dark">
                                         <h4 class="">2BHk Deluxe Flat</h4>
                                     </a>
-                                    <p class=""><i class="icon icon-location-pin text-muted me-1"></i> New
-                                        York, NY 10012, US </p>
+                                    <p class=""><i class="icon icon-location-pin text-muted me-1"></i> New York, NY
+                                        10012, US </p>
                                 </div>
                                 <ul class="item-cards7-ic mb-0">
-                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i>
-                                            300 Sqft</a></li>
+                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i> 300
+                                            Sqft</a></li>
                                     <li><a href="javascript:void(0);" class="icons"><i
                                                 class="fa fa-bed text-muted me-1"></i> 4 Beds</a></li>
                                     <li><a href="javascript:void(0);" class="icons"><i
@@ -716,7 +771,7 @@
                         </div>
                         <div class="item-card7-overlaytext">
                             <a href="col-left.html" class="text-white">Featured</a>
-                            <span class="mb-0 fs-13 active"><i class="fa fa fa-heart"></i></span>
+                            <span class="mb-0 fs-13"><i class="fa fa fa-heart-o"></i></span>
                         </div>
                         <div class="card-body">
                             <div class="item-card7-desc">
@@ -724,12 +779,12 @@
                                     <a href="col-left.html" class="text-dark">
                                         <h4 class="">House For Sale</h4>
                                     </a>
-                                    <p class=""><i class="icon icon-location-pin text-muted me-1"></i> New
-                                        York, NY 10012, US </p>
+                                    <p class=""><i class="icon icon-location-pin text-muted me-1"></i> New York, NY
+                                        10012, US </p>
                                 </div>
                                 <ul class="item-cards7-ic mb-0">
-                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i>
-                                            300 Sqft</a></li>
+                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i> 300
+                                            Sqft</a></li>
                                     <li><a href="javascript:void(0);" class="icons"><i
                                                 class="fa fa-bed text-muted me-1"></i> 4 Beds</a></li>
                                     <li><a href="javascript:void(0);" class="icons"><i
@@ -762,7 +817,7 @@
                         </div>
                         <div class="item-card7-overlaytext">
                             <a href="col-left.html" class="text-white"> Featured</a>
-                            <span class="mb-0 fs-13"><i class="fa fa fa-heart-o"></i></span>
+                            <span class="mb-0 fs-13 active"><i class="fa fa fa-heart"></i></span>
                         </div>
                         <div class="card-body">
                             <div class="item-card7-desc">
@@ -770,12 +825,12 @@
                                     <a href="col-left.html" class="text-dark">
                                         <h4 class="">Office For Rent</h4>
                                     </a>
-                                    <p class=""><i class="icon icon-location-pin text-muted me-1"></i> New
-                                        York, NY 10012, US </p>
+                                    <p class=""><i class="icon icon-location-pin text-muted me-1"></i> New York, NY
+                                        10012, US </p>
                                 </div>
                                 <ul class="item-cards7-ic mb-0">
-                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i>
-                                            300 Sqft</a></li>
+                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i> 300
+                                            Sqft</a></li>
                                     <li><a href="javascript:void(0);" class="icons"><i
                                                 class="fa fa-bed text-muted me-1"></i> 4 Beds</a></li>
                                     <li><a href="javascript:void(0);" class="icons"><i
@@ -800,8 +855,8 @@
                     </div>
                 </div>
                 <div class="item sold-out">
-                    <div class="ribbon sold-ribbon ribbon-top-left text-danger"><span class="bg-danger">Sold
-                            Out</span></div>
+                    <div class="ribbon sold-ribbon ribbon-top-left text-danger"><span class="bg-danger">Sold Out</span>
+                    </div>
                     <div class="card mb-0">
                         <div class="arrow-ribbon bg-secondary">For Rent</div>
                         <div class="item-card7-imgs">
@@ -810,7 +865,7 @@
                         </div>
                         <div class="item-card7-overlaytext">
                             <a href="col-left.html" class="text-white">Featured</a>
-                            <span class="mb-0 fs-13 active"><i class="fa fa fa-heart"></i></span>
+                            <span class="mb-0 fs-13"><i class="fa fa fa-heart-o"></i></span>
                         </div>
                         <div class="card-body">
                             <div class="item-card7-desc">
@@ -818,12 +873,12 @@
                                     <a href="col-left.html" class="text-dark">
                                         <h4 class="">Modern House For Sale</h4>
                                     </a>
-                                    <p class=""><i class="icon icon-location-pin text-muted me-1"></i> New
-                                        York, NY 10012, US </p>
+                                    <p class=""><i class="icon icon-location-pin text-muted me-1"></i> New York, NY
+                                        10012, US </p>
                                 </div>
                                 <ul class="item-cards7-ic mb-0">
-                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i>
-                                            300 Sqft</a></li>
+                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i> 300
+                                            Sqft</a></li>
                                     <li><a href="javascript:void(0);" class="icons"><i
                                                 class="fa fa-bed text-muted me-1"></i> 4 Beds</a></li>
                                     <li><a href="javascript:void(0);" class="icons"><i
@@ -852,676 +907,4 @@
     </section>
     <!--/Featured Ads-->
 
-    <!--Property-->
-    <section class="sptb">
-        <div class="container">
-            <div class="col-md-12">
-                <div class="items-gallery">
-                    <div class="items-blog-tab text-center">
-                        <h2 class="">Best Property Collections</h2>
-                        <div class="items-blog-tab-heading">
-                            <div class="">
-                                <ul class="nav items-blog-tab-menu">
-                                    <li class=""><a href="#tab-1" class="active show"
-                                            data-bs-toggle="tab">All</a></li>
-                                    <li><a href="#tab-2" data-bs-toggle="tab" class="">2BHK Homes</a></li>
-                                    <li><a href="#tab-3" data-bs-toggle="tab" class="">Villas</a></li>
-                                    <li><a href="#tab-4" data-bs-toggle="tab" class="">Apartments</a></li>
-                                    <li><a href="#tab-5" data-bs-toggle="tab" class="">Deplux Houses</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="tab-content p-0">
-                            <div class="tab-pane active" id="tab-1">
-                                <div class="row pt-2" id="container3">
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <div class="card">
-                                            <span class="ribbon-2">
-                                                <span><i class="fa fa-home"></i></span>
-                                            </span>
-                                            <div class="item-card8-img">
-                                                <a href="ad-details.html"></a>
-                                                <img src="../assets/images/products/f1.png" alt="img"
-                                                    class="cover-image">
-                                            </div>
-                                            <div class="item-card8-overlaytext">
-                                                <h6 class="bg-primary  mb-0">Luxury Room</h6>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="item-card8-desc">
-                                                    <p class="text-muted">16 June 2019.</p>
-                                                    <a href="ad-details.html">
-                                                        <h4 class="font-weight-semibold">Food &amp; Bar Apartments
-                                                        </h4>
-                                                    </a>
-                                                    <p class="mb-0">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui blanditiis praesentium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <div class="card">
-                                            <span class="ribbon-3">
-                                                <span><i class="fa fa-building"></i></span>
-                                            </span>
-                                            <div class="item-card8-img">
-                                                <a href="ad-details.html"></a>
-                                                <img src="../assets/images/products/b1.png" alt="img"
-                                                    class="cover-image">
-                                            </div>
-                                            <div class="item-card8-overlaytext">
-                                                <h6 class="bg-info  mb-0">Villa</h6>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="item-card8-desc">
-                                                    <p class="text-muted">05 June 2019</p>
-                                                    <a href="ad-details.html">
-                                                        <h4 class="font-weight-semibold">Food &amp; Bar Apartments
-                                                        </h4>
-                                                    </a>
-                                                    <p class="mb-0">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui blanditiis praesentium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <div class="card">
-                                            <span class="ribbon-2">
-                                                <span><i class="fa fa-home"></i></span>
-                                            </span>
-                                            <div class="item-card8-img">
-                                                <a href="ad-details.html"></a>
-                                                <img src="../assets/images/products/h4.png" alt="img"
-                                                    class="cover-image">
-                                            </div>
-                                            <div class="item-card8-overlaytext">
-                                                <h6 class="bg-primary  mb-0">Apartments</h6>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="item-card8-desc">
-                                                    <p class="text-muted">21 June 2019</p>
-                                                    <a href="ad-details.html">
-                                                        <h4 class="font-weight-semibold">Food &amp; Bar Apartments
-                                                        </h4>
-                                                    </a>
-                                                    <p class="mb-0">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui blanditiis praesentium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <div class="card">
-                                            <span class="ribbon-3">
-                                                <span><i class="fa fa-building"></i></span>
-                                            </span>
-                                            <div class="item-card8-img">
-                                                <a href="ad-details.html"></a>
-                                                <img src="../assets/images/products/f4.png" alt="img"
-                                                    class="cover-image">
-                                            </div>
-                                            <div class="item-card8-overlaytext">
-                                                <h6 class="bg-info  mb-0">Deplux Rooms</h6>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="item-card8-desc">
-                                                    <p class="text-muted">20 June 2019</p>
-                                                    <a href="ad-details.html">
-                                                        <h4 class="font-weight-semibold">Food &amp; Bar Apartments
-                                                        </h4>
-                                                    </a>
-                                                    <p class="mb-0">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui blanditiis praesentium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <div class="card">
-                                            <span class="ribbon-1">
-                                                <span><i class="fa fa-home"></i></span>
-                                            </span>
-                                            <div class="item-card8-img">
-                                                <a href="ad-details.html"></a>
-                                                <img src="../assets/images/products/j2.png" alt="img"
-                                                    class="cover-image">
-                                            </div>
-                                            <div class="item-card8-overlaytext">
-                                                <h6 class="bg-secondary mb-0">2BHK House</h6>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="item-card8-desc">
-                                                    <p class="text-muted">11 June 2019 </p>
-                                                    <a href="ad-details.html">
-                                                        <h4 class="font-weight-semibold">Food &amp; Bar Apartments
-                                                        </h4>
-                                                    </a>
-                                                    <p class="mb-0">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui blanditiis praesentium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <div class="card">
-                                            <span class="ribbon-2">
-                                                <span><i class="fa fa-building-o"></i></span>
-                                            </span>
-                                            <div class="item-card8-img">
-                                                <a href="ad-details.html"></a>
-                                                <img src="../assets/images/products/b2.png" alt="img"
-                                                    class="cover-image">
-                                            </div>
-                                            <div class="item-card8-overlaytext">
-                                                <h6 class="bg-primary  mb-0">Villa</h6>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="item-card8-desc">
-                                                    <p class="text-muted">26 May 2019.</p>
-                                                    <a href="ad-details.html">
-                                                        <h4 class="font-weight-semibold">Food &amp; Bar Apartments
-                                                        </h4>
-                                                    </a>
-                                                    <p class="mb-0">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui blanditiis praesentium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <div class="card">
-                                            <span class="ribbon-3">
-                                                <span><i class="fa fa-home"></i></span>
-                                            </span>
-                                            <div class="item-card8-img">
-                                                <a href="ad-details.html"></a>
-                                                <img src="../assets/images/products/h2.png" alt="img"
-                                                    class="cover-image">
-                                            </div>
-                                            <div class="item-card8-overlaytext">
-                                                <h6 class="bg-info mb-0">Apartments</h6>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="item-card8-desc">
-                                                    <p class="text-muted">18 June 2019</p>
-                                                    <a href="ad-details.html">
-                                                        <h4 class="font-weight-semibold">Food &amp; Bar Apartments
-                                                        </h4>
-                                                    </a>
-                                                    <p class="mb-0">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui blanditiis praesentium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <div class="card">
-                                            <span class="ribbon-1">
-                                                <span><i class="fa fa-building"></i></span>
-                                            </span>
-                                            <div class="item-card8-img">
-                                                <a href="ad-details.html"></a>
-                                                <img src="../assets/images/products/f3.png" alt="img"
-                                                    class="cover-image">
-                                            </div>
-                                            <div class="item-card8-overlaytext">
-                                                <h6 class="bg-secondary mb-0">Duplex House</h6>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="item-card8-desc">
-                                                    <p class="text-muted">19 June 2019</p>
-                                                    <a href="ad-details.html">
-                                                        <h4 class="font-weight-semibold">Food &amp; Bar Apartments
-                                                        </h4>
-                                                    </a>
-                                                    <p class="mb-0">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui blanditiis praesentium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <div class="card">
-                                            <span class="ribbon-3">
-                                                <span><i class="fa fa-home"></i></span>
-                                            </span>
-                                            <div class="item-card8-img">
-                                                <a href="ad-details.html"></a>
-                                                <img src="../assets/images/products/j3.png" alt="img"
-                                                    class="cover-image">
-                                            </div>
-                                            <div class="item-card8-overlaytext">
-                                                <h6 class="bg-info mb-0">2BHK House</h6>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="item-card8-desc">
-                                                    <p class="text-muted">10 June 2019.</p>
-                                                    <a href="ad-details.html">
-                                                        <h4 class="font-weight-semibold">Food &amp; Bar Apartments
-                                                        </h4>
-                                                    </a>
-                                                    <p class="mb-0">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui blanditiis praesentium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <div class="card mb-lg-0">
-                                            <span class="ribbon-1">
-                                                <span><i class="fa fa-building-o"></i></span>
-                                            </span>
-                                            <div class="item-card8-img">
-                                                <a href="ad-details.html"></a>
-                                                <img src="../assets/images/products/j1.png" alt="img"
-                                                    class="cover-image">
-                                            </div>
-                                            <div class="item-card8-overlaytext">
-                                                <h6 class="bg-secondary  mb-0">Villa</h6>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="item-card8-desc">
-                                                    <p class="text-muted">16 November 2019.</p>
-                                                    <a href="ad-details.html">
-                                                        <h4 class="font-weight-semibold">Food &amp; Bar Apartments
-                                                        </h4>
-                                                    </a>
-                                                    <p class="mb-0">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui blanditiis praesentium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <div class="card mb-0">
-                                            <span class="ribbon-1">
-                                                <span><i class="fa fa-home"></i></span>
-                                            </span>
-                                            <div class="item-card8-img">
-                                                <a href="ad-details.html"></a>
-                                                <img src="../assets/images/products/h3.png" alt="img"
-                                                    class="cover-image">
-                                            </div>
-                                            <div class="item-card8-overlaytext">
-                                                <h6 class="bg-secondary  mb-0">Apartments</h6>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="item-card8-desc">
-                                                    <p class="text-muted">06 July 2019</p>
-                                                    <a href="ad-details.html">
-                                                        <h4 class="font-weight-semibold">Food &amp; Bar Apartments
-                                                        </h4>
-                                                    </a>
-                                                    <p class="mb-0">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui blanditiis praesentium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <div class="card mb-0">
-                                            <span class="ribbon-2">
-                                                <span><i class="fa fa-building"></i></span>
-                                            </span>
-                                            <div class="item-card8-img">
-                                                <a href="ad-details.html"></a>
-                                                <img src="../assets/images/products/f2.png" alt="img"
-                                                    class="cover-image">
-                                            </div>
-                                            <div class="item-card8-overlaytext">
-                                                <h6 class="bg-primary  mb-0">Duplex Room</h6>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="item-card8-desc">
-                                                    <p class="text-muted">13 June 2019</p>
-                                                    <a href="ad-details.html">
-                                                        <h4 class="font-weight-semibold">Food &amp; Bar Apartments
-                                                        </h4>
-                                                    </a>
-                                                    <p class="mb-0">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui blanditiis praesentium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="tab-2">
-                                <div class="row">
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <div class="card mb-xl-0">
-                                            <span class="ribbon-2">
-                                                <span><i class="fa fa-home"></i></span>
-                                            </span>
-                                            <div class="item-card8-img">
-                                                <a href="ad-details.html"></a>
-                                                <img src="../assets/images/products/f1.png" alt="img"
-                                                    class="cover-image">
-                                            </div>
-                                            <div class="item-card8-overlaytext">
-                                                <h6 class="bg-primary  mb-0">Luxury Room</h6>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="item-card8-desc">
-                                                    <p class="text-muted">16 June 2019.</p>
-                                                    <a href="ad-details.html">
-                                                        <h4 class="font-weight-semibold">Food &amp; Bar Apartments
-                                                        </h4>
-                                                    </a>
-                                                    <p class="mb-0">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui blanditiis praesentium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <div class="card mb-xl-0">
-                                            <span class="ribbon-1">
-                                                <span><i class="fa fa-home"></i></span>
-                                            </span>
-                                            <div class="item-card8-img">
-                                                <a href="ad-details.html"></a>
-                                                <img src="../assets/images/products/j2.png" alt="img"
-                                                    class="cover-image">
-                                            </div>
-                                            <div class="item-card8-overlaytext">
-                                                <h6 class="bg-secondary mb-0">2BHK House</h6>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="item-card8-desc">
-                                                    <p class="text-muted">11 June 2019 </p>
-                                                    <a href="ad-details.html">
-                                                        <h4 class="font-weight-semibold">Food &amp; Bar Apartments
-                                                        </h4>
-                                                    </a>
-                                                    <p class="mb-0">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui blanditiis praesentium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <div class="card mb-0">
-                                            <span class="ribbon-3">
-                                                <span><i class="fa fa-home"></i></span>
-                                            </span>
-                                            <div class="item-card8-img">
-                                                <a href="ad-details.html"></a>
-                                                <img src="../assets/images/products/j3.png" alt="img"
-                                                    class="cover-image">
-                                            </div>
-                                            <div class="item-card8-overlaytext">
-                                                <h6 class="bg-info mb-0">Modren Kitchen</h6>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="item-card8-desc">
-                                                    <p class="text-muted">10 June 2019.</p>
-                                                    <a href="ad-details.html">
-                                                        <h4 class="font-weight-semibold">Food &amp; Bar Apartments
-                                                        </h4>
-                                                    </a>
-                                                    <p class="mb-0">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui blanditiis praesentium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="tab-3">
-                                <div class="row">
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <div class="card mb-xl-0">
-                                            <span class="ribbon-3">
-                                                <span><i class="fa fa-building"></i></span>
-                                            </span>
-                                            <div class="item-card8-img">
-                                                <a href="ad-details.html"></a>
-                                                <img src="../assets/images/products/b1.png" alt="img"
-                                                    class="cover-image">
-                                            </div>
-                                            <div class="item-card8-overlaytext">
-                                                <h6 class="bg-info  mb-0">Villa</h6>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="item-card8-desc">
-                                                    <p class="text-muted">05 June 2019</p>
-                                                    <a href="ad-details.html">
-                                                        <h4 class="font-weight-semibold">Food &amp; Bar Apartments
-                                                        </h4>
-                                                    </a>
-                                                    <p class="mb-0">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui blanditiis praesentium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <div class="card mb-xl-0">
-                                            <span class="ribbon-2">
-                                                <span><i class="fa fa-building-o"></i></span>
-                                            </span>
-                                            <div class="item-card8-img">
-                                                <a href="ad-details.html"></a>
-                                                <img src="../assets/images/products/b2.png" alt="img"
-                                                    class="cover-image">
-                                            </div>
-                                            <div class="item-card8-overlaytext">
-                                                <h6 class="bg-primary  mb-0">Garden House</h6>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="item-card8-desc">
-                                                    <p class="text-muted">26 May 2019.</p>
-                                                    <a href="ad-details.html">
-                                                        <h4 class="font-weight-semibold">Food &amp; Bar Apartments
-                                                        </h4>
-                                                    </a>
-                                                    <p class="mb-0">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui blanditiis praesentium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <div class="card mb-0">
-                                            <span class="ribbon-1">
-                                                <span><i class="fa fa-building-o"></i></span>
-                                            </span>
-                                            <div class="item-card8-img">
-                                                <a href="ad-details.html"></a>
-                                                <img src="../assets/images/products/j1.png" alt="img"
-                                                    class="cover-image">
-                                            </div>
-                                            <div class="item-card8-overlaytext">
-                                                <h6 class="bg-secondary  mb-0">Villa</h6>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="item-card8-desc">
-                                                    <p class="text-muted">16 November 2019.</p>
-                                                    <a href="ad-details.html">
-                                                        <h4 class="font-weight-semibold">Food &amp; Bar Apartments
-                                                        </h4>
-                                                    </a>
-                                                    <p class="mb-0">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui blanditiis praesentium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="tab-4">
-                                <div class="row">
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <div class="card mb-xl-0">
-                                            <span class="ribbon-2">
-                                                <span><i class="fa fa-home"></i></span>
-                                            </span>
-                                            <div class="item-card8-img">
-                                                <a href="ad-details.html"></a>
-                                                <img src="../assets/images/products/h4.png" alt="img"
-                                                    class="cover-image">
-                                            </div>
-                                            <div class="item-card8-overlaytext">
-                                                <h6 class="bg-primary  mb-0">Apartments</h6>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="item-card8-desc">
-                                                    <p class="text-muted">21 June 2019</p>
-                                                    <a href="ad-details.html">
-                                                        <h4 class="font-weight-semibold">Food &amp; Bar Apartments
-                                                        </h4>
-                                                    </a>
-                                                    <p class="mb-0">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui blanditiis praesentium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <div class="card mb-xl-0">
-                                            <span class="ribbon-3">
-                                                <span><i class="fa fa-home"></i></span>
-                                            </span>
-                                            <div class="item-card8-img">
-                                                <a href="ad-details.html"></a>
-                                                <img src="../assets/images/products/h2.png" alt="img"
-                                                    class="cover-image">
-                                            </div>
-                                            <div class="item-card8-overlaytext">
-                                                <h6 class="bg-info mb-0">2BHK House</h6>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="item-card8-desc">
-                                                    <p class="text-muted">18 June 2019</p>
-                                                    <a href="ad-details.html">
-                                                        <h4 class="font-weight-semibold">Food &amp; Bar Apartments
-                                                        </h4>
-                                                    </a>
-                                                    <p class="mb-0">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui blanditiis praesentium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <div class="card mb-0">
-                                            <span class="ribbon-1">
-                                                <span><i class="fa fa-home"></i></span>
-                                            </span>
-                                            <div class="item-card8-img">
-                                                <a href="ad-details.html"></a>
-                                                <img src="../assets/images/products/h3.png" alt="img"
-                                                    class="cover-image">
-                                            </div>
-                                            <div class="item-card8-overlaytext">
-                                                <h6 class="bg-secondary  mb-0">3BHK House</h6>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="item-card8-desc">
-                                                    <p class="text-muted">06 July 2019</p>
-                                                    <a href="ad-details.html">
-                                                        <h4 class="font-weight-semibold">Food &amp; Bar Apartments
-                                                        </h4>
-                                                    </a>
-                                                    <p class="mb-0">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui blanditiis praesentium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="tab-5">
-                                <div class="row">
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <div class="card mb-xl-0">
-                                            <span class="ribbon-3">
-                                                <span><i class="fa fa-building"></i></span>
-                                            </span>
-                                            <div class="item-card8-img">
-                                                <a href="ad-details.html"></a>
-                                                <img src="../assets/images/products/f4.png" alt="img"
-                                                    class="cover-image">
-                                            </div>
-                                            <div class="item-card8-overlaytext">
-                                                <h6 class="bg-info  mb-0">Deplux Rooms</h6>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="item-card8-desc">
-                                                    <p class="text-muted">20 June 2019</p>
-                                                    <a href="ad-details.html">
-                                                        <h4 class="font-weight-semibold">Food &amp; Bar Apartments
-                                                        </h4>
-                                                    </a>
-                                                    <p class="mb-0">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui blanditiis praesentium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <div class="card mb-xl-0">
-                                            <span class="ribbon-1">
-                                                <span><i class="fa fa-building"></i></span>
-                                            </span>
-                                            <div class="item-card8-img">
-                                                <a href="ad-details.html"></a>
-                                                <img src="../assets/images/products/f3.png" alt="img"
-                                                    class="cover-image">
-                                            </div>
-                                            <div class="item-card8-overlaytext">
-                                                <h6 class="bg-secondary mb-0">Duplex House</h6>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="item-card8-desc">
-                                                    <p class="text-muted">19 June 2019</p>
-                                                    <a href="ad-details.html">
-                                                        <h4 class="font-weight-semibold">Food &amp; Bar Apartments
-                                                        </h4>
-                                                    </a>
-                                                    <p class="mb-0">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui blanditiis praesentium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <div class="card mb-0">
-                                            <span class="ribbon-2">
-                                                <span><i class="fa fa-building"></i></span>
-                                            </span>
-                                            <div class="item-card8-img">
-                                                <a href="ad-details.html"></a>
-                                                <img src="../assets/images/products/f2.png" alt="img"
-                                                    class="cover-image">
-                                            </div>
-                                            <div class="item-card8-overlaytext">
-                                                <h6 class="bg-primary  mb-0">Duplex Room</h6>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="item-card8-desc">
-                                                    <p class="text-muted">13 June 2019</p>
-                                                    <a href="ad-details.html">
-                                                        <h4 class="font-weight-semibold">Food &amp; Bar Apartments
-                                                        </h4>
-                                                    </a>
-                                                    <p class="mb-0">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui blanditiis praesentium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--/Property-->
 @endsection

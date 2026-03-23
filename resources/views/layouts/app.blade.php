@@ -20,27 +20,26 @@
 
     <!-- Title -->
     <title>Estateman</title>
-
     <!-- Bootstrap Css -->
-    <link id="style" href="../assets/plugins/bootstrap-5/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="style" href="{{ asset('assets/plugins/bootstrap-5/css/bootstrap.min.css') }}" rel="stylesheet" />
 
     <!-- Dashboard Css -->
-    <link href="../assets/css/style.css" rel="stylesheet" />
+    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" />
 
-    <!-- Font-awesome  Css -->
-    <link href="../assets/css/icons.css" rel="stylesheet" />
+    <!-- Font-awesome Css -->
+    <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet" />
 
-    <!--Select2 Plugin -->
-    <link href="../assets/plugins/select2/select2.min.css" rel="stylesheet" />
+    <!-- Select2 Plugin -->
+    <link href="{{ asset('assets/plugins/select2/select2.min.css') }}" rel="stylesheet" />
 
     <!-- Date Picker Plugin -->
-    <link href="../assets/plugins/date-picker/spectrum.css" rel="stylesheet" />
+    <link href="{{ asset('assets/plugins/date-picker/spectrum.css') }}" rel="stylesheet" />
 
-    <!-- Owl Theme css-->
-    <link href="../assets/plugins/owl-carousel/owl.carousel.css" rel="stylesheet" />
+    <!-- Owl Theme css -->
+    <link href="{{ asset('assets/plugins/owl-carousel/owl.carousel.css') }}" rel="stylesheet" />
 
-    <!-- P-scroll bar css-->
-    <link href="../assets/plugins/pscrollbar/perfect-scrollbar.css" rel="stylesheet" />
+    <!-- P-scroll bar css -->
+    <link href="{{ asset('assets/plugins/pscrollbar/perfect-scrollbar.css') }}" rel="stylesheet" />
 
 </head>
 
@@ -60,6 +59,8 @@
     <a href="#top" id="back-to-top"><i class="fa fa-rocket"></i></a>
 
     @include('section.footer')
+
+    @stack('scripts')
 
 </body>
 

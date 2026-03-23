@@ -7,10 +7,9 @@
                      <div class="col-lg-3 col-md-12">
                          <h6>About</h6>
                          <hr class="deep-purple  accent-2 mb-4 mt-0 d-inline-block mx-auto">
-                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                             ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis exercitation ullamco
-                             laboris </p>
-                         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum .</p>
+                         <p>
+                             Estateman Ltd – Trusted Real Estate Solutions for Nigerians in the Diaspora
+                         </p>
                      </div>
                      <div class="col-lg-2 col-sm-6">
                          <h6>Our Quick Links</h6>
@@ -110,72 +109,73 @@
      </footer>
  </section>
  <!--Footer Section-->
-
  <!-- JQuery js-->
- <script src="../assets/js/vendors/jquery-3.6.0.min.js"></script>
+ <script src="{{ asset('assets/js/vendors/jquery-3.6.0.min.js') }}"></script>
 
  <!-- Bootstrap js -->
- <script src="../assets/plugins/bootstrap-5/popper.min.js"></script>
- <script src="../assets/plugins/bootstrap-5/js/bootstrap.min.js"></script>
+ <script src="{{ asset('assets/plugins/bootstrap-5/popper.min.js') }}"></script>
+ <script src="{{ asset('assets/plugins/bootstrap-5/js/bootstrap.min.js') }}"></script>
 
- <!--JQuery RealEstaterkline Js-->
- <script src="../assets/js/vendors/jquery.sparkline.min.js"></script>
+ <!-- JQuery Sparkline Js -->
+ <script src="{{ asset('assets/js/vendors/jquery.sparkline.min.js') }}"></script>
 
  <!-- Circle Progress Js-->
- <script src="../assets/js/vendors/circle-progress.min.js"></script>
+ <script src="{{ asset('assets/js/vendors/circle-progress.min.js') }}"></script>
 
  <!-- Star Rating Js-->
- <script src="../assets/plugins/rating/jquery.rating-stars.js"></script>
+ <script src="{{ asset('assets/plugins/rating/jquery.rating-stars.js') }}"></script>
 
- <!--Counters -->
- <script src="../assets/plugins/counters/counterup.min.js"></script>
- <script src="../assets/plugins/counters/waypoints.min.js"></script>
- <script src="../assets/plugins/counters/numeric-counter.js"></script>
+ <!-- Counters -->
+ <script src="{{ asset('assets/plugins/counters/counterup.min.js') }}"></script>
+ <script src="{{ asset('assets/plugins/counters/waypoints.min.js') }}"></script>
+ <script src="{{ asset('assets/plugins/counters/numeric-counter.js') }}"></script>
 
- <!--Owl Carousel js -->
- <script src="../assets/plugins/owl-carousel/owl.carousel.js"></script>
+ <!-- Owl Carousel js -->
+ <script src="{{ asset('assets/plugins/owl-carousel/owl.carousel.js') }}"></script>
 
- <!--Horizontal Menu-->
- <script src="../assets/plugins/horizontal-menu/horizontal.js"></script>
+ <!-- Horizontal Menu-->
+ <script src="{{ asset('assets/plugins/horizontal-menu/horizontal.js') }}"></script>
 
- <!--JQuery TouchSwipe js-->
- <script src="../assets/js/jquery.touchSwipe.min.js"></script>
+ <!-- JQuery TouchSwipe js-->
+ <script src="{{ asset('assets/js/jquery.touchSwipe.min.js') }}"></script>
 
- <!--Select2 js -->
- <script src="../assets/plugins/select2/select2.full.min.js"></script>
- <script src="../assets/js/select2.js"></script>
+ <!-- Select2 js -->
+ <script src="{{ asset('assets/plugins/select2/select2.full.min.js') }}"></script>
+ <script src="{{ asset('assets/js/select2.js') }}"></script>
 
- <!-- sticky Js-->
- <script src="../assets/js/sticky.js"></script>
+ <!-- Sticky Js-->
+ <script src="{{ asset('assets/js/sticky.js') }}"></script>
 
  <!-- Cookie js -->
- <script src="../assets/plugins/cookie/jquery.ihavecookies.js"></script>
- <script src="../assets/plugins/cookie/cookie.js"></script>
+ <script src="{{ asset('assets/plugins/cookie/jquery.ihavecookies.js') }}"></script>
+ <script src="{{ asset('assets/plugins/cookie/cookie.js') }}"></script>
 
  <!-- Datepicker js -->
- <script src="../assets/plugins/date-picker/spectrum.js"></script>
- <script src="../assets/plugins/date-picker/jquery-ui.js"></script>
- <script src="../assets/plugins/date-picker/datepicker.js"></script>
+ <script src="{{ asset('assets/plugins/date-picker/spectrum.js') }}"></script>
+ <script src="{{ asset('assets/plugins/date-picker/jquery-ui.js') }}"></script>
+ <script src="{{ asset('assets/plugins/date-picker/datepicker.js') }}"></script>
 
  <!-- P-scroll bar Js-->
- <script src="../assets/plugins/pscrollbar/perfect-scrollbar.js"></script>
+ <script src="{{ asset('assets/plugins/pscrollbar/perfect-scrollbar.js') }}"></script>
 
-
- <!--Showmore Js-->
- <script src="../assets/js/jquery.showmore.js"></script>
- <script src="../assets/js/showmore.js"></script>
+ <!-- Showmore Js -->
+ <script src="{{ asset('assets/js/jquery.showmore.js') }}"></script>
+ <script src="{{ asset('assets/js/showmore.js') }}"></script>
 
  <!-- Swipe Js-->
- <script src="../assets/js/swipe.js"></script>
+ <script src="{{ asset('assets/js/swipe.js') }}"></script>
 
  <!-- Scripts Js-->
- <script src="../assets/js/owl-carousel.js"></script>
+ <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
 
- <!-- themecolor Js-->
- <script src="../assets/js/themeColors.js"></script>
+ <!-- Theme color Js-->
+ <script src="{{ asset('assets/js/themeColors.js') }}"></script>
 
  <!-- Custom Js-->
- <script src="../assets/js/custom.js"></script>
+ <script src="{{ asset('assets/js/custom.js') }}"></script>
 
  <!-- Custom-switcher Js-->
- <script src="../assets/js/custom-switcher.js"></script>
+ <script src="{{ asset('assets/js/custom-switcher.js') }}"></script>
+
+ <!-- My Dash Sidemenu Js-->
+ <script src="{{ asset('assets/plugins/toggle-sidebar-1/sidemenu.js') }}"></script>
