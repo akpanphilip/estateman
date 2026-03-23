@@ -40,9 +40,12 @@ Route::prefix('admin')
         Route::get('/prototypes', [AdminController::class, 'prototypeIndex'])->name('prototypes.index');
         Route::get('/prototypes/create', [AdminController::class, 'prototypeCreate'])->name('prototypes.create');
         Route::post('/prototypes/store', [AdminController::class, 'prototypeStore'])->name('prototypes.store');
-        Route::get('/prototypes/{prototype}/edit', [AdminController::class, 'prototypeEdit'])->name('prototypes.edit');
+        Route::get('/prototypes/{prototype}/images', [AdminController::class, 'prototypeImages'])->name('prototypes.images');
+        Route::post('/prototypes/{prototype}/images/store', [AdminController::class, 'prototypeImagesStore'])->name('prototypes.images.store');
+        Route::delete('/prototypes/images/{image}/delete', [AdminController::class, 'prototypeImageDelete'])->name('prototypes.images.delete');
         Route::put('/prototypes/{prototype}/update', [AdminController::class, 'prototypeUpdate'])->name('prototypes.update');
         Route::delete('/prototypes/{prototype}/delete', [AdminController::class, 'prototypeDelete'])->name('prototypes.delete');
+        Route::get('/prototypes/{prototype}/edit', [AdminController::class, 'prototypeEdit'])->name('prototypes.edit');
     });
 
 // Public routes

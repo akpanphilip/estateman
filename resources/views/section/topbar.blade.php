@@ -96,7 +96,7 @@
                      <a href="/">
                          <img src="../assets/images/brand/logo.png" class="mobile-light-logo" width="120"
                              alt="" />
-                         <img src="../assets/images/brand/logo1.png" class="mobile-dark-logo" width="120"
+                         <img src="../assets/images/brand/logo.png" class="mobile-dark-logo" width="120"
                              alt="" />
                      </a>
                  </span>
@@ -109,10 +109,10 @@
      <div class="horizontal-main bg-dark-transparent clearfix">
          <div class="horizontal-mainwrapper container clearfix">
              <div class="desktoplogo">
-                 <a href="/"><img src="../assets/images/brand/logo1.png" alt=""></a>
+                 <a href="/"><img src="{{ asset('assets/images/brand/logo.png') }}" alt=""></a>
              </div>
              <div class="desktoplogo-1">
-                 <a href="/"><img src="../assets/images/brand/logo1.png" alt=""></a>
+                 <a href="/"><img src="{{ asset('assets/images/brand/logo.png') }}" alt=""></a>
              </div>
              <!--Nav-->
              <nav class="horizontalMenu clearfix d-md-flex">

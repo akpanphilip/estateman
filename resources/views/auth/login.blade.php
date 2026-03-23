@@ -11,10 +11,7 @@
                                 @csrf
 
                                 <div class="smllogo py-4">
-                                    <img src="../assets/images/brand/logo.png" class="mobile-light-logo" width="120"
-                                        alt="" />
-                                    <img src="../assets/images/brand/logo1.png" class="mobile-dark-logo" width="120"
-                                        alt="" />
+                                    <img src="{{ asset('assets/images/brand/logo.png') }}" alt="">
                                 </div>
                                 <h3 class="mt-4">Login</h3>
 

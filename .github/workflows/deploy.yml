@@ -1,23 +1,62 @@
-name: Deploy Laravel to cPanel
+name: Deploy to cPanel
 
 on:
   push:
     branches:
-      - main
+      - main  # change to master if that's your branch
 
 jobs:
   deploy:
+    name: Deploy
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy to Server
-        uses: appleboy/ssh-action@v0.1.6
+      # Step 1 - Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2 - Setup PHP
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
+          php-version: '8.2'
+          extensions: mbstring, bcmath, pdo, pdo_mysql
+
+      # Step 3 - Install Composer dependencies
+      - name: Install dependencies
+        run: composer install --no-dev --optimize-autoloader --no-interaction
+
+      # Step 4 - Copy .env
+      - name: Create .env file
+        run: |
+          echo "APP_NAME=Estatman" >> .env
+          echo "APP_ENV=production" >> .env
+          echo "APP_KEY=${{ secrets.APP_KEY }}" >> .env
+          echo "APP_DEBUG=false" >> .env
+          echo "APP_URL=${{ secrets.APP_URL }}" >> .env
+          echo "DB_CONNECTION=mysql" >> .env
+          echo "DB_HOST=${{ secrets.DB_HOST }}" >> .env
+          echo "DB_PORT=${{ secrets.DB_PORT }}" >> .env
+          echo "DB_DATABASE=${{ secrets.DB_DATABASE }}" >> .env
+          echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env
+          echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
+
+      # Step 5 - Deploy via SSH to cPanel
+      - name: Deploy to cPanel via SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.CPANEL_HOST }}
+          username: ${{ secrets.CPANEL_USERNAME }}
+          key: ${{ secrets.CPANEL_SSH_KEY }}
+          port: ${{ secrets.CPANEL_PORT }}
           script: |
-            cd public_html/your-project-folder
+            cd ${{ secrets.CPANEL_DEPLOY_PATH }}
             git pull origin main
-            composer install --no-dev --optimize-autoloader
+            composer install --no-dev --optimize-autoloader --no-interaction
             php artisan migrate --force
+            php artisan config:clear
+            php artisan cache:clear
+            php artisan view:clear
+            php artisan route:clear
+            php artisan optimize
+            echo "✅ Deployment complete!"

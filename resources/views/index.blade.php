@@ -68,7 +68,7 @@
     <!--Sliders Section-->
 
     <!-- Categories-->
-    <section class="sptb bg-white">
+    {{-- <section class="sptb bg-white">
         <div class="container">
             <div class="section-title center-block text-center">
                 <h2>Categories</h2>
@@ -185,7 +185,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--Categories-->
 
 

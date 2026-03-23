@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Developer;
 use App\Models\Estate;
+use App\Models\Prototype;
+use App\Models\PrototypeImage;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
@@ -179,5 +181,136 @@ class AdminController extends Controller
 
         return redirect()->route('admin.estates.index')
             ->with('success', 'Estate deleted successfully!');
+    }
+
+    // ==================
+    // PROTOTYPE SECTION
+    // ==================
+
+    public function prototypeIndex()
+    {
+        $prototypes = Prototype::with('estate.developer')->latest()->paginate(10);
+        return view('admin.prototypes.index', compact('prototypes'));
+    }
+
+    public function prototypeCreate()
+    {
+        $estates = Estate::where('is_active', true)->get();
+        return view('admin.prototypes.create', compact('estates'));
+    }
+
+    public function prototypeStore(Request $request)
+    {
+        $validated = $request->validate([
+            'estate_id'        => ['required', 'exists:estates,id'],
+            'name'             => ['required', 'string', 'max:255'],
+            'description'      => ['nullable', 'string'],
+            'price'            => ['nullable', 'numeric'],
+            'plot_size'        => ['nullable', 'string', 'max:255'],
+            'description' => ['nullable', 'string'],
+            'category'         => ['required', 'in:regular,featured,new_listing'],
+            'phone_number'     => ['nullable', 'string', 'max:20'],
+            'whatsapp_number'  => ['nullable', 'string', 'max:20'],
+            'facebook_link'    => ['nullable', 'url'],
+            'instagram_link'   => ['nullable', 'url'],
+            'is_active'        => ['nullable', 'boolean'],
+        ]);
+
+        $validated['slug']      = Str::slug($request->name);
+        $validated['is_active'] = $request->boolean('is_active', true);
+
+        $prototype = Prototype::create($validated);
+
+        // Redirect to image upload step
+        return redirect()->route('admin.prototypes.images', $prototype->id)
+            ->with('success', 'Prototype created! Now add images.');
+    }
+
+    public function prototypeImages(Prototype $prototype)
+    {
+        $images = $prototype->images;
+        return view('admin.prototypes.images', compact('prototype', 'images'));
+    }
+
+    public function prototypeImagesStore(Request $request, Prototype $prototype)
+    {
+        $request->validate([
+            'images'   => ['required', 'array', 'max:5'],
+            'images.*' => ['image', 'mimes:jpg,jpeg,png,webp', 'max:2048'],
+        ]);
+
+        $existingCount = $prototype->images()->count();
+
+        if ($existingCount >= 5) {
+            return back()->withErrors(['images' => 'Maximum of 5 images allowed per prototype.']);
+        }
+
+        foreach ($request->file('images') as $index => $image) {
+            // Stop if we already have 5
+            if ($existingCount + $index >= 5) break;
+
+            $path = $image->store('prototypes', 'public');
+
+            $prototype->images()->create([
+                'image' => $path,
+                'order' => $existingCount + $index + 1,
+            ]);
+        }
+
+        return redirect()->route('admin.prototypes.index')
+            ->with('success', 'Prototype and images saved successfully!');
+    }
+
+    public function prototypeImageDelete(PrototypeImage $image)
+    {
+        Storage::disk('public')->delete($image->image);
+        $image->delete();
+
+        return back()->with('success', 'Image deleted successfully!');
+    }
+
+    public function prototypeUpdate(Request $request, Prototype $prototype)
+    {
+        $validated = $request->validate([
+            'estate_id'        => ['required', 'exists:estates,id'],
+            'name'             => ['required', 'string', 'max:255'],
+            'description'      => ['nullable', 'string'],
+            'price'            => ['nullable', 'numeric'],
+            'plot_size'        => ['nullable', 'string', 'max:255'],
+            'description' => ['nullable', 'string'],
+            'category'         => ['required', 'in:regular,featured,new_listing'],
+            'phone_number'     => ['nullable', 'string', 'max:20'],
+            'whatsapp_number'  => ['nullable', 'string', 'max:20'],
+            'facebook_link'    => ['nullable', 'url'],
+            'instagram_link'   => ['nullable', 'url'],
+            'is_active'        => ['nullable', 'boolean'],
+        ]);
+
+        $validated['slug']      = Str::slug($request->name);
+        $validated['is_active'] = $request->boolean('is_active', true);
+
+        $prototype->update($validated);
+
+        return redirect()->route('admin.prototypes.index')
+            ->with('success', 'Prototype updated successfully!');
+    }
+
+    public function prototypeDelete(Prototype $prototype)
+    {
+        // Delete all images from storage
+        foreach ($prototype->images as $image) {
+            Storage::disk('public')->delete($image->image);
+        }
+
+        $prototype->delete();
+
+        return redirect()->route('admin.prototypes.index')
+            ->with('success', 'Prototype deleted successfully!');
+    }
+
+    public function prototypeEdit(Prototype $prototype)
+    {
+        $estates = Estate::where('is_active', true)->get();
+        return view('admin.prototypes.edit', compact('prototype', 'estates'));
     }
 }
