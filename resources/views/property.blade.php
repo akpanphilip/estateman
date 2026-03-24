@@ -51,7 +51,7 @@
     <div class="bg-white border-bottom">
         <div class="container">
             <div class="page-header">
-                <h4 class="page-title">{{ $prototype->name }}</h4>
+                <h4 class="page-title">{{ $prototype->estate->developer->name  }} | {{ $prototype->estate->name  }}</h4>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javascript:void(0);">Home</a></li>
                     <li class="breadcrumb-item"><a href="javascript:void(0);">Categories</a></li>
@@ -152,9 +152,11 @@
                             <div class="tab-pane active" id="tab-1">
                                 <h3 class="card-title mb-3 font-weight-semibold">Description</h3>
                                 <div class="mb-4">
-                                    <p class="mb-0">{{ $prototype->description }}</p>
+                                    <p class="mb-0">
+										{!! $prototype->description !!}
+									</p>
                                     <p class="mb-0">Plot Size: <span
-                                            class="font-weight-bold">{{ $prototype->plot_size }}Sqft</span></p>
+                                            class="font-weight-bold">{{ number_format($prototype->plot_size) }}Sqft</span></p>
                                 </div>
                                 {{-- <h4 class="mb-4">Specifications</h4>
 									<div class="row">
@@ -428,7 +430,7 @@
                             </div>
                         </div>
                     </div> --}}
-                    <div class="card">
+                    {{-- <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Shares</h3>
                         </div>
@@ -441,8 +443,8 @@
                                 <a href="javascript:void(0);" class="pinterest-bg"><i class="fa fa-pinterest"></i></a>
                             </div>
                         </div>
-                    </div>
-                    <div class="card">
+                    </div> --}}
+                    {{-- <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Latest Seller Ads</h3>
                         </div>
@@ -532,7 +534,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     {{-- <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Map location</h3>

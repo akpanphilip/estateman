@@ -67,127 +67,6 @@
 
     <!--Sliders Section-->
 
-    <!-- Categories-->
-    {{-- <section class="sptb bg-white">
-        <div class="container">
-            <div class="section-title center-block text-center">
-                <h2>Categories</h2>
-                <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-            </div>
-            <div class="row">
-                <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
-                    <div class="card bg-card mb-xl-0">
-                        <div class="card-body">
-                            <div class="cat-item text-center">
-                                <a href="page-list.html"></a>
-                                <div class="cat-img text-shadow1">
-                                    <img src="../assets/images/categories/bk.png" alt="img"
-                                        class="cover-image h-8 w-8 status-img-light">
-                                    <img src="../assets/images/categories/2.png" alt="img"
-                                        class="cover-image h-8 w-8 status-img-dark">
-                                </div>
-                                <div class="cat-desc">
-                                    <h5 class="mb-1">2BHK Homes</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
-                    <div class="card bg-card mb-xl-0">
-                        <div class="card-body">
-                            <div class="cat-item text-center">
-                                <a href="page-list.html"></a>
-                                <div class="cat-img text-shadow1">
-                                    <img src="../assets/images/categories/resturant.png" alt="img"
-                                        class="cover-image h-8 w-8 status-img-light">
-                                    <img src="../assets/images/categories/6.png" alt="img"
-                                        class="cover-image h-8 w-8 status-img-dark">
-                                </div>
-                                <div class="cat-desc">
-                                    <h5 class="mb-1">Duplex House</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
-                    <div class="card bg-card mb-xl-0">
-                        <div class="card-body">
-                            <div class="cat-item text-center">
-                                <a href="page-list.html"></a>
-                                <div class="cat-img text-shadow1">
-                                    <img src="../assets/images/categories/apartment.png" alt="img"
-                                        class="cover-image h-8 w-8 status-img-light">
-                                    <img src="../assets/images/categories/1.png" alt="img"
-                                        class="cover-image h-8 w-8 status-img-dark">
-                                </div>
-                                <div class="cat-desc">
-                                    <h5 class="mb-1">Apartments</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
-                    <div class="card bg-card mb-md-0">
-                        <div class="card-body">
-                            <div class="cat-item text-center">
-                                <a href="page-list.html"></a>
-                                <div class="cat-img text-shadow1">
-                                    <img src="../assets/images/categories/duplex.png" alt="img"
-                                        class="cover-image h-8 w-8 status-img-light">
-                                    <img src="../assets/images/categories/3.png" alt="img"
-                                        class="cover-image h-8 w-8 status-img-dark">
-                                </div>
-                                <div class="cat-desc">
-                                    <h5 class="mb-1">3BHK Flats</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
-                    <div class="card bg-card mb-sm-0">
-                        <div class="card-body">
-                            <div class="cat-item text-center">
-                                <a href="page-list.html"></a>
-                                <div class="cat-img text-shadow1">
-                                    <img src="../assets/images/categories/office.png" alt="img"
-                                        class="cover-image h-8 w-8 status-img-light">
-                                    <img src="../assets/images/categories/5.png" alt="img"
-                                        class="cover-image h-8 w-8 status-img-dark">
-                                </div>
-                                <div class="cat-desc">
-                                    <h5 class="mb-1">Offices</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
-                    <div class="card bg-card mb-0">
-                        <div class="card-body">
-                            <div class="cat-item text-center">
-                                <a href="page-list.html"></a>
-                                <div class="cat-img text-shadow1">
-                                    <img src="../assets/images/categories/flats.png" alt="img"
-                                        class="cover-image h-8 w-8 status-img-light">
-                                    <img src="../assets/images/categories/4.png" alt="img"
-                                        class="cover-image h-8 w-8 status-img-dark">
-                                </div>
-                                <div class="cat-desc">
-                                    <h5 class="mb-1">Flats</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    <!--Categories-->
-
 
     <!--Latest Ads-->
     <section class="sptb bg-white">
@@ -275,7 +154,63 @@
             </div>
             <div id="myCarousel2" class="owl-carousel owl-carousel-icons2">
                 <!-- Wrapper for carousel items -->
-                <div class="item">
+                @foreach ($featuredPrototypes as $featuredPrototype)
+                    <div class="item">
+                        <div class="card mb-0">
+                            <div class="arrow-ribbon bg-primary">For Sale</div>
+                            <div class="item-card7-imgs">
+                                <a href="{{ route('property.detail', $featuredPrototype->slug) }}"></a>
+                                @if ($featuredPrototype->coverImage)
+                                    <img src="{{ asset('storage/' . $featuredPrototype->coverImage->image) }}"
+                                        alt="{{ $featuredPrototype->name }}" class="cover-image">
+                                @else
+                                    <img src="../assets/images/products/products/b3.jpg" alt="img" class="cover-image">
+                                @endif
+                            </div>
+                            <div class="item-card7-overlaytext">
+                                <a href="{{ route('property.detail', $featuredPrototype->slug) }}" class="text-white">
+                                    Featured </a>
+                                <span class="mb-0 fs-13"><i class="fa fa fa-heart-o"></i></span>
+                            </div>
+                            <div class="card-body">
+                                <div class="item-card7-desc">
+                                    <div class="item-card7-text">
+                                        <a href="{{ route('property.detail', $featuredPrototype->slug) }}"
+                                            class="text-dark">
+                                            <h4 class="text-truncate" style="max-width: 100%;">
+                                                {{ $featuredPrototype->name }}
+                                            </h4>
+                                        </a>
+                                        <p class=""><i class="icon icon-location-pin text-muted me-1"></i>
+                                            {{ $featuredPrototype->estate->location ?? 'N/A' }} </p>
+                                    </div>
+                                </div>
+                                <ul class="item-cards7-ic mb-0">
+                                    <li><a href="javascript:void(0);">
+                                            <h5 class="font-weight-bold"> ₦{{ number_format($featuredPrototype->price) }}
+                                            </h5>
+                                        </a></li>
+                                    <li><a href="javascript:void(0);" class="icons text-right"><i
+                                                class="fa fa-arrows-alt text-muted me-1"></i>{{ $featuredPrototype->plot_size }} Sqft</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                               <div class="card-footer">
+                            <div class="d-flex mb-0">
+                                <span class="fs-12"><i class="icon icon-event me-2 mt-1"></i>{{ $featuredPrototype->created_at->format('M d, Y') }} </span>
+                                <div class="ms-auto">
+                                    <a href="javascript:void(0);" class="" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Share Property"><i
+                                            class="icon icon-share text-muted"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                @endforeach
+                {{-- <div class="item">
                     <div class="card mb-0">
                         <div class="arrow-ribbon bg-primary">For Sale</div>
                         <div class="item-card7-imgs">
@@ -320,189 +255,51 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="arrow-ribbon bg-purple">For Buy</div>
-                        <div class="item-card7-imgs">
-                            <a href="col-left.html"></a>
-                            <img src="../assets/images/products/products/h3.jpg" alt="img" class="cover-image">
-                        </div>
-                        <div class="item-card7-overlaytext">
-                            <a href="col-left.html" class="text-white">Featured</a>
-                            <span class="mb-0 fs-13 active"><i class="fa fa fa-heart"></i></span>
-                        </div>
-                        <div class="card-body">
-                            <div class="item-card7-desc">
-                                <div class="item-card7-text">
-                                    <a href="col-left.html" class="text-dark">
-                                        <h4 class="">2BHk Deluxe Flat</h4>
-                                    </a>
-                                    <p class=""><i class="icon icon-location-pin text-muted me-1"></i> New York, NY
-                                        10012, US </p>
+                </div> --}}
+
+            </div>
+    </section>
+    <!--/Featured Ads-->
+
+    <section>
+        <div class="about-1 cover-image sptb bg-background2" data-bs-image-src="../assets/images/banners/banner5.jpg">
+            <div class="content-text mb-0 text-white info">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="counter-status md-mb-0">
+                                <div class="counter-icon">
+                                    <i class="icon icon-people"></i>
                                 </div>
-                                <ul class="item-cards7-ic mb-0">
-                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i> 300
-                                            Sqft</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-bed text-muted me-1"></i> 4 Beds</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-bath text-muted me-1"></i> 3 Bath</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-car text-muted me-1"></i> 1 Car</a></li>
-                                </ul>
-                                <h5 class="font-weight-bold mb-0">$89,005 <span class="fs-12  font-weight-normal">Per
-                                        Month</span></h5>
+                                <h5>Total Agents</h5>
+                                <h2 class="counter mb-0 font-weight-bold">893</h2>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <div class="d-flex mb-0">
-                                <span class="fs-12"><i class="icon icon-event me-2 mt-1"></i>Jul 05 2019 </span>
-                                <div class="ms-auto">
-                                    <a href="javascript:void(0);" class="" data-bs-toggle="tooltip"
-                                        data-bs-placement="top" title="Share Property"><i
-                                            class="icon icon-share text-muted"></i></a>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="counter-status status-1 md-mb-0">
+                                <div class="counter-icon text-warning">
+                                    <i class="icon icon-rocket"></i>
                                 </div>
+                                <h5>Total Sales</h5>
+                                <h2 class="counter mb-0 font-weight-bold">1765</h2>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="arrow-ribbon bg-secondary">For Rent</div>
-                        <div class="item-card7-imgs">
-                            <a href="col-left.html"></a>
-                            <img src="../assets/images/products/products/v4.jpg" alt="img" class="cover-image">
-                        </div>
-                        <div class="item-card7-overlaytext">
-                            <a href="col-left.html" class="text-white">Featured</a>
-                            <span class="mb-0 fs-13"><i class="fa fa fa-heart-o"></i></span>
-                        </div>
-                        <div class="card-body">
-                            <div class="item-card7-desc">
-                                <div class="item-card7-text">
-                                    <a href="col-left.html" class="text-dark">
-                                        <h4 class="">House For Sale</h4>
-                                    </a>
-                                    <p class=""><i class="icon icon-location-pin text-muted me-1"></i> New York, NY
-                                        10012, US </p>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="counter-status status md-mb-0">
+                                <div class="counter-icon text-primary">
+                                    <i class="icon icon-docs"></i>
                                 </div>
-                                <ul class="item-cards7-ic mb-0">
-                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i> 300
-                                            Sqft</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-bed text-muted me-1"></i> 4 Beds</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-bath text-muted me-1"></i> 3 Bath</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-car text-muted me-1"></i> 1 Car</a></li>
-                                </ul>
-                                <h5 class="font-weight-bold mb-0">$89,005 <span class="fs-12  font-weight-normal">Per
-                                        Month</span></h5>
+                                <h5>Total Projects</h5>
+                                <h2 class="counter mb-0 font-weight-bold">846</h2>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <div class="d-flex mb-0">
-                                <span class="fs-12"><i class="icon icon-event me-2 mt-1"></i>June 29 2019 </span>
-                                <div class="ms-auto">
-                                    <a href="javascript:void(0);" class="" data-bs-toggle="tooltip"
-                                        data-bs-placement="top" title="Share Property"><i
-                                            class="icon icon-share text-muted"></i></a>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="counter-status status">
+                                <div class="counter-icon text-success">
+                                    <i class="icon icon-emotsmile"></i>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="arrow-ribbon bg-primary">For Sale</div>
-                        <div class="item-card7-imgs">
-                            <a href="col-left.html"></a>
-                            <img src="../assets/images/products/products/f2.jpg" alt="img" class="cover-image">
-                        </div>
-                        <div class="item-card7-overlaytext">
-                            <a href="col-left.html" class="text-white"> Featured</a>
-                            <span class="mb-0 fs-13 active"><i class="fa fa fa-heart"></i></span>
-                        </div>
-                        <div class="card-body">
-                            <div class="item-card7-desc">
-                                <div class="item-card7-text">
-                                    <a href="col-left.html" class="text-dark">
-                                        <h4 class="">Office For Rent</h4>
-                                    </a>
-                                    <p class=""><i class="icon icon-location-pin text-muted me-1"></i> New York, NY
-                                        10012, US </p>
-                                </div>
-                                <ul class="item-cards7-ic mb-0">
-                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i> 300
-                                            Sqft</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-bed text-muted me-1"></i> 4 Beds</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-bath text-muted me-1"></i> 3 Bath</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-car text-muted me-1"></i> 1 Car</a></li>
-                                </ul>
-                                <h5 class="font-weight-bold mb-0">$89,005 <span class="fs-12  font-weight-normal">Per
-                                        Month</span></h5>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="d-flex mb-0">
-                                <span class="fs-12"><i class="icon icon-event me-2 mt-1"></i>June 25 2019 </span>
-                                <div class="ms-auto">
-                                    <a href="javascript:void(0);" class="" data-bs-toggle="tooltip"
-                                        data-bs-placement="top" title="Share Property"><i
-                                            class="icon icon-share text-muted"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item sold-out">
-                    <div class="ribbon sold-ribbon ribbon-top-left text-danger"><span class="bg-danger">Sold Out</span>
-                    </div>
-                    <div class="card mb-0">
-                        <div class="arrow-ribbon bg-secondary">For Rent</div>
-                        <div class="item-card7-imgs">
-                            <a href="col-left.html"></a>
-                            <img src="../assets/images/products/products/j3.jpg" alt="img" class="cover-image">
-                        </div>
-                        <div class="item-card7-overlaytext">
-                            <a href="col-left.html" class="text-white">Featured</a>
-                            <span class="mb-0 fs-13"><i class="fa fa fa-heart-o"></i></span>
-                        </div>
-                        <div class="card-body">
-                            <div class="item-card7-desc">
-                                <div class="item-card7-text ">
-                                    <a href="col-left.html" class="text-dark">
-                                        <h4 class="">Modern House For Sale</h4>
-                                    </a>
-                                    <p class=""><i class="icon icon-location-pin text-muted me-1"></i> New York, NY
-                                        10012, US </p>
-                                </div>
-                                <ul class="item-cards7-ic mb-0">
-                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i> 300
-                                            Sqft</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-bed text-muted me-1"></i> 4 Beds</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-bath text-muted me-1"></i> 3 Bath</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-car text-muted me-1"></i> 1 Car</a></li>
-                                </ul>
-                                <h5 class="font-weight-bold mb-0">$89,005 <span class="fs-12  font-weight-normal">Per
-                                        Month</span></h5>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="d-flex mb-0">
-                                <span class="fs-12"><i class="icon icon-event me-2 mt-1"></i>June 19 2019 </span>
-                                <div class="ms-auto">
-                                    <a href="javascript:void(0);" class="" data-bs-toggle="tooltip"
-                                        data-bs-placement="top" title="Share Property"><i
-                                            class="icon icon-share text-muted"></i></a>
-                                </div>
+                                <h5>Happy Customers</h5>
+                                <h2 class="counter font-weight-bold mb-0">7253</h2>
                             </div>
                         </div>
                     </div>
@@ -510,5 +307,97 @@
             </div>
         </div>
     </section>
-    <!--/Featured Ads-->
+
+    <!--Categories-->
+    <section class="sptb">
+        <div class="container">
+            <div class="section-title center-block text-center">
+                <h2>Developers</h2>
+                <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+            </div>
+            <div id="small-categories" class="owl-carousel owl-carousel-icons2">
+                <div class="item">
+                    <div class="card mb-0">
+                        <div class="item-card">
+                            <div class="item-card-desc">
+                                <a href="javascript:void(0);"></a>
+                                <div class="item-card-img">
+                                    <img src="../assets/images/products/1.png" alt="img" class="br-tr-7 br-tl-7">
+                                </div>
+                                <div class="item-card-text">
+                                    <h4 class="mb-0">Stylish Houses</h4>
+                                    <span class="badge rounded-pill badge-primary w-15">45</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card mb-0">
+                        <div class="item-card">
+                            <div class="item-card-desc">
+                                <a href="javascript:void(0);"></a>
+                                <div class="item-card-img">
+                                    <img src="../assets/images/products/2.png" alt="img" class="br-tr-7 br-tl-7">
+                                </div>
+                                <div class="item-card-text">
+                                    <h4 class="mb-0">Luxury Houses</h4>
+                                    <span class="badge rounded-pill badge-secondary w-15">23</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card mb-0">
+                        <div class="item-card">
+                            <div class="item-card-desc">
+                                <a href="javascript:void(0);"></a>
+                                <div class="item-card-img">
+                                    <img src="../assets/images/products/3.png" alt="img" class="br-tr-7 br-tl-7">
+                                </div>
+                                <div class="item-card-text">
+                                    <h4 class="mb-0">Apartments</h4>
+                                    <span class="badge rounded-pill badge-warning w-15">48</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card mb-0">
+                        <div class="item-card">
+                            <div class="item-card-desc">
+                                <a href="javascript:void(0);"></a>
+                                <div class="item-card-img">
+                                    <img src="../assets/images/products/9.png" alt="img" class="br-tr-7 br-tl-7">
+                                </div>
+                                <div class="item-card-text">
+                                    <h4 class="mb-0">Deluxe Houses</h4>
+                                    <span class="badge rounded-pill badge-info w-15">15</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="card mb-0">
+                        <div class="item-card">
+                            <div class="item-card-desc">
+                                <a href="javascript:void(0);"></a>
+                                <div class="item-card-img">
+                                    <img src="../assets/images/products/10.png" alt="img" class="br-tr-7 br-tl-7">
+                                </div>
+                                <div class="item-card-text">
+                                    <h4 class="mb-0">Nature Houses</h4>
+                                    <span class="badge rounded-pill badge-success w-15">12</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
 @endsection

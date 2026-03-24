@@ -17,7 +17,7 @@ class Prototype extends Model
         'description',
         'price',
         'plot_size',
-        'plot_description',
+        'description',
         'category',
         'facebook_link',
         'instagram_link',
@@ -35,7 +35,7 @@ class Prototype extends Model
     const CATEGORIES = [
         'regular'     => 'Regular',
         'featured'    => 'Featured',
-        'new_listing' => 'New Listing',
+        // 'new_listing' => 'New Listing',
     ];
 
     // Auto generate slug from name

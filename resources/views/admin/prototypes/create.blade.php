@@ -61,7 +61,7 @@
                                     </div>
 
                                     {{-- Description --}}
-                                    <div class="col-sm-12 col-md-12">
+                                    {{-- <div class="col-sm-12 col-md-12">
                                         <div class="form-group">
                                             <label class="form-label text-dark">Description</label>
                                             <textarea name="description" class="form-control @error('description') is-invalid @enderror" rows="4"
@@ -70,7 +70,18 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
+                                    </div> --}}
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="form-group">
+                                            <label class="form-label text-dark">Description</label>
+                                            <textarea id="description" name="description" class="form-control @error('description') is-invalid @enderror"
+                                                placeholder="Text here..">{{ old('description') }}</textarea>
+                                            @error('description')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
                                     </div>
+
 
                                     {{-- Price & Plot Size --}}
                                     <div class="col-sm-6 col-md-6">
@@ -160,8 +171,7 @@
                                             <label class="form-label">Facebook Link</label>
                                             <input type="url" name="facebook_link"
                                                 class="form-control @error('facebook_link') is-invalid @enderror"
-                                                placeholder="https://facebook.com/..."
-                                                value="{{ old('facebook_link') }}">
+                                                placeholder="https://facebook.com/..." value="{{ old('facebook_link') }}">
                                             @error('facebook_link')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -209,4 +219,18 @@
         </div>
     </section>
     <!--/User Dashboard-->
+
+    @push('scripts')
+        
+    <script>
+        ClassicEditor
+        .create(document.querySelector('#description'), {
+            toolbar: [
+                'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList',
+                'blockQuote', 'insertTable', 'undo', 'redo'
+            ],
+        })
+        .catch(error => console.error(error));
+        </script>
+        @endpush
 @endsection

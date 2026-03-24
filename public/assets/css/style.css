@@ -30450,7 +30450,8 @@ video {
 }
 
 .item-cards7-ic {
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
 }
 .item-cards7-ic.realestate-list li {
   width: 50%;
@@ -30462,7 +30463,7 @@ video {
   width: 1rem;
 }
 .item-cards7-ic li {
-  float: left;
+  /* float: left; */
   width: 50%;
   margin-right: 0 !important;
   margin-bottom: 0.5rem;
@@ -30515,6 +30516,8 @@ video {
   transform: scale(1);
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
+  max-height: 200px;
+  min-height: 200px;
 }
 .item-card7-imgs:hover img {
   -webkit-transform: scale(1.1);
@@ -30558,6 +30561,8 @@ video {
   transform: scale(1.1);
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
+  min-height: 200px;
+  max-height: 200px;
 }
 .item-card2-img:hover img {
   -webkit-transform: scale(1);

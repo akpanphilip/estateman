@@ -22,7 +22,7 @@
                                 </div>
                             @endif
 
-                            <table class="table table-bordered table-hover mb-0 text-nowrap">
+                            <table class="table table-bordered table-hover mb-0 text-nowrap table-responsive">
                                 <thead>
                                     <tr>
                                         <th></th>
