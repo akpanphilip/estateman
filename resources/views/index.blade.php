@@ -11,7 +11,7 @@
                         <p>Find your ideal, secure, and verified property.
                         </p>
                     </div>
-                    {{-- <div class="row">
+                    <div class="row">
                         <div class="col-xl-10 col-lg-12 col-md-12 d-block mx-auto">
                             <div class="search-background bg-transparent">
                                 <div class="form row no-gutters ">
@@ -47,7 +47,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
             </div><!-- /header-text -->
             <ul class="circles">
@@ -73,7 +73,9 @@
         <div class="container">
             <div class="section-title center-block text-center">
                 <h2>Latest Properties</h2>
-                {{-- <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p> --}}
+                <p>Discover our newest listings, fresh on the market and ready for you.</p>
+                {{-- <p>Sed do eiusmod tempor incidid
+                    punt ut labore et dolore magna aliqua</p> --}}
             </div>
             <div id="myCarousel1" class="owl-carousel owl-carousel-icons2">
                 @foreach ($prototypes as $prototype)
@@ -150,7 +152,7 @@
         <div class="container">
             <div class="section-title center-block text-center">
                 <h2>Featured Properties</h2>
-                <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                <p>Exceptional homes you don’t want to miss.</p>
             </div>
             <div id="myCarousel2" class="owl-carousel owl-carousel-icons2">
                 <!-- Wrapper for carousel items -->
@@ -191,22 +193,25 @@
                                             </h5>
                                         </a></li>
                                     <li><a href="javascript:void(0);" class="icons text-right"><i
-                                                class="fa fa-arrows-alt text-muted me-1"></i>{{ number_format($featuredPrototype->plot_size) }} Sqft</a>
+                                                class="fa fa-arrows-alt text-muted me-1"></i>{{ number_format($featuredPrototype->plot_size) }}
+                                            Sqft</a>
                                     </li>
                                 </ul>
 
                             </div>
 
-                               <div class="card-footer">
-                            <div class="d-flex mb-0">
-                                <span class="fs-12"><i class="icon icon-event me-2 mt-1"></i>{{ $featuredPrototype->created_at->format('M d, Y') }} </span>
-                                <div class="ms-auto">
-                                    <a href="javascript:void(0);" class="" data-bs-toggle="tooltip"
-                                        data-bs-placement="top" title="Share Property"><i
-                                            class="icon icon-share text-muted"></i></a>
+                            <div class="card-footer">
+                                <div class="d-flex mb-0">
+                                    <span class="fs-12"><i
+                                            class="icon icon-event me-2 mt-1"></i>{{ $featuredPrototype->created_at->format('M d, Y') }}
+                                    </span>
+                                    <div class="ms-auto">
+                                        <a href="javascript:void(0);" class="" data-bs-toggle="tooltip"
+                                            data-bs-placement="top" title="Share Property"><i
+                                                class="icon icon-share text-muted"></i></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </div>
                     </div>
                 @endforeach
@@ -313,34 +318,35 @@
         <div class="container">
             <div class="section-title center-block text-center">
                 <h2>Developers</h2>
-                <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                <p>Crafted by experts, delivered with excellence.</p>
             </div>
             <div id="small-categories" class="owl-carousel owl-carousel-icons2">
-            @foreach ($developers as $developer)
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="item-card">
-                            <div class="item-card-desc">
-                                <a href=""></a>
-                                <div class="item-card-img">
-                                    {{-- @if ($developer->logo)
+                @foreach ($developers as $developer)
+                    <div class="item">
+                        <div class="card mb-0">
+                            <div class="item-card">
+                                <div class="item-card-desc">
+                                    <a href=""></a>
+                                    <div class="item-card-img">
+                                        {{-- @if ($developer->logo)
                                         <img src="{{ asset('storage/' . $developer->logo) }}" alt="{{ $developer->name }}"
                                             class="br-tr-7 br-tl-7">
                                     @else --}}
                                         <img src="../assets/images/products/1.png" alt="{{ $developer->name }}"
                                             class="br-tr-7 br-tl-7">
-                                    {{-- @endif --}}
-                                </div>
-                                <div class="item-card-text">
-                                    <h4 class="mb-0">{{ $developer->name }}</h4>
-                                    <span class="badge rounded-pill badge-primary w-15">{{ $developer->prototypes_count }}</span>
+                                        {{-- @endif --}}
+                                    </div>
+                                    <div class="item-card-text">
+                                        <h4 class="mb-0">{{ $developer->name }}</h4>
+                                        <span
+                                            class="badge rounded-pill badge-primary w-15">{{ $developer->prototypes_count }}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-             @endforeach
-             {{-- @foreach ($developers as $developer)
+                @endforeach
+                {{-- @foreach ($developers as $developer)
              @endforeach
              --}}
                 {{-- <div class="item">
@@ -359,8 +365,8 @@
                         </div>
                     </div>
                 </div> --}}
-            
-                
+
+
             </div>
         </div>
     </section>
