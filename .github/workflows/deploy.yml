@@ -33,11 +33,13 @@ jobs:
           script: |
             cd /home2/estatem2/repositories/estateman
             git pull origin main
-            composer install --no-dev --optimize-autoloader --no-interaction
+            php -d allow_url_fopen=On composer.phar install --no-dev --optimize-autoloader --no-interaction
             php artisan migrate --force
+            php artisan db:seed --class=RolesAndPermissionsSeeder --force
             php artisan config:clear
             php artisan cache:clear
             php artisan view:clear
             php artisan route:clear
             php artisan optimize
+            cp -r /home2/estatem2/repositories/estateman/public/assets /home2/estatem2/public_html/assets
             echo "✅ Deployment complete!"
