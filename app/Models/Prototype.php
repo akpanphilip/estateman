@@ -36,7 +36,7 @@ class Prototype extends Model
     const CATEGORIES = [
         'regular'     => 'Regular',
         'featured'    => 'Featured',
-        // 'new_listing' => 'New Listing',
+        'new listing' => 'New Listing',
     ];
 
     // Auto generate slug from name
