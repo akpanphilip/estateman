@@ -17,7 +17,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'
+          php-version: "8.2"
           extensions: mbstring, bcmath, pdo, pdo_mysql
 
       - name: Install dependencies
@@ -35,11 +35,11 @@ jobs:
             git pull origin main
             php -d allow_url_fopen=On composer.phar install --no-dev --optimize-autoloader --no-interaction
             php artisan migrate --force
-            php artisan db:seed --class=RolesAndPermissionsSeeder --force
             php artisan config:clear
             php artisan cache:clear
             php artisan view:clear
             php artisan route:clear
             php artisan optimize
             cp -r /home2/estatem2/repositories/estateman/public/assets /home2/estatem2/public_html/assets
+            cp -r /home2/estatem2/repositories/estateman/storage/app/public/* /home2/estatem2/public_html/storage/
             echo "✅ Deployment complete!"
