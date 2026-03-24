@@ -14,8 +14,8 @@
         content="html template, real estate websites, real estate html template, property websites, premium html templates, real estate company website, bootstrap real estate template, real estate marketplace html template, listing website template, property listing html template, real estate bootstrap template, real estate html5 template, real estate listing template, property template, property dealer website" />
 
     <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+      <link rel="icon" href="{{ asset('favicon.png') }}" type="image/x-icon" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.png') }}" />
 
     <!-- Title -->
     <title>Login | Estateman</title>

@@ -280,5 +280,5 @@
                 modal.show();
             }
         </script>
-
-    @endsection
+    @endpush
+@endsection

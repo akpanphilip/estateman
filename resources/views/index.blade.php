@@ -316,7 +316,34 @@
                 <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
             </div>
             <div id="small-categories" class="owl-carousel owl-carousel-icons2">
+            @foreach ($developers as $developer)
                 <div class="item">
+                    <div class="card mb-0">
+                        <div class="item-card">
+                            <div class="item-card-desc">
+                                <a href=""></a>
+                                <div class="item-card-img">
+                                    {{-- @if ($developer->logo)
+                                        <img src="{{ asset('storage/' . $developer->logo) }}" alt="{{ $developer->name }}"
+                                            class="br-tr-7 br-tl-7">
+                                    @else --}}
+                                        <img src="../assets/images/products/1.png" alt="{{ $developer->name }}"
+                                            class="br-tr-7 br-tl-7">
+                                    {{-- @endif --}}
+                                </div>
+                                <div class="item-card-text">
+                                    <h4 class="mb-0">{{ $developer->name }}</h4>
+                                    <span class="badge rounded-pill badge-primary w-15">{{ $developer->prototypes_count }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             @endforeach
+             {{-- @foreach ($developers as $developer)
+             @endforeach
+             --}}
+                {{-- <div class="item">
                     <div class="card mb-0">
                         <div class="item-card">
                             <div class="item-card-desc">
@@ -331,71 +358,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="item-card">
-                            <div class="item-card-desc">
-                                <a href="javascript:void(0);"></a>
-                                <div class="item-card-img">
-                                    <img src="../assets/images/products/2.png" alt="img" class="br-tr-7 br-tl-7">
-                                </div>
-                                <div class="item-card-text">
-                                    <h4 class="mb-0">Luxury Houses</h4>
-                                    <span class="badge rounded-pill badge-secondary w-15">23</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="item-card">
-                            <div class="item-card-desc">
-                                <a href="javascript:void(0);"></a>
-                                <div class="item-card-img">
-                                    <img src="../assets/images/products/3.png" alt="img" class="br-tr-7 br-tl-7">
-                                </div>
-                                <div class="item-card-text">
-                                    <h4 class="mb-0">Apartments</h4>
-                                    <span class="badge rounded-pill badge-warning w-15">48</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="item-card">
-                            <div class="item-card-desc">
-                                <a href="javascript:void(0);"></a>
-                                <div class="item-card-img">
-                                    <img src="../assets/images/products/9.png" alt="img" class="br-tr-7 br-tl-7">
-                                </div>
-                                <div class="item-card-text">
-                                    <h4 class="mb-0">Deluxe Houses</h4>
-                                    <span class="badge rounded-pill badge-info w-15">15</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="item-card">
-                            <div class="item-card-desc">
-                                <a href="javascript:void(0);"></a>
-                                <div class="item-card-img">
-                                    <img src="../assets/images/products/10.png" alt="img" class="br-tr-7 br-tl-7">
-                                </div>
-                                <div class="item-card-text">
-                                    <h4 class="mb-0">Nature Houses</h4>
-                                    <span class="badge rounded-pill badge-success w-15">12</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </div> --}}
+            
                 
             </div>
         </div>

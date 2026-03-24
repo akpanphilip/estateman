@@ -279,6 +279,7 @@
             </div>
         </div>
     </section>
+    
     @push('scripts')
         <script>
             function openEditModal(id, developerId, name, location, description, image, isActive) {

@@ -41,4 +41,9 @@ class Developer extends Model
     {
         return $this->hasMany(Estate::class);
     }
+    public function prototypes()
+    {
+        // Developer → Estate → Prototype
+        return $this->hasManyThrough(Prototype::class, Estate::class);
+    }
 }

@@ -11,7 +11,7 @@
                                 @csrf
 
                                 <div class="smllogo py-4">
-                                    <img src="{{ asset('assets/images/brand/logo.png') }}" alt="">
+                                    <img src="{{ asset('favicon.png') }}" alt="">
                                 </div>
                                 <h3 class="mt-4">Login</h3>
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Developer;
 use App\Models\Prototype;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,10 @@ class PageController extends Controller
         // $prototypes = Prototype::with('estate.developer')->latest()->paginate(10);
         $featuredPrototypes = Prototype::with('estate.developer')->where('category', 'featured')->latest()->take(5)->get();
         $prototypes = Prototype::with('estate.developer')->where('category', '!=', 'featured')->latest()->take(5)->get();
-        return view('index', compact('prototypes', 'featuredPrototypes'));
+        $developers = Developer::withCount('prototypes')
+            ->has('prototypes')
+            ->get();
+        return view('index', compact('prototypes', 'featuredPrototypes', 'developers'));
     }
 
     public function about()
