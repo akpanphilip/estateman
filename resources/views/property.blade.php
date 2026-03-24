@@ -51,7 +51,7 @@
     <div class="bg-white border-bottom">
         <div class="container">
             <div class="page-header">
-                <h4 class="page-title">{{ $prototype->estate->developer->name  }} | {{ $prototype->estate->name  }}</h4>
+                <h4 class="page-title">{{ $prototype->estate->developer->name }} | {{ $prototype->estate->name }}</h4>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javascript:void(0);">Home</a></li>
                     <li class="breadcrumb-item"><a href="javascript:void(0);">Categories</a></li>
@@ -96,29 +96,33 @@
                             <div class="product-slider carousel-slide-1">
                                 <div id="carouselFade" class="carousel slide carousel-fade" data-bs-ride="carousel"
                                     data-bs-loop="false" data-bs-thumb="true" data-bs-dots="false">
-                                    <div class="arrow-ribbon2 bg-primary">₦{{ number_format($prototype->price) }}</div>
-                                    <div class="carousel-inner slide-show-image" id=full-gallery>
-                                        <div class="carousel-item active"><img
-                                                src="{{ asset('storage/' . $prototype->coverImage->image) }}"
-                                                alt="img"> </div>
-                                        <div class="carousel-item"><img src="../assets/images/products/products/h2.jpg"
-                                                alt="img"> </div>
-                                        <div class="carousel-item"><img src="../assets/images/products/products/h3.jpg"
-                                                alt="img"> </div>
-                                        <div class="carousel-item"><img src="../assets/images/products/products/h4.jpg"
-                                                alt="img"> </div>
-                                        <div class="carousel-item"><img src="../assets/images/products/products/h5.jpg"
-                                                alt="img"> </div>
-                                        <div class="carousel-item"><img src="../assets/images/products/products/h6.jpg"
-                                                alt="img"> </div>
-                                        <div class="carousel-item"><img src="../assets/images/products/products/b1.jpg"
-                                                alt="img"> </div>
-                                        <div class="carousel-item"><img src="../assets/images/products/products/b2.jpg"
-                                                alt="img"> </div>
-                                        <div class="carousel-item"><img src="../assets/images/products/products/b3.jpg"
-                                                alt="img"> </div>
-                                        <div class="carousel-item"><img src="../assets/images/products/products/b4.jpg"
-                                                alt="img"> </div>
+
+                                    {{-- Price Badge --}}
+                                    @if ($prototype->price)
+                                        <div class="arrow-ribbon2 bg-primary">
+                                            ₦{{ number_format($prototype->price) }}
+                                        </div>
+                                    @endif
+
+                                    <div class="carousel-inner slide-show-image" id="full-gallery">
+
+                                        {{-- Main Images --}}
+                                        @if ($prototype->images->count() > 0)
+                                            @foreach ($prototype->images as $index => $image)
+                                                <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                                    <img src="{{ asset('storage/' . $image->image) }}"
+                                                        alt="{{ $prototype->name }}">
+                                                </div>
+                                            @endforeach
+                                        @else
+                                            {{-- Fallback if no images --}}
+                                            <div class="carousel-item active">
+                                                <img src="{{ asset('assets/images/products/h1.png') }}"
+                                                    alt="No Image Available">
+                                            </div>
+                                        @endif
+
+                                        {{-- Prev/Next Controls --}}
                                         <div class="thumbcarousel">
                                             <a class="carousel-control-prev" href="#carouselFade" role="button"
                                                 data-bs-slide="prev">
@@ -129,6 +133,7 @@
                                                 <i class="fa fa-angle-right" aria-hidden="true"></i>
                                             </a>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -153,10 +158,11 @@
                                 <h3 class="card-title mb-3 font-weight-semibold">Description</h3>
                                 <div class="mb-4">
                                     <p class="mb-0">
-										{!! $prototype->description !!}
-									</p>
+                                        {!! $prototype->description !!}
+                                    </p>
                                     <p class="mb-0">Plot Size: <span
-                                            class="font-weight-bold">{{ number_format($prototype->plot_size) }}Sqft</span></p>
+                                            class="font-weight-bold">{{ number_format($prototype->plot_size) }}Sqft</span>
+                                    </p>
                                 </div>
                                 {{-- <h4 class="mb-4">Specifications</h4>
 									<div class="row">
@@ -407,9 +413,10 @@
                                     class="btn btn-success" target="_blank">
                                     <i class="fa fa-whatsapp"></i> Chat
                                 </a>
-								<a href="tel:+{{ preg_replace('/[^0-9]/', '', $prototype->phone_number) }}" class="btn btn-primary">
-									<i class="fa fa-phone"></i> Call
-								</a>
+                                <a href="tel:+{{ preg_replace('/[^0-9]/', '', $prototype->phone_number) }}"
+                                    class="btn btn-primary">
+                                    <i class="fa fa-phone"></i> Call
+                                </a>
                                 {{-- <a href="{{ $prototype->phone_number }}" class="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#contact"><i class="fa fa-user"></i> Contact Me</a> --}}
                                 <a href="javascript:void(0);" class="btn  btn-info"><i class="fa fa-share"></i> Share</a>

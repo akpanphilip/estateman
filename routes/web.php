@@ -47,6 +47,12 @@ Route::prefix('admin')
         Route::put('/prototypes/{prototype}/update', [AdminController::class, 'prototypeUpdate'])->name('prototypes.update');
         Route::delete('/prototypes/{prototype}/delete', [AdminController::class, 'prototypeDelete'])->name('prototypes.delete');
         Route::get('/prototypes/{prototype}/edit', [AdminController::class, 'prototypeEdit'])->name('prototypes.edit');
+
+        // Banner routes
+        Route::get('/banners', [AdminController::class, 'bannerIndex'])->name('banners.index');
+        Route::get('/banners/create', [AdminController::class, 'bannerCreate'])->name('banners.create');
+        Route::post('/banners/store', [AdminController::class, 'bannerStore'])->name('banners.store');
+        Route::delete('/banners/{banner}/delete', [AdminController::class, 'bannerDelete'])->name('banners.delete');
     });
 
 // Public routes

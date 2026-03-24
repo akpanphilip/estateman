@@ -29,7 +29,7 @@
                                         <th>Image</th>
                                         <th>Estate</th>
                                         <th>Name</th>
-                                        <th>Description</th>
+                                        {{-- <th>Description</th> --}}
                                         <th>Price</th>
                                         <th>Plot Size</th>
                                         <th>Category</th>
@@ -76,7 +76,7 @@
                                             <td>{{ $prototype->name }}</td>
 
                                             {{-- Description --}}
-                                            <td>{{ Str::limit($prototype->description, 40) }}</td>
+                                            {{-- <td>{{ Str::limit($prototype->description, 40) }}</td> --}}
 
                                             {{-- Price --}}
                                             <td>
@@ -88,7 +88,7 @@
                                             </td>
 
                                             {{-- Plot Size --}}
-                                            <td>{{ $prototype->plot_size ?? 'N/A' }}</td>
+                                            <td>{{ number_format($prototype->plot_size) ?? 'N/A' }}</td>
 
                                             {{-- Category --}}
                                             <td>

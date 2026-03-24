@@ -27,10 +27,11 @@
                 <p class="leading-normal">Estateman Ltd is a proudly Nigerian real estate marketing and property management
                     company built on trust, transparency, and reliability. Our mission is simple — to make real estate
                     investment in Nigeria safe, stress-free, and rewarding for Nigerians living abroad.</p>
-                <p class="leading-normal mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                <p class="leading-normal mb-0">
                     With a deep understanding of the risks and challenges that come with investing in property from afar, we
                     provide a secure bridge between our clients in the diaspora and genuine real estate opportunities in
-                    Nigeria. We are not just real estate marketers; we are your eyes, ears, and hands on the ground.</p>
+                    Nigeria. We are not just real estate marketers; we are your eyes, ears, and hands on the ground.
+                </p>
             </div>
         </div>
     </section>
@@ -301,7 +302,7 @@
     </section>
 
     <!--post section-->
-  
+
     <!--/post section-->
 
 

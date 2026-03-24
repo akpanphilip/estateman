@@ -59,10 +59,8 @@
                                         </label>
 
                                         <div id="dropZone"
-                                            style="border: 2px dashed #ccc; border-radius: 8px; padding: 30px; text-align: center; cursor: pointer; transition: all 0.3s;"
-                                            onclick="document.getElementById('imageInput').click()"
-                                            ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)"
-                                            ondrop="handleDrop(event)">
+                                            style="border: 2px dashed #ccc; border-radius: 8px; padding: 30px; text-align: center; cursor: pointer;"
+                                            onclick="document.getElementById('imageInput').click()">
                                             <i class="fa fa-cloud-upload" style="font-size: 2.5rem; color: #ccc;"></i>
                                             <p class="mt-2 mb-0 text-muted">
                                                 Click to select or drag & drop images here
@@ -72,9 +70,9 @@
                                             </small>
                                         </div>
 
+
                                         <input type="file" id="imageInput" name="images[]" accept=".jpg,.jpeg,.png,.webp"
                                             multiple style="display: none;" onchange="previewImages(event)">
-
                                         @error('images')
                                             <div class="text-danger small mt-1">{{ $message }}</div>
                                         @enderror
@@ -296,4 +294,3 @@
         }
     </script>
 @endpush
-

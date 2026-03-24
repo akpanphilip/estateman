@@ -26,7 +26,7 @@ class PageController extends Controller
 
     public function propertyDetail($slug)
     {
-        $prototype = Prototype::with('estate.developer')->where('slug', $slug)->firstOrFail();
+        $prototype = Prototype::with(['estate.developer', 'images'])->where('slug', $slug)->firstOrFail();
         return view('property', compact('prototype'));
     }
 }

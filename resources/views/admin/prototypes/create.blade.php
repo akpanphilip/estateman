@@ -108,17 +108,7 @@
                                         </div>
                                     </div>
 
-                                    {{-- Plot Description --}}
-                                    {{-- <div class="col-sm-12 col-md-12">
-                                        <div class="form-group">
-                                            <label class="form-label text-dark">Description</label>
-                                            <textarea name="description" class="form-control @error('description') is-invalid @enderror" rows="3"
-                                                placeholder="Plot details..">{{ old('description') }}</textarea>
-                                            @error('description')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-                                    </div> --}}
+                        
 
                                     {{-- Category --}}
                                     <div class="col-sm-12 col-md-12">

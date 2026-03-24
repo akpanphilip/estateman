@@ -11,7 +11,7 @@
                         <p>Find your ideal, secure, and verified property.
                         </p>
                     </div>
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-xl-10 col-lg-12 col-md-12 d-block mx-auto">
                             <div class="search-background bg-transparent">
                                 <div class="form row no-gutters ">
@@ -47,7 +47,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div><!-- /header-text -->
             <ul class="circles">
@@ -104,7 +104,7 @@
                                 <div class="item-card2">
                                     <div class="item-card2-text">
                                         <a href="col-left.html" class="text-dark">
-                                            <h4 class="">{{ $prototype->name }}</h4>
+                                            <h4 class="text-truncate" style="max-width: 100%;">{{ $prototype->name }}</h4>
                                         </a>
                                         <p class="mb-2"><i class="fa fa-map-marker text-danger me-1"></i>
                                             {{ $prototype->estate->location }}</p>
@@ -117,7 +117,7 @@
                                             </a></li>
                                         <li><a href="javascript:void(0);" class="icons text-right"><i
                                                     class="fa fa-arrows-alt text-muted me-1"></i>
-                                                {{ $prototype->plot_size }} Sqft</a></li>
+                                                {{ number_format($prototype->plot_size) }} Sqft</a></li>
 
                                     </ul>
                                 </div>
@@ -191,7 +191,7 @@
                                             </h5>
                                         </a></li>
                                     <li><a href="javascript:void(0);" class="icons text-right"><i
-                                                class="fa fa-arrows-alt text-muted me-1"></i>{{ $featuredPrototype->plot_size }} Sqft</a>
+                                                class="fa fa-arrows-alt text-muted me-1"></i>{{ number_format($featuredPrototype->plot_size) }} Sqft</a>
                                     </li>
                                 </ul>
 

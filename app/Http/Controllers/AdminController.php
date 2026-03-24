@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
 use Illuminate\Http\Request;
 use App\Models\Developer;
 use App\Models\Estate;
@@ -277,7 +278,7 @@ class AdminController extends Controller
             'description'      => ['nullable', 'string'],
             'price'            => ['nullable', 'numeric'],
             'plot_size'        => ['nullable', 'string', 'max:255'],
-            'description' => ['nullable', 'string'],
+            // 'description' => ['nullable', 'string'],
             'category'         => ['required', 'in:regular,featured,new_listing'],
             'phone_number'     => ['nullable', 'string', 'max:20'],
             'whatsapp_number'  => ['nullable', 'string', 'max:20'],
@@ -312,5 +313,50 @@ class AdminController extends Controller
     {
         $estates = Estate::where('is_active', true)->get();
         return view('admin.prototypes.edit', compact('prototype', 'estates'));
+    }
+
+
+    // ==================
+    // BANNER SECTION
+    // ==================
+
+    public function bannerIndex()
+    {
+        $banners = Banner::orderBy('order')->paginate(10);
+        return view('admin.banners.index', compact('banners'));
+    }
+
+    public function bannerCreate()
+    {
+        return view('admin.banners.create');
+    }
+
+    public function bannerStore(Request $request)
+    {
+        $validated = $request->validate([
+            'title'     => ['required', 'string', 'max:255'],
+            'image'     => ['required', 'image', 'mimes:jpg,jpeg,png,webp', 'max:2048'],
+            'link'      => ['nullable', 'url'],
+            'order'     => ['nullable', 'integer'],
+            'is_active' => ['nullable', 'boolean'],
+        ]);
+
+        $validated['image']     = $request->file('image')->store('banners', 'public');
+        $validated['is_active'] = $request->boolean('is_active', true);
+        $validated['order']     = $request->input('order', 0);
+
+        Banner::create($validated);
+
+        return redirect()->route('admin.banners.index')
+            ->with('success', 'Banner created successfully!');
+    }
+
+    public function bannerDelete(Banner $banner)
+    {
+        Storage::disk('public')->delete($banner->image);
+        $banner->delete();
+
+        return redirect()->route('admin.banners.index')
+            ->with('success', 'Banner deleted successfully!');
     }
 }

@@ -55,7 +55,7 @@
                                      Prototype</a></li>
                              <li><a class="slide-item" href="{{ route('admin.prototypes.index') }}"><i
                                          class="fa fa-angle-right me-2"></i>Manage Prototype</a></li>
-                             <li class="sub-slide">
+                             {{-- <li class="sub-slide">
                                  <a class="side-menu__item border-top-0 slide-item" href="javascript:void(0)"
                                      data-bs-toggle="sub-slide"><span class="side-menu__label"><i
                                              class="fa fa-angle-right me-2"></i>Managed Ads 03</span> <i
@@ -65,17 +65,31 @@
                                                  class="fa fa-angle-right me-2 text-muted"></i>Managed Ads
                                              04</a></li>
                                  </ul>
-                             </li>
+                             </li> --}}
+                         </ul>
+                     </li>
+                     <li class="slide">
+                         <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
+                                 class="icon icon-folder-alt"></i><span class="side-menu__label ms-2">Banner</span><i
+                                 class="angle fa fa-angle-right"></i></a>
+                         <ul class="slide-menu">
+                             <li><a class="slide-item" href="{{ route('admin.banners.create') }}"><i
+                                         class="fa fa-angle-right me-2"></i>Add
+                                     Banner</a></li>
+                             <li><a class="slide-item" href="{{ route('admin.banners.index') }}"><i
+                                         class="fa fa-angle-right me-2"></i>Manage Banner</a></li>
+                           
                          </ul>
                      </li>
                      <li>
-                         <a class="side-menu__item" href="settings.html"><i class="icon icon-settings"></i><span
-                                 class="side-menu__label ms-2">Settings
-                             </span></a>
-                     </li>
-                     <li>
-                         <a class="side-menu__item" href="login.html"><i class="icon icon-power"></i><span
-                                 class="side-menu__label ms-2">Logout</span></a>
+                         <form method="POST" action="{{ route('logout') }}">
+                             @csrf
+                             <button type="submit" class="side-menu__item"
+                                 style="background:none; border:none; width:100%; text-align:left; cursor:pointer;">
+                                 <i class="icon icon-power"></i>
+                                 <span class="side-menu__label ms-2">Logout</span>
+                             </button>
+                         </form>
                      </li>
                  </ul>
              </div>
