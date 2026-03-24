@@ -7,12 +7,25 @@
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta
-        content="Reallist- Bootstrap Responsive Real estate Classifieds, Dealer, Rentel, Builder and Agent Multipurpose HTML Template"
-        name="description">
-    <meta content="Spruko Technologies Private Limited" name="author">
-    <meta name="keywords"
-        content="html template, real estate websites, real estate, property websites, premium html templates, real estate company website, bootstrap real estate template, real estate marketplace html template, listing website template, property listing html template, real estate bootstrap template, real estate html5 template, real estate listing template, property template, property dealer website" />
+
+    {{-- Dynamic SEO --}}
+    <title>@yield('seo_title', config('app.name') . ' - Real Estate')</title>
+    <meta name="description" content="@yield('seo_description', 'Find your dream property on ' . config('app.name'))">
+    <meta name="keywords" content="@yield('seo_keywords', 'real estate, property, estate, prototype')">
+
+    {{-- Open Graph (Facebook & WhatsApp preview) --}}
+    <meta property="og:title" content="@yield('seo_title', config('app.name'))">
+    <meta property="og:description" content="@yield('seo_description', 'Find your dream property')">
+    <meta property="og:image" content="@yield('seo_image', asset('assets/images/brand/logo.png'))">
+    <meta property="og:url" content="{{ request()->fullUrl() }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ config('app.name') }}">
+
+    {{-- Twitter Card --}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('seo_title', config('app.name'))">
+    <meta name="twitter:description" content="@yield('seo_description', 'Find your dream property')">
+    <meta name="twitter:image" content="@yield('seo_image', asset('assets/images/brand/logo.png'))">
 
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('favicon.png') }}" type="image/x-icon" />

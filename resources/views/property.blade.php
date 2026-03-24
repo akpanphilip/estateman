@@ -1,5 +1,11 @@
 @extends('layouts.app')
 @section('content')
+@section('seo_title', $prototype->name . ' - ' . $prototype->estate->name . ' | ' . config('app.name'))
+@section('seo_description', Str::limit($prototype->description, 160))
+@section('seo_keywords', $prototype->name . ', ' . $prototype->estate->name . ', ' . $prototype->estate->developer->name
+    . ', real estate, property')
+@section('seo_image', $prototype->coverImage ? asset('storage/' . $prototype->coverImage->image) :
+    asset('assets/images/brand/logo.png'))
     <!--Sliders Section-->
     <div>
         <div class="cover-image sptb-1 bg-background" data-bs-image-src="../assets/images/banners/banner1.jpg">
@@ -328,16 +334,53 @@
                                 </div>
                             </div>
                         </div> --}}
-                        <div class="card-footer bg-white details-tab border">
+                        {{-- <div class="card-footer bg-white details-tab border">
                             <div class="icons">
                                 <a href="javascript:void(0);" class="btn btn-info icons"><i
                                         class="icon icon-share me-1"></i> Share Ad</a>
-                                {{-- <a href="javascript:void(0);" class="btn btn-primary icons"><i
-                                        class="icon icon-heart  me-1"></i> 678</a>
-                                <a href="javascript:void(0);" class="btn btn-secondary icons"><i
-                                        class="icon icon-printer  me-1"></i> Print</a> --}}
+                            
+                            </div>
+                        </div> --}}
+                        {{-- Social Share --}}
+                        <div class="share-section mt-3 border border-top-0 border-bottom-0 bg-white mb-3">
+                            <h6 class="mb-2">Share this Listing</h6>
+                            <div class="d-flex gap-2 flex-wrap">
+
+                                {{-- Facebook --}}
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(request()->fullUrl()) }}"
+                                    target="_blank" class="btn btn-primary btn-sm">
+                                    <i class="fa fa-facebook me-1"></i> Facebook
+                                </a>
+
+                                {{-- Twitter/X --}}
+                                <a href="https://twitter.com/intent/tweet?url={{ urlencode(request()->fullUrl()) }}&text={{ urlencode($prototype->name . ' - ' . $prototype->estate->name) }}"
+                                    target="_blank" class="btn btn-info btn-sm text-white">
+                                    <i class="fa fa-twitter me-1"></i> Twitter
+                                </a>
+
+                                {{-- WhatsApp --}}
+                                <a href="https://wa.me/?text={{ urlencode($prototype->name . ' - ' . $prototype->estate->name . ' ' . request()->fullUrl()) }}"
+                                    target="_blank" class="btn btn-success btn-sm">
+                                    <i class="fa fa-whatsapp me-1"></i> WhatsApp
+                                </a>
+
+                                {{-- Instagram (copy link — Instagram has no direct share URL) --}}
+                                <button type="button" class="btn btn-danger btn-sm"
+                                    onclick="copyToClipboard('{{ request()->fullUrl() }}')"
+                                    title="Copy link to share on Instagram">
+                                    <i class="fa fa-instagram me-1"></i> Copy for Instagram
+                                </button>
+
+                                {{-- Copy Link --}}
+                                <button type="button" class="btn btn-secondary btn-sm"
+                                    onclick="copyToClipboard('{{ request()->fullUrl() }}')">
+                                    <i class="fa fa-copy me-1"></i> Copy Link
+                                </button>
+
                             </div>
                         </div>
+
+
                     </div>
 
                     {{-- <h3 class="mb-5 mt-4">Related Posts</h3> --}}
@@ -713,4 +756,13 @@
             </div>
         </div>
     </section>
+    @push('scripts')
+        <script>
+            function copyToClipboard(text) {
+                navigator.clipboard.writeText(text).then(function() {
+                    alert('Link copied to clipboard!');
+                });
+            }
+        </script>
+    @endpush
 @endsection
