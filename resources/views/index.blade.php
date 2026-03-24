@@ -194,287 +194,73 @@
         <div class="container">
             <div class="section-title center-block text-center">
                 <h2>Latest Properties</h2>
-                <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                {{-- <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p> --}}
             </div>
             <div id="myCarousel1" class="owl-carousel owl-carousel-icons2">
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="power-ribbon power-ribbon-top-left text-warning"><span class="bg-warning"><i
-                                    class="fa fa-bolt"></i></span></div>
-                        <div class="item-card2-img">
-                            <a href="col-left.html"></a>
-                            <img src="../assets/images/products/products/f1.jpg" alt="img" class="cover-image">
-                            <div class="tag-text">
-                                <span class="bg-danger tag-option">For Sale </span>
-                                <span class="bg-pink tag-option">Open</span>
-                            </div>
-                        </div>
-                        <div class="item-card2-icons">
-                            <a href="col-left.html" class="item-card2-icons-l bg-primary"> <i class="fa fa-home"></i></a>
-                            <a href="javascript:void(0);" class="item-card2-icons-r bg-secondary"><i
-                                    class="fa fa fa-heart-o"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <div class="item-card2">
-                                <div class="item-card2-text">
-                                    <a href="col-left.html" class="text-dark">
-                                        <h4 class="">Deluxe Houses</h4>
-                                    </a>
-                                    <p class="mb-2"><i class="fa fa-map-marker text-danger me-1"></i> Preston Street
-                                        Wichita , USA </p>
-                                    <h5 class="font-weight-bold mb-3">$89,005 <span class="fs-12  font-weight-normal">Per
-                                            Month</span></h5>
-                                </div>
-                                <ul class="item-card2-list">
-                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i> 256
-                                            Sqft</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-bed text-muted me-1"></i> 3 Beds</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-bath text-muted me-1"></i> 2 Bath</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-car text-muted me-1"></i> 1 Car</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="footerimg d-flex mt-0 mb-0">
-                                <div class="d-flex footerimg-l mb-0">
-                                    <img src="../assets/images/faces/male/18.jpg" alt="image"
-                                        class="avatar brround  me-2">
-                                    <h5 class="time-title text-muted p-0 leading-normal my-auto">Wendy Peake<i
-                                            class="si si-check text-success fs-12 ms-1" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" title="verified"></i></h5>
-                                </div>
-                                <div class="my-auto footerimg-r ms-auto">
-                                    <small class="text-muted">1 day ago</small>
+                @foreach ($prototypes as $prototype)
+                    <div class="item">
+                        <div class="card mb-0">
+                            <div class="power-ribbon power-ribbon-top-left text-warning"><span class="bg-warning"><i
+                                        class="fa fa-bolt"></i></span></div>
+                            <div class="item-card2-img">
+                                <a href="{{ route('property.detail', $prototype->slug) }}"></a>
+                                @if ($prototype->coverImage)
+                                    <img src="{{ asset('storage/' . $prototype->coverImage->image) }}"
+                                        alt="{{ $prototype->name }}" class="cover-image">
+                                @else
+                                    <img src="../assets/images/products/products/f1.jpg" alt="img" class="cover-image">
+                                @endif
+                                <div class="tag-text">
+                                    <span class="bg-danger tag-option">{{ $prototype->category }} </span>
+                                    {{-- <span class="bg-pink tag-option">Open</span> --}}
                                 </div>
                             </div>
+                            <div class="item-card2-icons">
+                                <a href="col-left.html" class="item-card2-icons-l bg-primary"> <i
+                                        class="fa fa-home"></i></a>
+                                <a href="javascript:void(0);" class="item-card2-icons-r bg-secondary"><i
+                                        class="fa fa fa-heart-o"></i></a>
+                            </div>
+                            <div class="card-body">
+                                <div class="item-card2">
+                                    <div class="item-card2-text">
+                                        <a href="col-left.html" class="text-dark">
+                                            <h4 class="">{{ $prototype->name }}</h4>
+                                        </a>
+                                        <p class="mb-2"><i class="fa fa-map-marker text-danger me-1"></i>
+                                            {{ $prototype->estate->location }}</p>
+
+                                    </div>
+                                    <ul class="item-card2-list">
+                                        <li><a href="javascript:void(0);">
+                                                <h5 class="font-weight-bold"> ₦{{ number_format($prototype->price) }}
+                                                </h5>
+                                            </a></li>
+                                        <li><a href="javascript:void(0);" class="icons text-right"><i
+                                                    class="fa fa-arrows-alt text-muted me-1"></i>
+                                                {{ $prototype->plot_size }} Sqft</a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            {{-- <div class="card-footer">
+                                <div class="footerimg d-flex mt-0 mb-0">
+                                    <div class="d-flex footerimg-l mb-0">
+                                        <img src="../assets/images/faces/male/18.jpg" alt="image"
+                                            class="avatar brround  me-2">
+                                        <h5 class="time-title text-muted p-0 leading-normal my-auto">Wendy Peake<i
+                                                class="si si-check text-success fs-12 ms-1" data-bs-toggle="tooltip"
+                                                data-bs-placement="top" title="verified"></i></h5>
+                                    </div>
+                                    <div class="my-auto footerimg-r ms-auto">
+                                        <small class="text-muted">{{ $prototype->created_at }}</small>
+                                    </div>
+                                </div>
+                            </div> --}}
                         </div>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="power-ribbon power-ribbon-top-left text-warning"><span class="bg-warning"><i
-                                    class="fa fa-bolt"></i></span></div>
-                        <div class="item-card2-img">
-                            <a href="col-left.html"></a>
-                            <img src="../assets/images/products/products/h4.jpg" alt="img" class="cover-image">
-                            <div class="tag-text"><span class="bg-danger tag-option">For Rent </span></div>
-                        </div>
-                        <div class="item-card2-icons">
-                            <a href="javascript:void(0);" class="item-card2-icons-l bg-primary"> <i
-                                    class="fa fa-home"></i></a>
-                            <a href="javascript:void(0);" class="item-card2-icons-r bg-secondary"><i
-                                    class="fa fa fa-heart-o"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <div class="item-card2">
-                                <div class="item-card2-text">
-                                    <a href="col-left.html" class="text-dark">
-                                        <h4 class="">2BK Houses</h4>
-                                    </a>
-                                    <p class="mb-2"><i class="fa fa-map-marker text-danger me-1"></i> Preston Street
-                                        Wichita , USA </p>
-                                    <h5 class="font-weight-bold mb-3">$12,890 <span class="fs-12  font-weight-normal">Per
-                                            Month</span></h5>
-                                </div>
-                                <ul class="item-card2-list">
-                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i> 150
-                                            Sqft</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-bed text-muted me-1"></i> 2 Beds</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-bath text-muted me-1"></i> 3 Bath</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-car text-muted me-1"></i> 1 Car</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="footerimg d-flex mt-0 mb-0">
-                                <div class="d-flex footerimg-l mb-0">
-                                    <img src="../assets/images/faces/female/12.jpg" alt="image"
-                                        class="avatar brround  me-2">
-                                    <h5 class="time-title text-muted p-0 leading-normal my-auto">Ryan Lyman<i
-                                            class="si si-check text-success fs-12 ms-1" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" title="verified"></i></h5>
-                                </div>
-                                <div class="my-auto footerimg-r ms-auto">
-                                    <small class="text-muted">55 mins ago</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="item-card2-img">
-                            <a href="col-left.html"></a>
-                            <img src="../assets/images/products/products/b1.jpg" alt="img" class="cover-image">
-                            <div class="tag-text">
-                                <span class="bg-danger tag-option">For Rent </span>
-                                <span class="bg-pink tag-option">Hot</span>
-                            </div>
-                        </div>
-                        <div class="item-card2-icons">
-                            <a href="javascript:void(0);" class="item-card2-icons-l bg-primary"> <i
-                                    class="fa fa-home"></i></a>
-                            <a href="javascript:void(0);" class="item-card2-icons-r bg-secondary"><i
-                                    class="fa fa fa-heart-o"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <div class="item-card2">
-                                <div class="item-card2-text">
-                                    <a href="col-left.html" class="text-dark">
-                                        <h4 class="">Office Rooms</h4>
-                                    </a>
-                                    <p class="mb-2"><i class="fa fa-map-marker text-danger me-1"></i> Preston Street
-                                        Wichita , USA </p>
-                                    <h5 class="font-weight-bold mb-3">$25,784 <span class="fs-12  font-weight-normal">Per
-                                            Month</span></h5>
-                                </div>
-                                <ul class="item-card2-list">
-                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i> 256
-                                            Sqft</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-bed text-muted me-1"></i> 8 Beds</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-bath text-muted me-1"></i> 4 Bath</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-car text-muted me-1"></i> 4 Car</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="footerimg d-flex mt-0 mb-0">
-                                <div class="d-flex footerimg-l mb-0">
-                                    <img src="../assets/images/faces/male/8.jpg" alt="image"
-                                        class="avatar brround  me-2">
-                                    <h5 class="time-title text-muted p-0 leading-normal my-auto">Joan Hunter<i
-                                            class="si si-check text-success fs-12 ms-1" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" title="verified"></i></h5>
-                                </div>
-                                <div class="my-auto footerimg-r ms-auto">
-                                    <small class="text-muted">2 day ago</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="power-ribbon power-ribbon-top-left text-warning"><span class="bg-warning"><i
-                                    class="fa fa-bolt"></i></span></div>
-                        <div class="item-card2-img">
-                            <a href="col-left.html"></a>
-                            <img src="../assets/images/products/products/v1.jpg" alt="img" class="cover-image">
-                            <div class="tag-text"><span class="bg-danger tag-option">For Sale </span></div>
-                        </div>
-                        <div class="item-card2-icons">
-                            <a href="javascript:void(0);" class="item-card2-icons-l bg-primary"> <i
-                                    class="fa fa-home"></i></a>
-                            <a href="javascript:void(0);" class="item-card2-icons-r bg-secondary"><i
-                                    class="fa fa fa-heart-o"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <div class="item-card2">
-                                <div class="item-card2-text">
-                                    <a href="col-left.html" class="text-dark">
-                                        <h4 class="">Apartments</h4>
-                                    </a>
-                                    <p class="mb-2"><i class="fa fa-map-marker text-danger me-1"></i> Preston Street
-                                        Wichita , USA </p>
-                                    <h5 class="font-weight-bold mb-3">$89,005 <span class="fs-12  font-weight-normal">Per
-                                            Month</span></h5>
-                                </div>
-                                <ul class="item-card2-list">
-                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i> 700
-                                            Sqft</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-bed text-muted me-1"></i> 20 Beds</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-bath text-muted me-1"></i> 10 Bath</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-car text-muted me-1"></i> 10 Car</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="footerimg d-flex mt-0 mb-0">
-                                <div class="d-flex footerimg-l mb-0">
-                                    <img src="../assets/images/faces/female/19.jpg" alt="image"
-                                        class="avatar brround  me-2">
-                                    <h5 class="time-title text-muted p-0 leading-normal my-auto">Elizabeth<i
-                                            class="si si-check text-success fs-12 ms-1" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" title="verified"></i></h5>
-                                </div>
-                                <div class="my-auto footerimg-r ms-auto">
-                                    <small class="text-muted">50 mins ago</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item sold-out">
-                    <div class="ribbon sold-ribbon ribbon-top-left text-danger"><span class="bg-danger">Sold Out</span>
-                    </div>
-                    <div class="card mb-0">
-                        <div class="power-ribbon power-ribbon-top-left text-warning"><span class="bg-warning"><i
-                                    class="fa fa-bolt"></i></span></div>
-                        <div class="item-card2-img">
-                            <a href="col-left.html"></a>
-                            <img src="../assets/images/products/products/f3.jpg" alt="img" class="cover-image">
-                            <div class="tag-text">
-                                <span class="bg-danger tag-option">For Sale </span>
-                                <span class="bg-pink tag-option">New</span>
-                            </div>
-                        </div>
-                        <div class="item-card2-icons">
-                            <a href="javascript:void(0);" class="item-card2-icons-l bg-primary"> <i
-                                    class="fa fa-home"></i></a>
-                            <a href="javascript:void(0);" class="item-card2-icons-r bg-secondary"><i
-                                    class="fa fa fa-heart-o"></i></a>
-                        </div>
-                        <div class="card-body">
-                            <div class="item-card2">
-                                <div class="item-card2-text">
-                                    <a href="col-left.html" class="text-dark">
-                                        <h4 class="">Duplex House</h4>
-                                    </a>
-                                    <p class="mb-2"><i class="fa fa-map-marker text-danger me-1"></i> Preston Street
-                                        Wichita , USA </p>
-                                    <h5 class="font-weight-bold mb-3">$23,789 <span class="fs-12  font-weight-normal">Per
-                                            Month</span></h5>
-                                </div>
-                                <ul class="item-card2-list">
-                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i> 300
-                                            Sqft</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-bed text-muted me-1"></i> 4 Beds</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-bath text-muted me-1"></i> 3 Bath</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-car text-muted me-1"></i> 1 Car</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="footerimg d-flex mt-0 mb-0">
-                                <div class="d-flex footerimg-l mb-0">
-                                    <img src="../assets/images/faces/female/18.jpg" alt="image"
-                                        class="avatar brround  me-2">
-                                    <h5 class="time-title text-muted p-0 leading-normal my-auto">Boris Nash<i
-                                            class="si si-check text-success fs-12 ms-1" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" title="verified"></i></h5>
-                                </div>
-                                <div class="my-auto footerimg-r ms-auto">
-                                    <small class="text-muted">12 mins ago</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </section>

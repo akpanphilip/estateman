@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\PageController;
 
 // Auth routes
 Route::middleware('guest')->group(function () {
@@ -49,5 +50,6 @@ Route::prefix('admin')
     });
 
 // Public routes
-Route::get('/', fn() => view('index'))->name('index');
-Route::get('/about', fn() => view('about'))->name('about');
+Route::get('/', [PageController::class, 'index'])->name('index');
+Route::get('/about', [PageController::class, 'about'])->name('about');
+Route::get('/property/{slug}', [PageController::class, 'propertyDetail'])->name('property.detail');

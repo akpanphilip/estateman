@@ -22,7 +22,7 @@
                                 </div>
                             @endif
 
-                            <table class="table table-bordered table-hover mb-0 text-nowrap">
+                            <table class="table table-bordered table-hover mb-0 text-nowrap table-responsive">
                                 <thead>
                                     <tr>
                                         <th></th>
@@ -33,7 +33,7 @@
                                         <th>Price</th>
                                         <th>Plot Size</th>
                                         <th>Category</th>
-                                        <th>Links</th>
+                                        {{-- <th>Links</th> --}}
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -102,7 +102,7 @@
                                             </td>
 
                                             {{-- Links --}}
-                                            <td>
+                                            {{-- <td>
                                                 @if ($prototype->facebook_link)
                                                     <a href="{{ $prototype->facebook_link }}" target="_blank"
                                                         class="btn btn-sm btn-primary me-1" title="Facebook">
@@ -135,7 +135,7 @@
                                                         !$prototype->phone_number)
                                                     <span class="text-muted">None</span>
                                                 @endif
-                                            </td>
+                                            </td> --}}
 
                                             {{-- Status --}}
                                             <td>
