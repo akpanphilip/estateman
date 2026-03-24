@@ -29,6 +29,7 @@ class Prototype extends Model
     protected $casts = [
         'is_active' => 'boolean',
         'price'     => 'decimal:2',
+        'plot_size' => 'float',
     ];
 
     // Category constants — no magic strings in your code
