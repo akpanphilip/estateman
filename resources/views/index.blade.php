@@ -112,12 +112,12 @@
                                             {{ $prototype->estate->location }}</p>
 
                                     </div>
-                                    <ul class="item-card2-list">
-                                        <li><a href="javascript:void(0);">
+                                    <ul class="d-flex justify-content-between mb-0 align-items-center">
+                                        <li class="w-auto"><a href="javascript:void(0);">
                                                 <h5 class="font-weight-bold"> ₦{{ number_format($prototype->price) }}
                                                 </h5>
                                             </a></li>
-                                        <li><a href="javascript:void(0);" class="icons text-right"><i
+                                        <li class="w-auto"><a href="javascript:void(0);" class="icons text-right"><i
                                                     class="fa fa-arrows-alt text-muted me-1"></i>
                                                 {{ number_format($prototype->plot_size) }} Sqft</a></li>
 
@@ -188,11 +188,11 @@
                                     </div>
                                 </div>
                                 <ul class="item-cards7-ic mb-0">
-                                    <li><a href="javascript:void(0);">
+                                    <li class="w-auto"><a href="javascript:void(0);">
                                             <h5 class="font-weight-bold"> ₦{{ number_format($featuredPrototype->price) }}
                                             </h5>
                                         </a></li>
-                                    <li><a href="javascript:void(0);" class="icons text-right"><i
+                                    <li class="w-auto"><a href="javascript:void(0);" class="icons text-right"><i
                                                 class="fa fa-arrows-alt text-muted me-1"></i>{{ number_format($featuredPrototype->plot_size) }}
                                             Sqft</a>
                                     </li>
