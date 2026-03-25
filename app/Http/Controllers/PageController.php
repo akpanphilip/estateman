@@ -31,46 +31,73 @@ class PageController extends Controller
         return view('property', compact('prototype'));
     }
 
-    public function allProperties()
+    public function allProperties(Request $request)
     {
-        $query = Prototype::with('estate.developer')->latest();
+        $prototypes = Prototype::with(['estate.developer', 'images'])
+            ->where('is_active', true)
+            ->when(
+                $request->search,
+                fn($q) =>
+                $q->where('name', 'like', "%{$request->search}%")
+                    ->orWhere('location', 'like', "%{$request->search}%")
+                    ->orWhereHas(
+                        'estate',
+                        fn($q) =>
+                        $q->where('name', 'like', "%{$request->search}%")
+                    )
+                    ->orWhereHas(
+                        'estate.developer',
+                        fn($q) =>
+                        $q->where('name', 'like', "%{$request->search}%")
+                    )
+            )
+            ->when(
+                $request->category,
+                fn($q) =>
+                $q->whereIn('category', $request->category)
+            )
+            ->when(
+                $request->min_price,
+                fn($q) =>
+                $q->where('price', '>=', $request->min_price)
+            )
+            ->when(
+                $request->max_price,
+                fn($q) =>
+                $q->where('price', '<=', $request->max_price)
+            )->when(
+                $request->estate_id,
+                fn($q) =>
+                $q->where('estate_id', $request->estate_id)
+            )
+            ->when(
+                $request->developer_id,
+                fn($q) =>
+                $q->whereHas(
+                    'estate',
+                    fn($q) =>
+                    $q->where('developer_id', $request->developer_id)
+                )
+            )
+            ->latest()
+            ->paginate(20)
+            ->withQueryString();
 
-        // Price filter
-        if ($price = request('price')) {
-            // Assuming price format is "min-max", e.g., "1000-5000"
-            [$min, $max] = explode('-', $price) + [0, PHP_INT_MAX];
-            $query->whereBetween('price', [(float)$min, (float)$max]);
-        }
+        $minPrice = Prototype::where('is_active', true)->min('price') ?? 0;
+        $maxPrice = Prototype::where('is_active', true)->max('price') ?? 10000000;
 
-        // Category filter
-        if ($categories = request('category')) {
-            $query->whereIn('category', $categories);
-        }
-
-        $prototypes = $query->paginate(20)->withQueryString();
-
-        return view('properties', compact('prototypes'));
+        return view('properties', compact('prototypes', 'minPrice', 'maxPrice'));
     }
     public function properties($slug)
     {
+        // Find the estate by slug
         $estate = Estate::where('slug', $slug)->firstOrFail();
 
-        $query = Prototype::with('estate.developer')
+        // Get prototypes only for this estate, with related developer
+        $prototypes = Prototype::with('estate.developer')
             ->where('estate_id', $estate->id)
-            ->latest();
-
-        // Price filter
-        if ($price = request('price')) {
-            [$min, $max] = explode('-', $price) + [0, PHP_INT_MAX];
-            $query->whereBetween('price', [(float)$min, (float)$max]);
-        }
-
-        // Category filter
-        if ($categories = request('category')) {
-            $query->whereIn('category', $categories);
-        }
-
-        $prototypes = $query->paginate(20)->withQueryString();
+            ->latest()
+            ->paginate(20);
 
         return view('properties', compact('prototypes', 'estate'));
     }
