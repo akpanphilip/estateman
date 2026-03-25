@@ -28,8 +28,8 @@
     <meta name="twitter:image" content="@yield('seo_image', asset('assets/images/brand/logo.png'))">
 
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('favicon.png') }}" type="image/x-icon" />
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.png') }}" />
+    <link rel="icon" href="{{ asset('assets/images/brand/favicon.png') }}" type="image/x-icon" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/brand/favicon.png') }}" />
 
     <!-- Title -->
     <title>Estateman</title>
@@ -51,8 +51,13 @@
     <!-- Owl Theme css -->
     <link href="{{ asset('assets/plugins/owl-carousel/owl.carousel.css') }}" rel="stylesheet" />
 
+    <!-- jquery ui RangeSlider -->
+    <link href="{{ asset('assets/plugins/jquery-uislider/jquery-ui.css') }}" rel="stylesheet">
+
     <!-- P-scroll bar css -->
     <link href="{{ asset('assets/plugins/pscrollbar/perfect-scrollbar.css') }}" rel="stylesheet" />
+    
+    
     @stack('styles')
 </head>
 

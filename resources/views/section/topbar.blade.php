@@ -94,9 +94,9 @@
                  <a id="horizontal-navtoggle" class="animated-arrow"><span></span></a>
                  <span class="smllogo">
                      <a href="/">
-                         <img src="../assets/images/brand/logo.png" class="mobile-light-logo" width="120"
+                         <img src="{{ asset('assets/images/brand/logo.png') }}" class="mobile-light-logo" width="120"
                              alt="" />
-                         <img src="../assets/images/brand/logo.png" class="mobile-dark-logo" width="120"
+                         <img src="{{ asset('assets/images/brand/logo.png') }}" class="mobile-dark-logo" width="120"
                              alt="" />
                      </a>
                  </span>
@@ -119,6 +119,7 @@
                  <ul class="horizontalMenu-list">
                      <li aria-haspopup="true"><a href="/">Home</a></li>
                      <li aria-haspopup="true"><a href="about">About Us </a></li>
+                     <li aria-haspopup="true"><a href="prototypes">Properties </a></li>
                      <li aria-haspopup="true"><a href="contact">Contact Us </a></li>
 
                      {{-- <li aria-haspopup="true" class="d-lg-none mt-5 pb-5 mt-lg-0">

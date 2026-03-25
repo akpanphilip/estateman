@@ -109,7 +109,7 @@
                                             <h4 class="text-truncate" style="max-width: 100%;">{{ $prototype->name }}</h4>
                                         </a>
                                         <p class="mb-2"><i class="fa fa-map-marker text-danger me-1"></i>
-                                            {{ $prototype->estate->location }}</p>
+                                            {{ $prototype->location }}</p>
 
                                     </div>
                                     <ul class="d-flex justify-content-between mb-0 align-items-center">
@@ -215,53 +215,6 @@
                         </div>
                     </div>
                 @endforeach
-                {{-- <div class="item">
-                    <div class="card mb-0">
-                        <div class="arrow-ribbon bg-primary">For Sale</div>
-                        <div class="item-card7-imgs">
-                            <a href="col-left.html"></a>
-                            <img src="../assets/images/products/products/b3.jpg" alt="img" class="cover-image">
-                        </div>
-                        <div class="item-card7-overlaytext">
-                            <a href="col-left.html" class="text-white"> Featured </a>
-                            <span class="mb-0 fs-13"><i class="fa fa fa-heart-o"></i></span>
-                        </div>
-                        <div class="card-body">
-                            <div class="item-card7-desc">
-                                <div class="item-card7-text">
-                                    <a href="col-left.html" class="text-dark">
-                                        <h4 class="">Deluxe Flat</h4>
-                                    </a>
-                                    <p class=""><i class="icon icon-location-pin text-muted me-1"></i> New York, NY
-                                        10012, US </p>
-                                </div>
-                                <ul class="item-cards7-ic mb-0">
-                                    <li><a href="javascript:void(0);"><i class="fa fa-arrows-alt text-muted me-1"></i> 300
-                                            Sqft</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-bed text-muted me-1"></i> 4 Beds</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-bath text-muted me-1"></i> 3 Bath</a></li>
-                                    <li><a href="javascript:void(0);" class="icons"><i
-                                                class="fa fa-car text-muted me-1"></i> 1 Car</a></li>
-                                </ul>
-                                <h5 class="font-weight-bold mb-0">$89,005 <span class="fs-12  font-weight-normal">Per
-                                        Month</span></h5>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="d-flex mb-0">
-                                <span class="fs-12"><i class="icon icon-event me-2 mt-1"></i>Jul 10 2019 </span>
-                                <div class="ms-auto">
-                                    <a href="javascript:void(0);" class="" data-bs-toggle="tooltip"
-                                        data-bs-placement="top" title="Share Property"><i
-                                            class="icon icon-share text-muted"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
-
             </div>
     </section>
     <!--/Featured Ads-->
@@ -326,12 +279,12 @@
                         <div class="card mb-0">
                             <div class="item-card">
                                 <div class="item-card-desc">
-                                    <a href=""></a>
+                                    <a href="{{ route('developer.detail', $developer->slug) }}"></a>
                                     <div class="item-card-img">
                                         {{-- @if ($developer->logo)
-                                        <img src="{{ asset('storage/' . $developer->logo) }}" alt="{{ $developer->name }}"
-                                            class="br-tr-7 br-tl-7">
-                                    @else --}}
+                                            <img src="{{ asset('storage/' . $developer->logo) }}"
+                                                alt="{{ $developer->name }}" class="br-tr-7 br-tl-7">
+                                        @else --}}
                                         <img src="../assets/images/products/1.png" alt="{{ $developer->name }}"
                                             class="br-tr-7 br-tl-7">
                                         {{-- @endif --}}
@@ -365,8 +318,6 @@
                         </div>
                     </div>
                 </div> --}}
-
-
             </div>
         </div>
     </section>

@@ -155,6 +155,10 @@
  <!-- Theme color Js-->
  <script src="{{ asset('assets/js/themeColors.js') }}"></script>
 
+ <!-- Ion.RangeSlider -->
+ <script src="{{ asset('assets/plugins/jquery-uislider/jquery-ui.js') }}"></script>
+ <script src="{{ asset('assets//js/uislider.js') }}"></script>
+
  <!-- Custom Js-->
  <script src="{{ asset('assets/js/custom.js') }}"></script>
 
@@ -164,4 +168,4 @@
  <!-- My Dash Sidemenu Js-->
  <script src="{{ asset('assets/plugins/toggle-sidebar-1/sidemenu.js') }}"></script>
 
-<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+ <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>

@@ -58,5 +58,9 @@ Route::prefix('admin')
 // Public routes
 Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/about', [PageController::class, 'about'])->name('about');
-Route::get('/properties', [PageController::class, 'properties'])->name('properties');
-Route::get('/property/{slug}', [PageController::class, 'propertyDetail'])->name('property.detail');
+Route::get('/prototypes', [PageController::class, 'allProperties'])->name('prototypes.all');
+Route::get('/prototypes/{slug}', [PageController::class, 'properties'])->name('properties');
+Route::get('/prototype/{slug}', [PageController::class, 'propertyDetail'])->name('property.detail');
+Route::get('/developer/{slug}', [PageController::class, 'developerDetail'])->name('developer.detail');
+// Route::get('/developer/{slug}', [PublicController::class, 'developerDetail'])->name('developer.detail');
+Route::get('/estate/{slug}', [PageController::class, 'estateDetail'])->name('estate.detail');

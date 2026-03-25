@@ -522,15 +522,15 @@
                             <div class="text-start">
                                 <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $prototype->whatsapp_number) }}"
                                     class="btn btn-success" target="_blank">
-                                    <i class="fa fa-whatsapp"></i> Chat
+                                    <i class="fa fa-whatsapp"></i> {{ $prototype->whatsapp_number }}
                                 </a>
                                 <a href="tel:+{{ preg_replace('/[^0-9]/', '', $prototype->phone_number) }}"
                                     class="btn btn-primary">
-                                    <i class="fa fa-phone"></i> Call
+                                    <i class="fa fa-phone"></i> {{ $prototype->phone_number }} 
                                 </a>
                                 {{-- <a href="{{ $prototype->phone_number }}" class="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#contact"><i class="fa fa-user"></i> Contact Me</a> --}}
-                                <a href="javascript:void(0);" class="btn  btn-info"><i class="fa fa-share"></i> Share</a>
+                                {{-- <a href="javascript:void(0);" class="btn  btn-info"><i class="fa fa-share"></i> Share</a> --}}
                             </div>
                         </div>
                     </div>
