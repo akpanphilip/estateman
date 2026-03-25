@@ -37,217 +37,151 @@
     </section>
     <!--/section-->
 
-    <!--How to work-->
     <section class="sptb bg-white">
         <div class="container">
             <div class="section-title center-block text-center">
                 <h2>Core Services</h2>
-                {{-- <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p> --}}
+                <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="service-card text-center">
-                                <div class="bg-purple-transparent icon-bg icon-service text-purple">
-                                    <i class="fa fa-shopping-cart "></i>
-                                </div>
-                                <div class="servic-data mt-4">
-                                    <h4 class="font-weight-semibold mb-2">Property Verification <br> & Due Diligence</h4>
-                                    <p class="text-muted">At Estateman Ltd, we verify every property to ensure your
-                                        investment is 100% genuine and legally secure.
-                                    </p>
-                                    <a href="javascript:void(0);" class="btn btn-primary btn-sm">View More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="service-card text-center">
-                                <div class="bg-warning-transparent icon-bg icon-service text-warning">
-                                    <i class="fa fa-eye"></i>
-                                </div>
-                                <div class="servic-data mt-4">
-                                    <h4 class="font-weight-semibold mb-2">Indemnified Transactions <br> for Your Peace of
-                                        Mind
+            <div class="item-all-cat center-block text-center">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="status-border mb-4 mb-lg-0 br-3">
+                            <div class="p-6">
+                                <div class="status-info text-center">
+                                    <div class="status-img mb-5">
+                                        <img src="../assets/images/categories/apr.png" class="status-img-light"
+                                            alt="">
+                                        <img src="../assets/images/categories/apr-white.png" class="status-img-dark"
+                                            alt="">
+                                    </div>
+                                    <h4 class="mt-2 mb-2">
+                                        Property Verification
+                                        & Due Diligence
                                     </h4>
-                                    <p class="text-muted">
-                                        Every transaction is backed by our indemnity, giving you full confidence and peace
-                                        of mind.
-
+                                    <p class="text-muted mb-0">At Estateman Ltd, we verify every property to ensure your
+                                        investment is 100% genuine and legally secure.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="status-border mb-4 mb-lg-0 br-3">
+                            <div class="p-6">
+                                <div class="status-info text-center">
+                                    <div class="status-img mb-5">
+                                        <img src="../assets/images/categories/hand.png" class="status-img-light"
+                                            alt="">
+                                        <img src="../assets/images/categories/hand-white.png" class="status-img-dark"
+                                            alt="">
+                                    </div>
+                                    <h4 class="mt-2 mb-2">Indemnified Transactions
+                                        for Your Peace of Mind</h4>
+                                    <p class="text-muted mb-0">Every transaction is backed by our indemnity, giving you full
+                                        confidence and peace of mind.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="status-border br-3">
+                            <div class="p-6">
+                                <div class="status-info text-center">
+                                    <div class="status-img mb-5">
+                                        <img src="../assets/images/categories/support.png" class="status-img-light"
+                                            alt="">
+                                        <img src="../assets/images/categories/support-white.png" class="status-img-dark"
+                                            alt="">
+                                    </div>
+                                    <h4 class="mt-2 mb-2">
+                                        Property Management
+                                        While You're Away
+                                    </h4>
+                                    <p class="text-muted mb-0">
+                                       We ensure your property is safeguarded, refined, and consistently profitable.
                                     </p>
-                                    <a href="javascript:void(0);" class="btn btn-primary btn-sm">View More</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="service-card text-center">
-                                <div class="bg-secondary-transparent icon-bg icon-service">
-                                    <i class="fa fa-credit-card"></i>
-                                </div>
-                                <div class="servic-data mt-4">
-                                    <h4 class="font-weight-semibold mb-2">Property Management <br> While You're Away</h4>
-                                    <p class="text-muted">
-                                        We manage your property fully, ensuring it stays protected, well-maintained, and
-                                        income-generating.
-                                    </p>
-                                    <a href="javascript:void(0);" class="btn btn-primary btn-sm">View More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
-    <!--/How to work-->
 
     <section class="sptb">
         <div class="container">
             <div class="section-title center-block text-center">
                 <h2>Why Nigerians in the Diaspora Trust Us</h2>
-                {{-- <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p> --}}
+                <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
             </div>
-
-            <div id="defaultCarousel" class="owl-carousel Card-owlcarousel owl-carousel-icons">
-
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="card-body text-center">
-                            <div class="feature">
-                                <div class="fa-stack fa-lg  fea-icon bg-success  mb-3">
-                                    <i class="fa fa-university  text-white"></i>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="">
+                        <div class="mb-lg-0 mb-5">
+                            <div class="service-card text-center">
+                                <div class="bg-white icon-bg  icon-service text-purple about">
+                                    <i class="fe fe-pocket text-primary"></i>
                                 </div>
-                                <h4>Zero Tolerance for Fraud</h4>
-                                <p>
-                                    We only deal with verified estates and certified
-                                    developers.
-                                </p>
+                                <div class="servic-data mt-3">
+                                    <h4 class="font-weight-semibold mb-2">Zero Tolerance for Fraud</h4>
+                                    <p class="text-muted mb-0">We only deal with verified estates and certified
+                                        developers.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="card-body text-center">
-                            <div class="feature">
-                                <div class="fa-stack fa-lg  fea-icon bg-primary mb-3">
-                                    <i class="fa fa-pencil-square-o  text-white"></i>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="">
+                        <div class="mb-sm-0 mb-5">
+                            <div class="service-card text-center">
+                                <div class="bg-white icon-bg  icon-service text-purple about">
+                                    <i class="fe fe-thumbs-up text-secondary"></i>
                                 </div>
-                                <h4>Full Transparency</h4>
-                                <p>You get real-time updates, photos, video inspections,
-                                    and document reviews </p>
+                                <div class="servic-data mt-3">
+                                    <h4 class="font-weight-semibold mb-2">Full Transparency</h4>
+                                    <p class="text-muted mb-0">You get real-time updates, photos, video inspections,
+                                        and document reviews</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="card-body text-center">
-                            <div class="feature">
-                                <div class="fa-stack fa-lg  fea-icon bg-secondary mb-3">
-                                    <i class="fa fa-handshake-o  text-white"></i>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="">
+                        <div class="mb-sm-0 mb-5">
+                            <div class="service-card text-center">
+                                <div class="bg-white icon-bg  icon-service text-purple about">
+                                    <i class="fe fe-file-text text-success"></i>
                                 </div>
-                                <h4>Professional Team</h4>
-                                <p>
-                                    We work with lawyers, surveyors, town planners, and
-                                    property consultants.
-                                </p>
+                                <div class="servic-data mt-3">
+                                    <h4 class="font-weight-semibold mb-2">Professional Team</h4>
+                                    <p class="text-muted mb-0">We work with lawyers, surveyors, town planners, and
+                                        property consultants.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="item">
-                    <div class="card mb-0">
-                        <div class="card-body text-center">
-                            <div class="feature">
-                                <div class="fa-stack fa-lg  fea-icon bg-warning mb-3">
-                                    <i class="fa fa-cubes   text-white"></i>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="">
+                        <div class="">
+                            <div class="service-card text-center">
+                                <div class="bg-white icon-bg  icon-service text-purple about">
+                                    <i class="fe fe-users text-info"></i>
                                 </div>
-                                <h4>Client-Centered Approach</h4>
-                                <p>
-                                    We treat every transaction like it’s our own, with integrity, care, and unwavering
-                                    attention to detail.
-                                </p>
+                                <div class="servic-data mt-3">
+                                    <h4 class="font-weight-semibold mb-2">Client-Centered Approach</h4>
+                                    <p class="text-muted mb-0"> We treat every transaction like it’s our own, with
+                                        integrity, care, and unwavering
+                                        attention to detail.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            {{-- <div class="row ">
-                <div class="col-sm-6 col-lg-4 features">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <div class="feature">
-                                <div class="fa-stack fa-lg  fea-icon bg-success  mb-3">
-                                    <i class="fa fa-university  text-white"></i>
-                                </div>
-                                <h3>Zero Tolerance for Fraud</h3>
-                                <p>
-                                    We only deal with verified estates and certified
-                                    developers.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 features">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <div class="feature">
-                                <div class="fa-stack fa-lg  fea-icon bg-primary mb-3">
-                                    <i class="fa fa-pencil-square-o  text-white"></i>
-                                </div>
-                                <h3>Full Transparency</h3>
-                                <p>You get real-time updates, photos, video inspections,
-                                    and document reviews </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 features">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <div class="feature">
-                                <div class="fa-stack fa-lg  fea-icon bg-secondary mb-3">
-                                    <i class="fa fa-handshake-o  text-white"></i>
-                                </div>
-                                <h3>Professional Team</h3>
-                                <p>
-                                    We work with lawyers, surveyors, town planners, and
-                                    property consultants.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 features">
-                    <div class="card mb-lg-0">
-                        <div class="card-body text-center">
-                            <div class="feature">
-                                <div class="fa-stack fa-lg  fea-icon bg-warning mb-3">
-                                    <i class="fa fa-cubes   text-white"></i>
-                                </div>
-                                <h3>Client-Centered Approach</h3>
-                                <p>
-                                    We treat every transaction like it’s our own.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            
-            </div> --}}
         </div>
     </section>
 

@@ -77,7 +77,7 @@
                                     <div class="col-sm-12 col-md-12">
                                         <div class="form-group">
                                             <label class="form-label text-dark">Description</label>
-                                            <textarea name="description" class="form-control @error('description') is-invalid @enderror" rows="6"
+                                            <textarea id="description" name="description" class="form-control @error('description') is-invalid @enderror"
                                                 placeholder="Text here..">{{ old('description') }}</textarea>
                                             @error('description')
                                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -124,4 +124,17 @@
         </div>
     </section>
     <!--/User Dashboard-->
+
+    @push('scripts')
+        <script>
+            ClassicEditor
+                .create(document.querySelector('#description'), {
+                    toolbar: [
+                        'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList',
+                        'blockQuote', 'insertTable', 'undo', 'redo'
+                    ],
+                })
+                .catch(error => console.error(error));
+        </script>
+    @endpush
 @endsection

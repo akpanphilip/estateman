@@ -18,6 +18,7 @@ class Prototype extends Model
         'price',
         'plot_size',
         'description',
+        'location',
         'category',
         'facebook_link',
         'instagram_link',

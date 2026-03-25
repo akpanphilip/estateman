@@ -6,6 +6,43 @@
     . ', real estate, property')
 @section('seo_image', $prototype->coverImage ? asset('storage/' . $prototype->coverImage->image) :
     asset('assets/images/brand/logo.png'))
+
+    @push('styles')
+        <style>
+            .carousel-thumb-gallery {
+                display: flex;
+                gap: 8px;
+                margin-top: 10px;
+                overflow-x: auto;
+                padding-bottom: 5px;
+            }
+
+            .carousel-thumb-gallery .thumb-item {
+                min-width: 100px;
+                max-width: 120px;
+                flex-shrink: 0;
+            }
+
+            .carousel-thumb-gallery .thumb-item img {
+                transition: border 0.2s ease;
+            }
+
+            .carousel-thumb-gallery .thumb-item img:hover {
+                border: 2px solid #5c67f2 !important;
+                opacity: 0.85;
+            }
+
+            /* Scrollbar styling */
+            .carousel-thumb-gallery::-webkit-scrollbar {
+                height: 4px;
+            }
+
+            .carousel-thumb-gallery::-webkit-scrollbar-thumb {
+                background: #ccc;
+                border-radius: 4px;
+            }
+        </style>
+    @endpush
     <!--Sliders Section-->
     <div>
         <div class="cover-image sptb-1 bg-background" data-bs-image-src="../assets/images/banners/banner1.jpg">
@@ -86,7 +123,7 @@
                                     {{-- <li class="me-5"><a href="javascript:void(0);" class="icons"><i class="icon icon-briefcase text-muted me-1"></i> RealEstate</a></li> --}}
                                     <li class="me-5"><a href="javascript:void(0);" class="icons"><i
                                                 class="icon icon-location-pin text-muted me-1"></i>
-                                            {{ $prototype->estate->location }}</a></li>
+                                            {{ $prototype->location }}</a></li>
                                     <li class="me-5"><a href="javascript:void(0);" class="icons"><i
                                                 class="icon icon-calendar text-muted me-1"></i>
                                             {{ $prototype->created_at->diffForHumans() }}</a></li>
@@ -110,37 +147,68 @@
                                         </div>
                                     @endif
 
-                                    <div class="carousel-inner slide-show-image" id="full-gallery">
+                                    <div class="product-slider carousel-slide-1">
+                                        <div id="carouselFade" class="carousel slide carousel-fade" data-bs-ride="carousel"
+                                            data-bs-loop="false" data-bs-thumb="true" data-bs-dots="false">
 
-                                        {{-- Main Images --}}
-                                        @if ($prototype->images->count() > 0)
-                                            @foreach ($prototype->images as $index => $image)
-                                                <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                                                    <img src="{{ asset('storage/' . $image->image) }}"
-                                                        alt="{{ $prototype->name }}">
+                                            {{-- Price Badge --}}
+                                            @if ($prototype->price)
+                                                <div class="arrow-ribbon2 bg-primary">
+                                                    ₦{{ number_format($prototype->price) }}
                                                 </div>
-                                            @endforeach
-                                        @else
-                                            {{-- Fallback if no images --}}
-                                            <div class="carousel-item active">
-                                                <img src="{{ asset('assets/images/products/h1.png') }}"
-                                                    alt="No Image Available">
+                                            @endif
+
+                                            {{-- Main Large Images --}}
+                                            <div class="carousel-inner slide-show-image" id="full-gallery">
+                                                @if ($prototype->images->count() > 0)
+                                                    @foreach ($prototype->images as $index => $image)
+                                                        <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                                            <img src="{{ asset('storage/' . $image->image) }}"
+                                                                alt="{{ $prototype->name }}">
+                                                        </div>
+                                                    @endforeach
+                                                @else
+                                                    <div class="carousel-item active">
+                                                        <img src="{{ asset('assets/images/products/h1.png') }}"
+                                                            alt="No Image">
+                                                    </div>
+                                                @endif
+
+                                                {{-- Prev/Next Controls --}}
+                                                <div class="thumbcarousel">
+                                                    <a class="carousel-control-prev" href="#carouselFade" role="button"
+                                                        data-bs-slide="prev">
+                                                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                                    </a>
+                                                    <a class="carousel-control-next" href="#carouselFade" role="button"
+                                                        data-bs-slide="next">
+                                                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
                                             </div>
-                                        @endif
 
-                                        {{-- Prev/Next Controls --}}
-                                        <div class="thumbcarousel">
-                                            <a class="carousel-control-prev" href="#carouselFade" role="button"
-                                                data-bs-slide="prev">
-                                                <i class="fa fa-angle-left" aria-hidden="true"></i>
-                                            </a>
-                                            <a class="carousel-control-next" href="#carouselFade" role="button"
-                                                data-bs-slide="next">
-                                                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                            </a>
+                                            {{-- Thumbnail Strip --}}
+                                            {{-- Thumbnail Strip --}}
+                                            <div
+                                                style="display: flex; gap: 8px; margin-top: 8px; overflow-x: auto; padding-bottom: 5px;">
+                                                @if ($prototype->images->count() > 0)
+                                                    @foreach ($prototype->images as $index => $image)
+                                                        <div style="flex-shrink: 0; width: 100px; cursor: pointer;"
+                                                            onclick="switchImage({{ $index }}, this)">
+                                                            <img src="{{ asset('storage/' . $image->image) }}"
+                                                                alt="thumb {{ $index + 1 }}"
+                                                                id="thumb-{{ $index }}"
+                                                                style="width: 100px; height: 70px; object-fit: cover; border-radius: 4px;
+                    border: {{ $index === 0 ? '2px solid #5c67f2' : '2px solid transparent' }};">
+                                                        </div>
+                                                    @endforeach
+                                                @endif
+                                            </div>
+
                                         </div>
-
                                     </div>
+
+
                                 </div>
                             </div>
                         </div>
@@ -762,6 +830,49 @@
                 navigator.clipboard.writeText(text).then(function() {
                     alert('Link copied to clipboard!');
                 });
+            }
+        </script>
+    @endpush
+
+    @push('scripts')
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var carouselEl = document.getElementById('carouselFade');
+
+                if (carouselEl) {
+                    // Auto swipe every 3 seconds
+                    var carousel = new bootstrap.Carousel(carouselEl, {
+                        interval: 3000,
+                        ride: 'carousel',
+                        wrap: true
+                    });
+
+                    // Sync thumbnail border on slide
+                    carouselEl.addEventListener('slide.bs.carousel', function(e) {
+                        document.querySelectorAll('[id^="thumb-"]').forEach(function(img) {
+                            img.style.border = '2px solid transparent';
+                        });
+                        var activeThumb = document.getElementById('thumb-' + e.to);
+                        if (activeThumb) {
+                            activeThumb.style.border = '2px solid #5c67f2';
+                        }
+                    });
+                }
+            });
+
+            // Click thumbnail to switch main image
+            function switchImage(index, container) {
+                var carousel = new bootstrap.Carousel(document.getElementById('carouselFade'));
+                carousel.to(index);
+
+                // Update borders
+                document.querySelectorAll('[id^="thumb-"]').forEach(function(img) {
+                    img.style.border = '2px solid transparent';
+                });
+                var activeThumb = document.getElementById('thumb-' + index);
+                if (activeThumb) {
+                    activeThumb.style.border = '2px solid #5c67f2';
+                }
             }
         </script>
     @endpush

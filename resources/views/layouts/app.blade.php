@@ -53,7 +53,7 @@
 
     <!-- P-scroll bar css -->
     <link href="{{ asset('assets/plugins/pscrollbar/perfect-scrollbar.css') }}" rel="stylesheet" />
-
+    @stack('styles')
 </head>
 
 <body class="main-body">

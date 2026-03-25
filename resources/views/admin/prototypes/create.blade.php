@@ -108,10 +108,21 @@
                                         </div>
                                     </div>
 
-                        
+                                    <div class="col-sm-6 col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Location</label>
+                                            <input type="text" name="location"
+                                                class="form-control @error('location') is-invalid @enderror"
+                                                placeholder="e.g Lekki Phase 1, Lagos"
+                                                value="{{ old('location', $prototype->location ?? '') }}">
+                                            @error('location')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
 
                                     {{-- Category --}}
-                                    <div class="col-sm-12 col-md-12">
+                                    <div class="col-sm-6 col-md-6">
                                         <div class="form-group">
                                             <label class="form-label text-dark">Category</label>
                                             <select name="category"
@@ -161,7 +172,8 @@
                                             <label class="form-label">Facebook Link</label>
                                             <input type="url" name="facebook_link"
                                                 class="form-control @error('facebook_link') is-invalid @enderror"
-                                                placeholder="https://facebook.com/..." value="{{ old('facebook_link') }}">
+                                                placeholder="https://facebook.com/..."
+                                                value="{{ old('facebook_link') }}">
                                             @error('facebook_link')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -211,16 +223,15 @@
     <!--/User Dashboard-->
 
     @push('scripts')
-        
-    <script>
-        ClassicEditor
-        .create(document.querySelector('#description'), {
-            toolbar: [
-                'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList',
-                'blockQuote', 'insertTable', 'undo', 'redo'
-            ],
-        })
-        .catch(error => console.error(error));
+        <script>
+            ClassicEditor
+                .create(document.querySelector('#description'), {
+                    toolbar: [
+                        'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList',
+                        'blockQuote', 'insertTable', 'undo', 'redo'
+                    ],
+                })
+                .catch(error => console.error(error));
         </script>
-        @endpush
+    @endpush
 @endsection
