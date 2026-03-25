@@ -29,4 +29,10 @@ class PageController extends Controller
         $prototype = Prototype::with(['estate.developer', 'images'])->where('slug', $slug)->firstOrFail();
         return view('property', compact('prototype'));
     }
+
+    public function properties()
+    {
+        $prototypes = Prototype::with('estate.developer')->latest()->paginate(10);
+        return view('properties', compact('prototypes'));
+    }
 }

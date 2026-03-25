@@ -58,4 +58,5 @@ Route::prefix('admin')
 // Public routes
 Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/about', [PageController::class, 'about'])->name('about');
+Route::get('/properties', [PageController::class, 'properties'])->name('properties');
 Route::get('/property/{slug}', [PageController::class, 'propertyDetail'])->name('property.detail');
