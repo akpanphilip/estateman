@@ -28,7 +28,7 @@
 
                      </div>
                  </div>
-                 <div class="col-xl-4 col-lg-4 col-sm-8 col-5">
+                 {{-- <div class="col-xl-4 col-lg-4 col-sm-8 col-5">
                      <div class="top-bar-right">
                          <ul class="custom">
                              @guest
@@ -81,7 +81,7 @@
                              @endauth
                          </ul>
                      </div>
-                 </div>
+                 </div> --}}
              </div>
          </div>
      </div>
