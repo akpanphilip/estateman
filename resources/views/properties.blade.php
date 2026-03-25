@@ -73,46 +73,101 @@
                 <!--Left Side Content-->
                 <div class="col-xl-3 col-lg-4 col-md-12">
 
-                    <div class="card">
-                        <form method="GET"
-                            action="{{ request()->routeIs('properties') ? route('properties', $estate->slug ?? '') : route('prototypes.all') }}">
-                            <!-- Price Range -->
+                    <form method="GET" action="{{ route('prototypes.all') }}" id="filterForm">
+
+                        {{-- Search Bar --}}
+                        {{-- <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="input-group">
+                                    <input type="text" name="search" class="form-control"
+                                        placeholder="Search by name, location, estate..." value="{{ request('search') }}">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div> --}}
+
+                        <div class="card">
+                            {{-- Price Range --}}
                             <div class="card-header border-top">
                                 <h3 class="card-title">Price Range</h3>
                             </div>
                             <div class="card-body">
-                                <input type="text" name="price" id="price" value="{{ request('price') }}"
-                                    class="form-control">
-                                <div id="mySlider"></div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label class="form-label small text-muted">Min Price</label>
+                                        <input type="number" name="min_price" class="form-control form-control-sm"
+                                            placeholder="Min" value="{{ request('min_price') }}">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label small text-muted">Max Price</label>
+                                        <input type="number" name="max_price" class="form-control form-control-sm"
+                                            placeholder="Max" value="{{ request('max_price') }}">
+                                    </div>
+                                </div>
                             </div>
 
-                            <!-- Category -->
+                            {{-- Category --}}
                             <div class="card-header border-top">
                                 <h3 class="card-title">Category</h3>
                             </div>
                             <div class="card-body">
                                 <div class="filter-product-checkboxs">
-                                    <label class="custom-control custom-checkbox mb-2">
-                                        <input type="checkbox" class="custom-control-input" name="category[]"
-                                            value="featured"
-                                            {{ in_array('featured', request('category', [])) ? 'checked' : '' }}>
-                                        <span class="custom-control-label">Featured</span>
-                                    </label>
-
-                                    <label class="custom-control custom-checkbox mb-2">
-                                        <input type="checkbox" class="custom-control-input" name="category[]"
-                                            value="regular"
-                                            {{ in_array('regular', request('category', [])) ? 'checked' : '' }}>
-                                        <span class="custom-control-label">Regular</span>
-                                    </label>
+                                    @foreach (\App\Models\Prototype::CATEGORIES as $value => $label)
+                                        <label class="custom-control custom-checkbox mb-2">
+                                            <input type="checkbox" class="custom-control-input" name="category[]"
+                                                value="{{ $value }}"
+                                                {{ in_array($value, request('category', [])) ? 'checked' : '' }}>
+                                            <span class="custom-control-label">{{ $label }}</span>
+                                        </label>
+                                    @endforeach
                                 </div>
                             </div>
 
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-primary btn-block">Apply Filter</button>
+                            {{-- Estate Filter --}}
+                            <div class="card-header border-top">
+                                <h3 class="card-title">Estate</h3>
                             </div>
-                        </form>
-                    </div>
+                            <div class="card-body">
+                                <select name="estate_id" class="form-control select2 form-select">
+                                    <option value="">All Estates</option>
+                                    @foreach (\App\Models\Estate::where('is_active', true)->get() as $estate)
+                                        <option value="{{ $estate->id }}"
+                                            {{ request('estate_id') == $estate->id ? 'selected' : '' }}>
+                                            {{ $estate->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            {{-- Developer Filter --}}
+                            <div class="card-header border-top">
+                                <h3 class="card-title">Developer</h3>
+                            </div>
+                            <div class="card-body">
+                                <select name="developer_id" class="form-control select2 form-select">
+                                    <option value="">All Developers</option>
+                                    @foreach (\App\Models\Developer::where('is_active', true)->get() as $developer)
+                                        <option value="{{ $developer->id }}"
+                                            {{ request('developer_id') == $developer->id ? 'selected' : '' }}>
+                                            {{ $developer->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    <i class="fa fa-filter me-1"></i> Apply Filter
+                                </button>
+                                <a href="{{ route('prototypes.all') }}" class="btn btn-secondary btn-block mt-2">
+                                    <i class="fa fa-times me-1"></i> Clear Filters
+                                </a>
+                            </div>
+                        </div>
+
+                    </form>
                 </div>
                 <!--/Left Side Content-->
 
@@ -124,13 +179,24 @@
                                 <div class=" mb-0">
                                     <div class="">
                                         <div class="p-5 bg-white item2-gl-nav d-flex border br-5">
-                                            <h6 class="mb-0 mt-2">Showing 1 to 10 of 30 entries</h6>
+                                            {{-- <h6 class="mb-0 mt-2">Showing 1 to 10 of 30 entries</h6> --}}
+                                            <h6 class="mb-0 mt-2">
+                                                <strong>{{ $prototypes->total() }}</strong> properties found
+                                                @if (request('search'))
+                                                    for "<strong>{{ request('search') }}</strong>"
+                                                @endif
+                                            </h6>
                                             <ul class="nav item2-gl-menu ms-auto mt-2">
                                                 <li class=""><a href="#tab-11" class="" data-bs-toggle="tab"
                                                         title="List style"><i class="fa fa-list"></i></a></li>
                                                 <li><a href="#tab-12" data-bs-toggle="tab" class="active show"
                                                         title="Grid"><i class="fa fa-th"></i></a></li>
                                             </ul>
+
+                                            <div class="d-flex justify-content-between align-items-center mb-3">
+
+
+                                            </div>
                                             <div class="d-flex">
                                                 <label class="me-2 mt-1 mb-sm-1 pt-2">Sort By:</label>
                                                 <select name="item" class="form-control select-sm w-75 select2">
@@ -146,14 +212,15 @@
                                 <div class="tab-content">
                                     <div class="tab-pane" id="tab-11">
 
-                                        @foreach ($prototypes as $prototype)
+                                        @forelse ($prototypes as $prototype)
                                             <div class="card overflow-hidden">
                                                 <div class="d-md-flex">
                                                     <div class="item-card9-img">
                                                         <div class="arrow-ribbon bg-primary">
                                                             ₦{{ number_format($prototype->price) }}</div>
                                                         <div class="item-card9-imgs">
-                                                            <a href="{{ route('property.detail', $prototype->slug) }}"></a>
+                                                            <a
+                                                                href="{{ route('property.detail', $prototype->slug) }}"></a>
                                                             @if ($prototype->coverImage)
                                                                 <img src="{{ asset('storage/' . $prototype->coverImage->image) }}"
                                                                     alt="{{ $prototype->name }}" class="cover-image">
@@ -161,64 +228,70 @@
                                                                 <img src="../assets/images/products/h4.png" alt="img"
                                                                     class="cover-image">
                                                             @endif
-
                                                         </div>
                                                         <div class="item-card9-icons">
                                                             <a href="javascript:void(0);"
                                                                 class="item-card9-icons1 bg-purple"
                                                                 data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Share"> <i class="icon icon-share"></i></a>
+                                                                title="Share">
+                                                                <i class="icon icon-share"></i>
+                                                            </a>
                                                         </div>
                                                         <div class="item-tags">
-                                                            <div class="bg-success tag-option">For Sale </div>
-                                                            <div class="bg-pink tag-option">Open </div>
+                                                            <div class="bg-success tag-option">For Sale</div>
+                                                            <div class="bg-pink tag-option">Open</div>
                                                         </div>
-
                                                     </div>
+
                                                     <div class="card border-0 mb-0">
-                                                        <div class="card-body ">
+                                                        <div class="card-body">
                                                             <div class="item-card9">
-                                                                {{-- <a href="col-left.html" class="text-muted me-4"><i
-                                                                        class="fa fa-tag me-1"></i>
-                                                                    {{ $prototype->locatoin }}</a> --}}
                                                                 <a href="col-left.html" class="text-dark">
                                                                     <h4 class="font-weight-bold mt-1">
-                                                                        {{ $prototype->name }} </h4>
+                                                                        {{ $prototype->name }}</h4>
                                                                 </a>
                                                                 <div class="mb-2">
                                                                     <a href="javascript:void(0);"
-                                                                        class="icons text-muted me-4"><i
-                                                                            class="fa fa-arrows-alt text-muted me-1"></i>
-                                                                        {{ number_format($prototype->plot_size) }} Sqft</a>
+                                                                        class="icons text-muted me-4">
+                                                                        <i class="fa fa-arrows-alt text-muted me-1"></i>
+                                                                        {{ number_format($prototype->plot_size) }} Sqft
+                                                                    </a>
                                                                 </div>
                                                             </div>
                                                         </div>
+
                                                         <div class="card-footer pt-4 pb-4">
                                                             <div class="item-card9-footer d-flex">
                                                                 <div class="item-card9-cost">
-                                                                    <a href="javascript:void(0);" class="me-4"><span
-                                                                            class=""><i
+                                                                    <a href="javascript:void(0);" class="me-4">
+                                                                        <span><i
                                                                                 class="fa fa-map-marker text-muted me-1"></i>
-                                                                            {{ $prototype->location }}</span></a>
+                                                                            {{ $prototype->location }}</span>
+                                                                    </a>
                                                                 </div>
                                                                 <div class="ms-auto">
-                                                                    <a href="javascript:void(0);" class=""><span
-                                                                            class=""><i
+                                                                    <a href="javascript:void(0);">
+                                                                        <span><i
                                                                                 class="fa fa-calendar-o text-muted me-1"></i>
-                                                                            {{ $prototype->created_at->diffForHumans() }}
-                                                                        </span></a>
+                                                                            {{ $prototype->created_at->diffForHumans() }}</span>
+                                                                    </a>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        @endforeach
+                                        @empty
+                                            <div class="text-center my-5">
+                                                <h4 class="text-muted">No properties found matching your criteria.</h4>
+                                                <p>Try adjusting your filters or check back later.</p>
+                                            </div>
+                                        @endforelse
 
                                     </div>
                                     <div class="tab-pane active" id="tab-12">
                                         <div class="row">
-                                            @foreach ($prototypes as $prototype)
+                                            @forelse ($prototypes as $prototype)
                                                 <div class="col-lg-6 col-md-12 col-xl-4">
                                                     <div class="card overflow-hidden">
                                                         <div class="item">
@@ -294,7 +367,12 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            @endforeach
+                                            @empty
+                                                <div class="text-center my-5">
+                                                    <h4 class="text-muted">No properties found matching your criteria.</h4>
+                                                    <p>Try adjusting your filters or check back later.</p>
+                                                </div>
+                                            @endforelse
                                         </div>
                                     </div>
                                 </div>
@@ -322,5 +400,4 @@
         </div>
     </section>
     <!--/Add Listings-->
-    
 @endsection
