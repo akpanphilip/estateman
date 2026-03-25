@@ -187,7 +187,7 @@
                                             {{ $featuredPrototype->estate->location ?? 'N/A' }} </p>
                                     </div>
                                 </div>
-                                <ul class="item-cards7-ic mb-0">
+                                <ul class="d-flex justify-content-between mb-0 align-items-center mb-0">
                                     <li class="w-auto"><a href="javascript:void(0);">
                                             <h5 class="font-weight-bold"> ₦{{ number_format($featuredPrototype->price) }}
                                             </h5>
