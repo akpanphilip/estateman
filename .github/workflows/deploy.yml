@@ -32,14 +32,30 @@ jobs:
           port: 22
           script: |
             cd /home2/estatem2/repositories/estateman
+
+            # Pull latest code
             git pull origin main
+
+            # Install dependencies
             php -d allow_url_fopen=On composer.phar install --no-dev --optimize-autoloader --no-interaction
-            php artisan migrate --force
+
+            # Clear ALL caches first
             php artisan config:clear
             php artisan cache:clear
             php artisan view:clear
             php artisan route:clear
+            php artisan event:clear
+
+            # Run migrations
+            php artisan migrate --force
+
+            # Rebuild cache
             php artisan optimize
+
+            # Copy assets
             cp -r /home2/estatem2/repositories/estateman/public/assets /home2/estatem2/public_html/assets
-            cp -r /home2/estatem2/repositories/estateman/storage/app/public/* /home2/estatem2/public_html/storage/
+
+            # Sync storage
+            cp -r /home2/estatem2/repositories/estateman/storage/app/public/* /home2/estatem2/public_html/storage/ 2>/dev/null || true
+
             echo "✅ Deployment complete!"
